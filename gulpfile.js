@@ -18,6 +18,7 @@ var gulp = require('gulp'),
 ///////////语言配置
 var language_zhCn = require("./json/zh_cn.json");
 
+//////////////////
 var raw_css = 'raw/scss',
     com_css = 'css',
     raw_js = 'raw/js',
