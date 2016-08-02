@@ -1,6 +1,7 @@
 {
-  "common/common.css": "common/common.css?v=f336d2ad2d",
+  "common/common.css": "common/common.css?v=195e7df65e",
+  "common/flex.css": "common/flex.css?v=a9b4cbf98a",
   "common/mixin.css": "common/mixin.css?v=d41d8cd98f",
-  "common/reset.css": "common/reset.css?v=d0482e9cea",
-  "page/index.css": "page/index.css?v=f336d2ad2d"
+  "common/reset.css": "common/reset.css?v=38d5090850",
+  "page/index.css": "page/index.css?v=46c9b06396"
 }

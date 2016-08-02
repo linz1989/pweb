@@ -1,3 +1,49 @@
 @import "../common/mixin.scss";
 @import "../common/common.scss";
+@import "../common/flex.scss";
 
+div.slider-wrap{
+  margin-top:70px;
+  ul.slides>li{
+    height:360px;
+    width:100%;
+    &>img{
+      height:360px;
+      width:100%;
+    }
+  }
+}
+
+div.product-wrap{
+  height:200px;
+  padding:10px 5px;
+  border:1px solid #eee;
+  &>div{
+    width:1000px;
+    margin:0 auto;
+    &>div{
+      border-bottom:1px solid #f0f0f0;
+      height:40px;
+      line-height: 40px;
+      font-weight: bold;
+      color:#2185c5;
+      font-size:20px;
+      &.zh_cn{
+        letter-spacing: 2px;
+      }
+      &>a{
+        float: right;
+      }
+    }
+  }
+}
+
+div.new-product{
+  margin-top:-58px;
+  background-color: #f8f8f8;
+  border-color:#ff0000
+}
+
+div.selling-product{
+  border-color:#ff00ff
+}

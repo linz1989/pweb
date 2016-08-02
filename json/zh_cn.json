@@ -3,5 +3,19 @@
   "{page_title}" : "香港阳光光电有限公司",
   "{page_description}" : "官方网站",
   "{page_keywords}" : "香港阳光",
-  "{search_input_tip}" : "搜索产品"
+  "{search_input_tip}" : "搜索产品",
+  "{menu_home}" : "首页",
+  "{menu_solution}" : "解决方案",
+  "{menu_product}" : "产品",
+  "{menu_case}" : "工程案例",
+  "{menu_case_botany}" : "植物补光",
+  "{menu_case_gardening}" : "室内园艺",
+  "{menu_case_lamp}" : "路灯工程",
+  "{menu_case_mining}" : "工矿工程",
+  "{menu_case_compute}" : "计算公式",
+  "{menu_about}" : "关于公司",
+  "{menu_contact}" : "联系我们",
+  "{new_product_tip}" : "新品推荐",
+  "{selling_product_tip}" : "热销产品",
+  "{more_tip}" : "更多..."
 }

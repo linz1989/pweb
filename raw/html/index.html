@@ -17,6 +17,8 @@
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/index.js"></script>
 </head>
 <body>
@@ -34,43 +36,44 @@
         <div class="logo"></div>
         <ul>
             <li>
-                <a>首页</a>
+                <a>{menu_home}</a>
+            </li>
+            <li>
+                <a>{menu_solution}</a>
+            </li>
+            <li>
+                <a>{menu_product}</a>
+            </li>
+            <li>
+                <a>{menu_case}</a>
                 <ul class="center">
-                    <li><a href="organization.html#bureauIntroduce">热销产品</a></li>
-                    <li><a href="organization.html#directorIntroduce">新品推荐</a></li>
+                    <li><a href="">{menu_case_botany}</a></li>
+                    <li><a href="">{menu_case_gardening}</a></li>
+                    <li><a href="">{menu_case_lamp}</a></li>
+                    <li><a href="">{menu_case_mining}</a></li>
+                    <li><a href="">{menu_case_compute}</a></li>
                 </ul>
             </li>
             <li>
-                <a>解决方案</a>
+                <a>{menu_about}</a>
             </li>
             <li>
-                <a>产品</a>
-                <ul class="center">
-                    <li><a href="organization.html#bureauIntroduce">本局概况</a></li>
-                    <li><a href="organization.html#directorIntroduce">领导介绍</a></li>
-                    <li><a href="organization.html#organizationStructuring">机构设置</a></li>
-                </ul>
-            </li>
-            <li>
-                <a>工程案例</a>
-                <ul class="center">
-                    <li><a href="organization.html#bureauIntroduce">本局概况</a></li>
-                    <li><a href="organization.html#directorIntroduce">领导介绍</a></li>
-                    <li><a href="organization.html#organizationStructuring">机构设置</a></li>
-                </ul>
-            </li>
-            <li>
-                <a>关于公司</a>
-                <ul class="center">
-                    <li><a href="organization.html#bureauIntroduce">本局概况</a></li>
-                    <li><a href="organization.html#directorIntroduce">领导介绍</a></li>
-                    <li><a href="organization.html#organizationStructuring">机构设置</a></li>
-                </ul>
-            </li>
-            <li>
-                <a>联系我们</a>
+                <a>{menu_contact}</a>
             </li>
         </ul>
+    </div>
+</div>
+<div class="slider-wrap flexslider" id="slider-wrap">
+    <ul class="slides"></ul>
+</div>
+<div class="product-wrap new-product">
+    <div>
+        <div class="{page_lang}">{new_product_tip}<a href="#">{more_tip}</a></div>
+    </div>
+</div>
+<div class="product-wrap selling-product">
+    <div>
+        <div class="{page_lang}">{selling_product_tip}<a href="#">{more_tip}</a></div>
     </div>
 </div>
 </body>

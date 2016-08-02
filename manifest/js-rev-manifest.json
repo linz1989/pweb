@@ -1,5 +1,7 @@
 {
   "common/css3-mediaqueries.js": "common/css3-mediaqueries.js?v=cb66be9560",
+  "common/jquery.flexslider-min.js": "common/jquery.flexslider-min.js?v=52ceed3525",
   "common/jquery.min.js": "common/jquery.min.js?v=ba0e911b8c",
-  "page/index.js": "page/index.js?v=b87520cda1"
+  "page/index.js": "page/index.js?v=4b4ad22191",
+  "page/public.js": "page/public.js?v=b87520cda1"
 }
