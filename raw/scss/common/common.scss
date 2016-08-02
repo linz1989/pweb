@@ -1,14 +1,14 @@
 @import "mixin.scss";
 @import "reset.scss";
 
-.clearfix:after{
+.clear-fix:after{
   content : "\200B";
   display : block;
   height : 0;
   clear : both;
 }
 
-.clearfix {
+.clear-fix {
   *zoom : 1;
 }
 
@@ -53,7 +53,8 @@ div.top-wrap{
   }
   &>input{
     float: right;
-    padding:6px 30px 6px 10px;
+    margin-top:2px;
+    padding:5px 30px 5px 10px;
     width:200px;
     color:#2185c5;
     box-shadow: none;
@@ -92,6 +93,7 @@ div.menu-wrap{
   //border-bottom:1px solid #f4fbff;
   height:70px;
   background-color: #f59f3a;
+  @include transition(background-color 0.3s);
   &>div{
     width:1000px;
     margin:0 auto;
@@ -196,6 +198,28 @@ div.menu-wrap{
       }
     }
   }
+  &.fixed{
+    position: fixed;
+    top:0;
+    background-color: rgba(245,159,58,0.92);
+  }
+}
+
+div.foot-wrap{
+  background-color: #2185c5;
+  padding:15px 0;
+  margin-top:-10px;
+  &>div{
+    width:1000px;
+    margin:0 auto;
+    &>h5{
+      height:32px;
+      line-height: 32px;
+      text-align: center;
+      font-size: 14px;
+      color:#fff;
+    }
+  }
 }
 
 /////////////////////////////////////////////760
@@ -230,14 +254,39 @@ div.menu-wrap{
 
 }
 
+///////////////////////////////////////////////////////////////////////////////
 @media screen and (min-width:1280px){
-
+  div.top-wrap,div.foot-wrap>div{
+    width:1200px;
+  }
+  div.menu-wrap>div{
+    width:1200px;
+    &>ul{
+      width:850px;
+    }
+  }
 }
 
 @media screen and (min-width:1366px){
-
+  div.top-wrap,div.foot-wrap>div{
+    width:1280px;
+  }
+  div.menu-wrap>div{
+    width:1280px;
+    &>ul{
+      width:880px;
+    }
+  }
 }
 
 @media screen and (min-width:1440px){
-
+  div.top-wrap,div.foot-wrap>div{
+    width:1340px;
+  }
+  div.menu-wrap>div{
+    width:1340px;
+    &>ul{
+      width:880px;
+    }
+  }
 }

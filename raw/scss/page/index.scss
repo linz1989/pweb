@@ -15,24 +15,85 @@ div.slider-wrap{
 }
 
 div.product-wrap{
-  height:200px;
   padding:10px 5px;
-  border:1px solid #eee;
+  //border:1px solid #eee;
   &>div{
     width:1000px;
     margin:0 auto;
+    overflow-x: hidden;
     &>div{
-      border-bottom:1px solid #f0f0f0;
+      border-bottom:1px solid #ddd;
       height:40px;
       line-height: 40px;
       font-weight: bold;
-      color:#2185c5;
       font-size:20px;
       &.zh_cn{
-        letter-spacing: 2px;
+        letter-spacing: 4px;
+        &>a{
+          letter-spacing: 0;
+        }
       }
       &>a{
         float: right;
+        line-height: 40px;
+        font-weight: normal;
+        cursor: pointer;
+        font-size:14px;
+        color:#f59f3a;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    &>ul{
+      width:1039px;
+      padding:15px 0;
+      &>li{
+        width:310px;
+        height:390px;
+        float: left;
+        margin-right:35px;
+        margin-bottom:15px;
+        //border:1px solid #e0e0e0;
+        cursor: pointer;
+        background-color: #fff;
+        @include boxSizing();
+        &>img{
+          width:308px;
+          height:310px;
+          border:1px dotted #d0d0d0;
+        }
+        &>div{
+          border-left:1px solid #ddd;
+          border-right:1px solid #ddd;
+          border-bottom:1px solid #ddd;
+          padding-top:6px;
+          height:71px;
+          &>h3{
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+            color:#f59f3a;
+          }
+          &>h5{
+            margin:0 8px;
+            font-size:14px;
+            text-align: center;
+            @include sl();
+          }
+        }
+        &:hover{
+          border:1px solid #f59f3a;
+          @include boxShadow(0 0 30px rgba(0,0,0,0.1));
+          &>img{
+            border-top-width:0;
+            border-left-width:0;
+            border-right-width:0;
+          }
+          &>div{
+            border-width:0;
+          }
+        }
       }
     }
   }
@@ -46,4 +107,53 @@ div.new-product{
 
 div.selling-product{
   border-color:#ff00ff
+}
+
+///////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width:1280px){
+  div.product-wrap{
+    &>div{
+      width:1200px;
+      &>ul{
+        width:1335px;
+        padding-left:30px;
+        padding-right:30px;
+        &>li{
+          margin-right:105px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1366px){
+  div.product-wrap{
+    &>div{
+      width:1280px;
+      &>ul{
+        width:1294px;
+        padding-left:0;
+        padding-right:0;
+        &>li{
+          margin-right:13px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1440px){
+  div.product-wrap{
+    &>div{
+      width:1340px;
+      &>ul{
+        width:1374px;
+        padding-left:0;
+        padding-right:0;
+        &>li{
+          margin-right:33px;
+        }
+      }
+    }
+  }
 }

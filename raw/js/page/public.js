@@ -72,4 +72,25 @@ $(function () {
         }
         else menu.className = "";
     }
+
+    ////////////////////////////////////////////////////////////滚动条的监听
+    var menu = $("body>div.menu-wrap");
+
+    $win.scroll(function(){
+        var scrollTop = $win.scrollTop();
+        if(scrollTop>112 && $win.width()>=1000){
+            if(!menu.hasClass("fixed")){
+                menu.addClass("fixed");
+            }
+        }
+        else{
+            if(menu.hasClass("fixed")){
+                menu.removeClass("fixed");
+            }
+        }
+    });
+
+    if($win.scrollTop()>112){
+        menu.addClass("fixed");
+    }
 });

@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/index.js"></script>
 </head>
-<body>
+<body data-lang="{page_lang}">
 <div class="top-wrap">
     <ul>
         <li class="china"><i></i>中文</li>
@@ -40,9 +40,29 @@
             </li>
             <li>
                 <a>{menu_solution}</a>
+                <ul class="center">
+                    <li><a href="">{menu_solution_bulb}</a></li>
+                    <li><a href="">{menu_solution_lamp}</a></li>
+                    <li><a href="">{menu_solution_down}</a></li>
+                    <li><a href="">{menu_solution_flat}</a></li>
+                    <li><a href="">{menu_solution_street}</a></li>
+                    <li><a href="">{menu_solution_cob}</a></li>
+                    <li><a href="">{menu_solution_cast}</a></li>
+                </ul>
             </li>
             <li>
                 <a>{menu_product}</a>
+                <ul class="center">
+                    <li><a href="">{menu_product_back}</a></li>
+                    <li><a href="">{menu_product_car}</a></li>
+                    <li><a href="">{menu_product_infrared}</a></li>
+                    <li><a href="">{menu_product_uv}</a></li>
+                    <li><a href="">{menu_product_fullColor}</a></li>
+                    <li><a href="">{menu_product_plant}</a></li>
+                    <li><a href="">{menu_product_chip}</a></li>
+                    <li><a href="">{menu_product_cob}</a></li>
+                    <li><a href="">{menu_product_lighting}</a></li>
+                </ul>
             </li>
             <li>
                 <a>{menu_case}</a>
@@ -69,11 +89,19 @@
 <div class="product-wrap new-product">
     <div>
         <div class="{page_lang}">{new_product_tip}<a href="#">{more_tip}</a></div>
+        <ul class="clear-fix" id="newProductList"></ul>
     </div>
 </div>
 <div class="product-wrap selling-product">
     <div>
         <div class="{page_lang}">{selling_product_tip}<a href="#">{more_tip}</a></div>
+        <ul class="clear-fix" id="sellingProductList"></ul>
+    </div>
+</div>
+<div class="foot-wrap">
+    <div>
+        <h5>Copyright © 2016 {copyright_tip}</h5>
+        <h5>{page_footer}</h5>
     </div>
 </div>
 </body>
