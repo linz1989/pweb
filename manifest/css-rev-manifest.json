@@ -1,7 +1,8 @@
 {
-  "common/common.css": "common/common.css?v=1a0a6f48ea",
+  "common/common.css": "common/common.css?v=c2dc1492b5",
   "common/flex.css": "common/flex.css?v=a9b4cbf98a",
   "common/mixin.css": "common/mixin.css?v=d41d8cd98f",
   "common/reset.css": "common/reset.css?v=38d5090850",
-  "page/index.css": "page/index.css?v=3168a4a5c0"
+  "common/swiper.css": "common/swiper.css?v=453b585266",
+  "page/index.css": "page/index.css?v=49523b2b37"
 }

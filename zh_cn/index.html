@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/common/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../js/common/swiper-3.3.1.jquery.min.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/index.js"></script>
 </head>
@@ -28,8 +28,6 @@
         <li class="english"><i></i>english</li>
         <li class="russia"><i></i>русский</li>
     </ul>
-    <input id="serach-input" type="text" placeholder="搜索产品" maxlength="50"/>
-    <i></i>
 </div>
 <div class="menu-wrap">
     <div>
@@ -65,16 +63,6 @@
                 </ul>
             </li>
             <li>
-                <a>工程案例</a>
-                <ul class="center">
-                    <li><a href="">植物补光</a></li>
-                    <li><a href="">室内园艺</a></li>
-                    <li><a href="">路灯工程</a></li>
-                    <li><a href="">工矿工程</a></li>
-                    <li><a href="">计算公式</a></li>
-                </ul>
-            </li>
-            <li>
                 <a>关于公司</a>
             </li>
             <li>
@@ -84,7 +72,10 @@
     </div>
 </div>
 <div class="slider-wrap flexslider" id="slider-wrap">
-    <ul class="slides"></ul>
+    <div class="swiper-container" id="slider-container">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
 <div class="product-wrap new-product">
     <div>

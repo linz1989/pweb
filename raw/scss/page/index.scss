@@ -1,13 +1,13 @@
 @import "../common/mixin.scss";
 @import "../common/common.scss";
-@import "../common/flex.scss";
+@import "../common/swiper.scss";
 
 div.slider-wrap{
   margin-top:70px;
-  ul.slides>li{
+  div.swiper-container{
     height:360px;
     width:100%;
-    &>img{
+    img{
       height:360px;
       width:100%;
     }
@@ -100,7 +100,7 @@ div.product-wrap{
 }
 
 div.new-product{
-  margin-top:-58px;
+  //margin-top:-58px;
   background-color: #f8f8f8;
   border-color:#ff0000
 }

@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/common/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../js/common/swiper-3.3.1.jquery.min.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/index.js"></script>
 </head>
@@ -28,8 +28,6 @@
         <li class="english"><i></i>english</li>
         <li class="russia"><i></i>русский</li>
     </ul>
-    <input id="serach-input" type="text" placeholder="{search_input_tip}" maxlength="50"/>
-    <i></i>
 </div>
 <div class="menu-wrap">
     <div>
@@ -65,16 +63,6 @@
                 </ul>
             </li>
             <li>
-                <a>{menu_case}</a>
-                <ul class="center">
-                    <li><a href="">{menu_case_botany}</a></li>
-                    <li><a href="">{menu_case_gardening}</a></li>
-                    <li><a href="">{menu_case_lamp}</a></li>
-                    <li><a href="">{menu_case_mining}</a></li>
-                    <li><a href="">{menu_case_compute}</a></li>
-                </ul>
-            </li>
-            <li>
                 <a>{menu_about}</a>
             </li>
             <li>
@@ -84,7 +72,10 @@
     </div>
 </div>
 <div class="slider-wrap flexslider" id="slider-wrap">
-    <ul class="slides"></ul>
+    <div class="swiper-container" id="slider-container">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
 <div class="product-wrap new-product">
     <div>

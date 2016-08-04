@@ -10,18 +10,28 @@ $(function(){
         var silderImgs = homeData.banner,
             htmlStr = "";
         for(i=0;i<silderImgs.length;i++){
-            htmlStr +="<li><img src='"+silderImgs[i]+"' /></li>";
+            htmlStr +="<div class='swiper-slide'><img src='"+silderImgs[i]+"' /></div>";
         }
-        $("#slider-wrap>ul.slides").html(htmlStr);
+        $("div#slider-container>div.swiper-wrapper").html(htmlStr);
         
-        $("#slider-wrap").flexslider({
+        /*$("#slider-wrap").flexslider({
             animation: "slide",
             slideshowSpeed : 3000,
             slideshow : true,
             animationLoop : true,
             pauseOnAction : false,
             pauseOnHover : false
-        });
+        });*/
+        
+        new Swiper ('#slider-container', {
+            direction : 'horizontal',
+            loop : true,
+            speed : 800,
+            autoplay : 3000,
+            effect : "coverflow",
+            autoplayDisableOnInteraction : false,
+            pagination : '.swiper-pagination'
+        })
 
         //////////////////////////////////////////////////////新品推荐
         var newProducts = homeData.newProducts;
