@@ -63,18 +63,18 @@ div.menu-wrap{
   z-index: 10;
   //border-bottom:1px solid #f4fbff;
   height:70px;
-  background-color: #000066; //f59f3a
+  background-color: #000033; //f59f3a
   @include transition(background-color 0.3s);
   &>div{
     width:1000px;
     margin:0 auto;
-    &>div{
+    &>div{ //logo
       float: left;
       width:60px;
       height:60px;
       margin-top:5px;
-      margin-right:50px;
-      border:1px solid #eee;
+      margin-right:80px;
+      //border:1px solid #eee;
       border-radius: 50%;
     }
     &>ul{
@@ -87,18 +87,18 @@ div.menu-wrap{
         line-height:70px;
         height:70px;
         text-align: center;
-        border-left:1px solid #eee;
+        border-left:1px solid #444;
         @include transition(width 0.3s);
         @include tOrigin(center center);
         &:last-child{
-          border-right:1px solid #eee;
+          border-right:1px solid #444;
         }
         &>a{
           display: block;
           width:100%;
           height:100%;
           line-height: 70px;
-          color:#fff;
+          color:#d0d0d0;
           font-size:16px;
           cursor: pointer;
           @include transition(background-color 0.3s);
@@ -127,6 +127,7 @@ div.menu-wrap{
             &:hover{
               background-color: #f59f3a !important;
               cursor: pointer;
+              font-weight: bold;
             }
             &:last-child{
               border-bottom-width: 0;
@@ -140,6 +141,7 @@ div.menu-wrap{
         &.active{
           width:18%;
           &>a{
+            color:#fff;
             background-color: rgba(33,133,194,0.9);
             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#2185c5,endColorstr=#2185c5);
           }
@@ -172,14 +174,14 @@ div.menu-wrap{
   &.fixed{
     position: fixed;
     top:0;
-    background-color: rgba(245,159,58,0.92);
+    background-color: rgba(0,0,51,0.8);
   }
 }
 
 div.foot-wrap{
   background-color: #2185c5;
-  padding:15px 0;
-  margin-top:-10px;
+  padding:30px 0 8px;
+  //margin-top:-10px;
   &>div{
     width:1000px;
     margin:0 auto;

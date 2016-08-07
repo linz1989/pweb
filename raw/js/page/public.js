@@ -60,6 +60,26 @@ function getParam(){
 
 $(function () {
     var $win = $(window), supportTouch = "ontouchend" in document;
+    
+    //////////////////////////////////////////////////////////menu
+    var lang = $("body").attr("data-lang");
+    $.get("../json/menu_"+lang+".json",{ "_t" : (+new Date())},function(res) {
+        var htmlStr = "";
+        ////////////////////////////////////////////////////solution menu
+        var solutionMenuData = res.solutionMenu;
+        for(i=0;i<solutionMenuData.length;i++){
+            htmlStr += "<li><a href=''>"+solutionMenuData[i]["text"]+"</a></li>";
+        }
+        $("#solution-menu").html(htmlStr);
+
+        ////////////////////////////////////////////////////product menu
+        var productMenuData = res.productMenu;
+        htmlStr = "";
+        for(i=0;i<productMenuData.length;i++){
+            htmlStr += "<li><a href=''>"+productMenuData[i]["text"]+"</a></li>";
+        }
+        $("#product-menu").html(htmlStr);
+    });
 
     ///////////////////////////////////////////////////////////点击菜单弹出
     var menuListArr = $("div.menu-wrap>div>ul>li");
