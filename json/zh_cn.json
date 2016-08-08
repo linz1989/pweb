@@ -18,5 +18,14 @@
   "{search-select-product-type-tip}" : "选择系列",
   "{search-select-product-name-tip}" : "选择产品",
   "{search-select-product-key-words}" : "请输入关键字",
-  "{contact_description_info}" : "我们是致力于生产。大打99及解决"
+  "{contact_description_info}" : "我们是致力于生产。大打99及解决我们是致力于生产。大打99及解决我们是致力于生产。大打99及解决我们是致力于生产。大打99及解决",
+  "{contact_building_tip}" : "SunShine HQ",
+  "{contact_building_info}" : "12-D (CCA), Phase 5D.H.A.<br/> Lahore Pakistan<br/>Tel: +92.42.37060558",
+  "{contact_building_btn}" : "联系我们",
+  "{contact_support_tip}" : "We're here to help 24/7",
+  "{contact_support_info}" : "Got a question about using Fishry?<br/>The Fishry support team is available 24 hours a day, 7 days a week, by email.",
+  "{contact_support_btn}" : "联系我们",
+  "{contact_modal_title}" : "联系我们",
+  "{contact_modal_ok_btn}" : "确定",
+  "{contact_modal_cancel_btn}" : "取消"
 }

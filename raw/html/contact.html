@@ -33,7 +33,7 @@
         <div class="logo"></div>
         <ul>
             <li>
-                <a>{menu_home}</a>
+                <a href="index.html">{menu_home}</a>
             </li>
             <li>
                 <a>{menu_solution}</a>
@@ -61,13 +61,13 @@
                 <div class="icon"></div>
                 <h4>{contact_building_tip}</h4>
                 <p>{contact_building_info}</p>
-                <a>{contact_building_btn}</a>
+                <a id="contact_building_btn">{contact_building_btn}</a>
             </li>
             <li class="support">
                 <div class="icon"></div>
                 <h4>{contact_support_tip}</h4>
                 <p>{contact_support_info}</p>
-                <a>{contact_support_btn}</a>
+                <a id="contact_support_btn">{contact_support_btn}</a>
             </li>
             <li></li>
         </ul>
@@ -79,5 +79,24 @@
         <h5>{page_footer}</h5>
     </div>
 </div>
+
+<div class="modal" id="contact-modal">
+    <div>
+        <h3 class="header">{contact_modal_title}<span>X</span></h3>
+        <div class="content form">
+            <div><label>您的姓名：</label><input type="text" id="user-name" maxlength="50"/></div>
+            <div><label>电子邮箱：</label><input type="text" id="user-email" maxlength="50"/></div>
+            <div><label>手机号码：</label><input type="text" id="user-tel" maxlength="11"/></div>
+            <div><label>主题：</label><input type="text" id="user-subject" maxlength="100"/></div>
+            <div class="spec clear-fix"><label>留言：</label><div id="user-content" contenteditable="true" class="contentEditable"/></div></div>
+        </div>
+        <div class="footer">
+            <span class="tip"></span>
+            <a class="ok">{contact_modal_ok_btn}</a>
+            <a class="cancel">{contact_modal_cancel_btn}</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
