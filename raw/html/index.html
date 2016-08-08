@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/common/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../js/common/swiper-3.3.1.jquery.min.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/index.js"></script>
 </head>
@@ -28,8 +28,6 @@
         <li class="english"><i></i>english</li>
         <li class="russia"><i></i>русский</li>
     </ul>
-    <input id="serach-input" type="text" placeholder="{search_input_tip}" maxlength="50"/>
-    <i></i>
 </div>
 <div class="menu-wrap">
     <div>
@@ -40,56 +38,25 @@
             </li>
             <li>
                 <a>{menu_solution}</a>
-                <ul class="center">
-                    <li><a href="">{menu_solution_bulb}</a></li>
-                    <li><a href="">{menu_solution_lamp}</a></li>
-                    <li><a href="">{menu_solution_down}</a></li>
-                    <li><a href="">{menu_solution_flat}</a></li>
-                    <li><a href="">{menu_solution_street}</a></li>
-                    <li><a href="">{menu_solution_cob}</a></li>
-                    <li><a href="">{menu_solution_cast}</a></li>
-                </ul>
+                <ul class="center" id="solution-menu"></ul>
             </li>
             <li>
                 <a>{menu_product}</a>
-                <ul class="center">
-                    <li><a href="">{menu_product_back}</a></li>
-                    <li><a href="">{menu_product_car}</a></li>
-                    <li><a href="">{menu_product_infrared}</a></li>
-                    <li><a href="">{menu_product_uv}</a></li>
-                    <li><a href="">{menu_product_fullColor}</a></li>
-                    <li><a href="">{menu_product_plant}</a></li>
-                    <li><a href="">{menu_product_chip}</a></li>
-                    <li><a href="">{menu_product_cob}</a></li>
-                    <li><a href="">{menu_product_lighting}</a></li>
-                </ul>
+                <ul class="center" id="product-menu"></ul>
             </li>
             <li>
-                <a>{menu_case}</a>
-                <ul class="center">
-                    <li><a href="">{menu_case_botany}</a></li>
-                    <li><a href="">{menu_case_gardening}</a></li>
-                    <li><a href="">{menu_case_lamp}</a></li>
-                    <li><a href="">{menu_case_mining}</a></li>
-                    <li><a href="">{menu_case_compute}</a></li>
-                </ul>
+                <a href="about.html">{menu_about}</a>
             </li>
             <li>
-                <a>{menu_about}</a>
-            </li>
-            <li>
-                <a>{menu_contact}</a>
+                <a href="contact.html">{menu_contact}</a>
             </li>
         </ul>
     </div>
 </div>
 <div class="slider-wrap flexslider" id="slider-wrap">
-    <ul class="slides"></ul>
-</div>
-<div class="product-wrap new-product">
-    <div>
-        <div class="{page_lang}">{new_product_tip}<a href="#">{more_tip}</a></div>
-        <ul class="clear-fix" id="newProductList"></ul>
+    <div class="swiper-container" id="slider-container">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
     </div>
 </div>
 <div class="product-wrap selling-product">
@@ -98,11 +65,43 @@
         <ul class="clear-fix" id="sellingProductList"></ul>
     </div>
 </div>
+<div class="help-wrap">{need_help_tip}<a href="contact.html">{contact_us_tip}</a></div>
 <div class="foot-wrap">
     <div>
         <h5>Copyright © 2016 {copyright_tip}</h5>
         <h5>{page_footer}</h5>
     </div>
 </div>
+<div class="side-bar">
+    <ul>
+        <li class="search"><i></i></li>
+        <li class="service">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=272900579&site=qq&menu=yes"><i></i></a>
+        </li>
+        <li class="share"><i></i></li>
+        <li class="code"><i></i></li>
+        <li class="back"><i></i></li>
+    </ul>
+    <div class="qrcode"><img src="../img/home/side-bar/qrCodeImg.png" /></div>
+    <div class="share">
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_qzone"></a>
+            <a class="a2a_button_google_plus"></a>
+            <a class="a2a_button_sina_weibo"></a>
+        </div>
+        <span>X</span>
+    </div>
+    <div class="search">
+        <h3>{search-product-tip}<span>X</span></h3>
+        <select id="product-type"><option>{search-select-product-type-tip}</option><option></option></select>
+        <select id="product-name"><option>{search-select-product-name-tip}</option><option></option></select>
+        <input id="product-keywords" placeholder="{search-select-product-key-words}" type="text" maxlength="60"/>
+        <a>搜索</a>
+    </div>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
 </body>
 </html>
