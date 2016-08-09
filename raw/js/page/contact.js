@@ -64,13 +64,64 @@ Modal.prototype.hideClose = function(){
 
 
 $(function(){
-    var contactModal = new Modal($("#contact-modal"),{
-        doOkBtnClick : function(){
+    var userName = $("#user-name"),
+        userEmail = $("#user-email"),
+        userTel = $("#user-tel"),
+        userSubject = $("#user-subject"),
+        userContent = $("#user-content");
 
+    var contactModal = new Modal($("#contact-modal"),{
+        doClickOkBtn : function(){
+            if(checkForm()){
+                contactModal.loading();
+
+                ///////////////////////////
+                contactModal.loading("hide");
+                userName.val("");
+                userEmail.val("");
+                userTel.val("");
+                userSubject.val("");
+                userContent.html("");
+            }
         }
     });
 
     $("#contact_building_btn,#contact_support_btn").click(function(){
         contactModal.show();
+    });
+
+    function checkForm(){
+        if(!userName.val()){
+            userName.focus();
+            return false;
+        }
+        if(userEmail.val() && !/^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/.test(userEmail.val())){
+            userEmail.focus();
+            return false;
+        }
+        if(!userSubject.val()){
+            userSubject.focus();
+            return false;
+        }
+        if(!userContent.text()){
+            userContent.focus();
+            return false;
+        }
+        return true;
+    }
+
+    userTel.on("input",function(){
+        if (/[^+\d]/.test(this.value)) {
+            this.value = this.value.replace(/[^+\d]/g, '');
+        }
+        /*if (this.value.length == 1 && this.value != 1) {
+            this.value = "";
+        }
+        if (this.value.length == 2 && !/^1[34578]$/.test(this.value)) {
+            this.value = 1;
+        }
+        if (this.value.length > 11) {
+            this.value = this.value.substring(0, 11);
+        }*/
     });
 })
