@@ -81,7 +81,8 @@ $(function(){
         contactZone = $("#contact-modal");
 
     var successTip = contactZone.attr("success-tip"),
-        failTip = contactZone.attr("fail-tip");
+        failTip = contactZone.attr("fail-tip"),
+        emailErrorTip = userEmail.attr("email-error-tip");
 
     var contactModal = new Modal(contactZone,{
         doClickOkBtn : function(){
@@ -133,6 +134,7 @@ $(function(){
         }
         if(userEmail.val() && !/^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/.test(userEmail.val())){
             userEmail.focus();
+            contactModal.showTip(emailErrorTip);
             return false;
         }
         if(!userSubject.val()){

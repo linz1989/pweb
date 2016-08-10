@@ -34,5 +34,6 @@
   "{contact-form-email}" : "电子邮箱",
   "{contact-form-tel}" : "手机号码",
   "{contact-form-subject}" : "主题",
-  "{contact-form-content}" : "内容"
+  "{contact-form-content}" : "内容",
+  "{email-error-tip}" : "电子邮箱格式不对！"
 }

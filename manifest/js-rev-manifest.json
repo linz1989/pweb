@@ -5,7 +5,8 @@
   "common/jquery.min.js": "common/jquery.min.js?v=ba0e911b8c",
   "common/swiper-3.3.1.jquery.min.js": "common/swiper-3.3.1.jquery.min.js?v=9a237fb70d",
   "page/about.js": "page/about.js?v=05fbb6d296",
-  "page/contact.js": "page/contact.js?v=712ca9742b",
+  "page/contact.js": "page/contact.js?v=96042edec2",
   "page/index.js": "page/index.js?v=1fc394286e",
+  "page/list.js": "page/list.js?v=8439c81f89",
   "page/public.js": "page/public.js?v=c1699c4959"
 }

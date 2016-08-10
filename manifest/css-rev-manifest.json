@@ -5,6 +5,7 @@
   "common/reset.css": "common/reset.css?v=38d5090850",
   "common/swiper.css": "common/swiper.css?v=453b585266",
   "page/about.css": "page/about.css?v=76f86883e4",
-  "page/contact.css": "page/contact.css?v=b4fee6f7b3",
-  "page/index.css": "page/index.css?v=eb77901fd6"
+  "page/contact.css": "page/contact.css?v=8349338822",
+  "page/index.css": "page/index.css?v=eb77901fd6",
+  "page/list.css": "page/list.css?v=b1c6efda41"
 }

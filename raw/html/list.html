@@ -12,14 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../css/page/contact.css"/>
+    <link rel="stylesheet" href="../css/page/list.css"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
     <script type="text/javascript" src="../js/common/SHA1.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
-    <script type="text/javascript" src="../js/page/contact.js"></script>
+    <script type="text/javascript" src="../js/page/list.js"></script>
 </head>
 <body data-lang="{page_lang}">
 <div class="top-wrap">
@@ -54,24 +54,28 @@
     </div>
 </div>
 <div class="content-wrap">
-    <div>
-        <h3>{menu_contact}</h3>
-        <p>{contact_description_info}</p>
-        <ul class="clear-fix">
-            <li class="building">
-                <div class="icon"></div>
-                <h4>{contact_building_tip}</h4>
-                <p>{contact_building_info}</p>
-                <a id="contact_building_btn">{contact_building_btn}</a>
-            </li>
-            <li class="support">
-                <div class="icon"></div>
-                <h4>{contact_support_tip}</h4>
-                <p>{contact_support_info}</p>
-                <a id="contact_support_btn">{contact_support_btn}</a>
-            </li>
-            <li></li>
-        </ul>
+    <div class="dataTable" id="orderListDataTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="6" class="header">数据列表</th>
+            </tr>
+            <tr>
+                <th style="width: 12%">姓名</th>
+                <th style="width: 12%">电子邮箱</th>
+                <th style="width: 12%;">手机号码</th>
+                <th style="width: 16%">主题</th>
+                <th style="width: 36%">内容</th>
+                <th style="width: 12%">提交时间</th>
+            </tr>
+            </thead>
+            <tbody id="noDataTab" class="noData">
+            <tr>
+                <td colspan="6">暂无数据！</td>
+            </tr>
+            </tbody>
+            <tbody id="dataTab"></tbody>
+        </table>
     </div>
 </div>
 <div class="foot-wrap">
@@ -80,24 +84,5 @@
         <h5>{page_footer}</h5>
     </div>
 </div>
-
-<div class="modal" id="contact-modal" success-tip="{contact-success-tip}" fail-tip="{contact-fail-tip}">
-    <div>
-        <h3 class="header">{contact_modal_title}<span>X</span></h3>
-        <div class="content form">
-            <div><label>{contact-form-name}：</label><input type="text" id="user-name" maxlength="50"/></div>
-            <div><label>{contact-form-email}：</label><input type="text" id="user-email" maxlength="50" email-error-tip="{email-error-tip}"/></div>
-            <div><label>{contact-form-tel}：</label><input type="text" id="user-tel" maxlength="20"/></div>
-            <div><label>{contact-form-subject}：</label><input type="text" id="user-subject" maxlength="100"/></div>
-            <div class="spec clear-fix"><label>{contact-form-content}：</label><div id="user-content" contenteditable="true" class="contentEditable"/></div></div>
-        </div>
-        <div class="footer">
-            <span class="tip"></span>
-            <a class="ok">{contact_modal_ok_btn}</a>
-            <a class="cancel">{contact_modal_cancel_btn}</a>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
