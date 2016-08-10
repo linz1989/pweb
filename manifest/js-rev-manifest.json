@@ -1,10 +1,11 @@
 {
+  "common/SHA1.js": "common/SHA1.js?v=a6a87b40aa",
   "common/css3-mediaqueries.js": "common/css3-mediaqueries.js?v=cb66be9560",
   "common/jquery.flexslider-min.js": "common/jquery.flexslider-min.js?v=52ceed3525",
   "common/jquery.min.js": "common/jquery.min.js?v=ba0e911b8c",
   "common/swiper-3.3.1.jquery.min.js": "common/swiper-3.3.1.jquery.min.js?v=9a237fb70d",
   "page/about.js": "page/about.js?v=05fbb6d296",
-  "page/contact.js": "page/contact.js?v=21dc5676e8",
+  "page/contact.js": "page/contact.js?v=712ca9742b",
   "page/index.js": "page/index.js?v=1fc394286e",
   "page/public.js": "page/public.js?v=c1699c4959"
 }

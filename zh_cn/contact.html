@@ -17,6 +17,7 @@
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common/SHA1.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/contact.js"></script>
 </head>
@@ -80,7 +81,7 @@
     </div>
 </div>
 
-<div class="modal" id="contact-modal">
+<div class="modal" id="contact-modal" success-tip="提交成功！" fail-tip="提交失败！">
     <div>
         <h3 class="header">联系我们<span>X</span></h3>
         <div class="content form">
@@ -88,7 +89,7 @@
             <div><label>电子邮箱：</label><input type="text" id="user-email" maxlength="50"/></div>
             <div><label>手机号码：</label><input type="text" id="user-tel" maxlength="20"/></div>
             <div><label>主题：</label><input type="text" id="user-subject" maxlength="100"/></div>
-            <div class="spec clear-fix"><label>留言：</label><div id="user-content" contenteditable="true" class="contentEditable"/></div></div>
+            <div class="spec clear-fix"><label>内容：</label><div id="user-content" contenteditable="true" class="contentEditable"/></div></div>
         </div>
         <div class="footer">
             <span class="tip"></span>

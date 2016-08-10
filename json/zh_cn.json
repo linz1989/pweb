@@ -27,5 +27,12 @@
   "{contact_support_btn}" : "联系我们",
   "{contact_modal_title}" : "联系我们",
   "{contact_modal_ok_btn}" : "确定",
-  "{contact_modal_cancel_btn}" : "取消"
+  "{contact_modal_cancel_btn}" : "取消",
+  "{contact-success-tip}" : "提交成功！",
+  "{contact-fail-tip}" : "提交失败！",
+  "{contact-form-name}" : "您的姓名",
+  "{contact-form-email}" : "电子邮箱",
+  "{contact-form-tel}" : "手机号码",
+  "{contact-form-subject}" : "主题",
+  "{contact-form-content}" : "内容"
 }

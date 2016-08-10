@@ -188,6 +188,51 @@ div.modal{
   }
 }
 
+div.msgBox{
+  position: fixed;
+  left: 0;
+  top: 35%;
+  height: 54px;
+  width: 100%;
+  text-align: center;
+  z-index: 65533;
+  overflow: hidden;
+  span{
+    background: url("../../../img/common/tip.png") no-repeat;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 54px;
+    line-height: 54px;
+  }
+  &>span{
+    position: relative;
+    padding: 0 18px 0 9px;
+    margin: 0 auto;
+    background-position: 0 -161px;
+    background-repeat: repeat-x;
+    &>span.fail,&>span.success{
+      position: absolute;
+      left: -45px;
+      top: 0;
+      width: 45px;
+    }
+    &>span.fail{
+      background-position: -6px -108px;
+    }
+    &>span.success{
+      background-position: -6px 0;
+    }
+    &>span.end{
+      position: absolute;
+      right: -6px;
+      top: 0;
+      width: 6px;
+      background-position: 0 0;
+    }
+  }
+}
+
 @-webkit-keyframes loading-ani{
   0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
   20% { -webkit-transform: scaleY(1.0) }

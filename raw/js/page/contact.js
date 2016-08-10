@@ -62,26 +62,62 @@ Modal.prototype.hideClose = function(){
     this.ele.find("div>h3.header>span").hide();
 };
 
+//////全局的提示，延时time之后消失
+function msgAlert(msg,tag,time){
+    time = time || 2000;
+    tag = (tag ? "success" : "fail" );
+    var $box = $('<div class="msgBox"><span><span class="' + tag + '"></span>'+msg+'<span class="end"></span></span></div>');
+    $("body").append($box);
+    $box.show(0);
+    setTimeout(function(){ $box.remove() },time)
+}
 
 $(function(){
     var userName = $("#user-name"),
         userEmail = $("#user-email"),
         userTel = $("#user-tel"),
         userSubject = $("#user-subject"),
-        userContent = $("#user-content");
+        userContent = $("#user-content"),
+        contactZone = $("#contact-modal");
 
-    var contactModal = new Modal($("#contact-modal"),{
+    var successTip = contactZone.attr("success-tip"),
+        failTip = contactZone.attr("fail-tip");
+
+    var contactModal = new Modal(contactZone,{
         doClickOkBtn : function(){
             if(checkForm()){
                 contactModal.loading();
 
-                ///////////////////////////
-                contactModal.loading("hide");
-                userName.val("");
-                userEmail.val("");
-                userTel.val("");
-                userSubject.val("");
-                userContent.html("");
+                var now =(+new Date()),
+                    appKey = SHA1("A6925251770173"+"UZ"+"35E25FEA-86D2-D271-C6CB-68EEC80020B2"+"UZ"+now)+"."+now;
+
+                $.ajax({
+                    "url": "https://d.apicloud.com/mcm/api/customer",
+                    "method": "POST",
+                    "cache": false,
+                    "headers": {
+                        "X-APICloud-AppId": "A6925251770173",
+                        "X-APICloud-AppKey": appKey
+                    },
+                    "data": {
+                        "name": userName.val(),
+                        "email": userEmail.val(),
+                        "tel": userTel.val(),
+                        "subject" : userSubject.val(),
+                        "content" : userContent.text()
+                    }
+                }).success(function (data, status, header) {
+                    contactModal.loading("hide");
+                    userName.val("");
+                    userEmail.val("");
+                    userTel.val("");
+                    userSubject.val("");
+                    userContent.html("");
+                    contactModal.close();
+                    msgAlert(successTip,true);
+                }).fail(function (header, status, errorThrown) {
+                    msgAlert(failTip);
+                })
             }
         }
     });

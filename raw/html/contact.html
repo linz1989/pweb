@@ -17,6 +17,7 @@
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common/SHA1.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
     <script type="text/javascript" src="../js/page/contact.js"></script>
 </head>
@@ -80,15 +81,15 @@
     </div>
 </div>
 
-<div class="modal" id="contact-modal">
+<div class="modal" id="contact-modal" success-tip="{contact-success-tip}" fail-tip="{contact-fail-tip}">
     <div>
         <h3 class="header">{contact_modal_title}<span>X</span></h3>
         <div class="content form">
-            <div><label>您的姓名：</label><input type="text" id="user-name" maxlength="50"/></div>
-            <div><label>电子邮箱：</label><input type="text" id="user-email" maxlength="50"/></div>
-            <div><label>手机号码：</label><input type="text" id="user-tel" maxlength="20"/></div>
-            <div><label>主题：</label><input type="text" id="user-subject" maxlength="100"/></div>
-            <div class="spec clear-fix"><label>留言：</label><div id="user-content" contenteditable="true" class="contentEditable"/></div></div>
+            <div><label>{contact-form-name}：</label><input type="text" id="user-name" maxlength="50"/></div>
+            <div><label>{contact-form-email}：</label><input type="text" id="user-email" maxlength="50"/></div>
+            <div><label>{contact-form-tel}：</label><input type="text" id="user-tel" maxlength="20"/></div>
+            <div><label>{contact-form-subject}：</label><input type="text" id="user-subject" maxlength="100"/></div>
+            <div class="spec clear-fix"><label>{contact-form-content}：</label><div id="user-content" contenteditable="true" class="contentEditable"/></div></div>
         </div>
         <div class="footer">
             <span class="tip"></span>
