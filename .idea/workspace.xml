@@ -2,55 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94425ed8-c3d6-4225-a911-5a341dcd1ba9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/3456e7be501724b5bba247c625b94c2ecd7ea51e/swiper.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/f076161abd58d2378fb691af138ac57235ad7ebf/about.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.sass-cache/f076161abd58d2378fb691af138ac57235ad7ebf/contact.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/about/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/about/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/contact/building.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/contact/support.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home/side-bar/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home/side-bar/code.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home/side-bar/qrCodeImg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home/side-bar/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home/side-bar/service.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home/side-bar/share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/common/swiper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/page/about.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/page/contact.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/common/swiper-3.3.1.jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/page/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/page/contact.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/json/about_zh_cn.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/json/menu_zh_cn.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/html/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/html/contact.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/js/common/swiper-3.3.1.jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/js/page/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/js/page/contact.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/scss/common/swiper.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/scss/page/about.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/scss/page/contact.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zh_cn/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zh_cn/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/3456e7be501724b5bba247c625b94c2ecd7ea51e/common.scssc" afterPath="$PROJECT_DIR$/.sass-cache/3456e7be501724b5bba247c625b94c2ecd7ea51e/common.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/697a9d132233f15d82f9ff5cf8a32bd083e2eb14/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/697a9d132233f15d82f9ff5cf8a32bd083e2eb14/index.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/8c98203a77166b499d9e1813cf6ea3ab96dfd01d/common.scssc" afterPath="$PROJECT_DIR$/.sass-cache/8c98203a77166b499d9e1813cf6ea3ab96dfd01d/common.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/f076161abd58d2378fb691af138ac57235ad7ebf/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/f076161abd58d2378fb691af138ac57235ad7ebf/index.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common/common.css" afterPath="$PROJECT_DIR$/css/common/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/index.css" afterPath="$PROJECT_DIR$/css/page/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/index.js" afterPath="$PROJECT_DIR$/js/page/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/public.js" afterPath="$PROJECT_DIR$/js/page/public.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/home_zh_cn.json" afterPath="$PROJECT_DIR$/json/home_zh_cn.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/zh_cn.json" afterPath="$PROJECT_DIR$/json/zh_cn.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest/css-rev-manifest.json" afterPath="$PROJECT_DIR$/manifest/css-rev-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest/js-rev-manifest.json" afterPath="$PROJECT_DIR$/manifest/js-rev-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw/html/index.html" afterPath="$PROJECT_DIR$/raw/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw/js/page/index.js" afterPath="$PROJECT_DIR$/raw/js/page/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw/js/page/public.js" afterPath="$PROJECT_DIR$/raw/js/page/public.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw/scss/common/common.scss" afterPath="$PROJECT_DIR$/raw/scss/common/common.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw/scss/page/index.scss" afterPath="$PROJECT_DIR$/raw/scss/page/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zh_cn/contact.html" afterPath="$PROJECT_DIR$/zh_cn/contact.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zh_cn/index.html" afterPath="$PROJECT_DIR$/zh_cn/index.html" />
     </list>
     <ignored path="pweb.iws" />
@@ -171,24 +124,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="raw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -280,7 +215,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15189873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
