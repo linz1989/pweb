@@ -7,6 +7,7 @@
   "page/about.js": "page/about.js?v=05fbb6d296",
   "page/contact.js": "page/contact.js?v=96042edec2",
   "page/index.js": "page/index.js?v=1fc394286e",
-  "page/list.js": "page/list.js?v=8439c81f89",
-  "page/public.js": "page/public.js?v=c1699c4959"
+  "page/list.js": "page/list.js?v=58337a69be",
+  "page/public.js": "page/public.js?v=b66c65c5c8",
+  "page/solution.js": "page/solution.js?v=05fbb6d296"
 }

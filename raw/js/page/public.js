@@ -68,7 +68,7 @@ $(function () {
         ////////////////////////////////////////////////////solution menu
         var solutionMenuData = res.solutionMenu;
         for(i=0;i<solutionMenuData.length;i++){
-            htmlStr += "<li><a href=''>"+solutionMenuData[i]["text"]+"</a></li>";
+            htmlStr += "<li><a href='solution.html#'"+solutionMenuData[i]["id"]+">"+solutionMenuData[i]["text"]+"</a></li>";
         }
         $("#solution-menu").html(htmlStr);
 
