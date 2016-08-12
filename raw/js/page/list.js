@@ -37,6 +37,16 @@ $(function(){
             $("#dataTab").html(_html);
         }
     }).fail(function (header, status, errorThrown) {
-        msgAlert("获取数据出错！")
-    })
+        msgAlert("获取数据出错啦！")
+    });
+
+    $(window).resize(function(){
+        doResizeHeight();
+    });
+
+    function doResizeHeight(){
+        console.log("wh:"+$(window).height()+"bh:"+$("body").height());
+    }
+
+    doResizeHeight();
 })
