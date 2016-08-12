@@ -1,0 +1,310 @@
+@import "../common/mixin.scss";
+section#accountCenterPage{
+  div.group{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom:15px;
+    @include ty(0 5px 5px rgba(0,0,0,.05));
+    padding-left:15px;
+    padding-right:15px;
+    &>h3.title{
+      position: relative;
+      padding:15px 0;
+      &>label{
+        margin-left:20px;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+      &>b{
+        font-weight: normal;
+        color:#ff6666;
+      }
+      &>a.btn{
+        position: absolute;
+        right:0;
+        top:7px;
+        padding: 6px 8px;
+        text-align: center;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+        @include transition(all 0.3s);
+        &:hover{
+          background-color: $highlightColor;
+          color:#fff;
+          border-color:$highlightColor
+        }
+        &.sub-account{
+          right:90px;
+        }
+      }
+    }
+  }
+  div.clubInfo{
+    padding-bottom:5px;
+    &>div{
+      float: left;
+      padding:10px 0;
+      border-top:1px dotted #ddd;
+      &.left{
+        width:35%;
+      }
+      &.right{
+        width:65%;
+      }
+      &>label{
+        display: inline-block;
+        width:110px;
+        text-align: right;
+      }
+      &.logo{
+        &>label{
+          float: left;
+        }
+        &>div{
+          float: left;
+          position: relative;
+          width:110px;
+          height:110px;
+          border-radius: 50%;
+          overflow: hidden;
+          &>img{
+            width:110px;
+            height:110px;
+            line-height: 110px;
+            //border:1px solid #eee;
+            &:hover{
+              border-color:#ddd;
+            }
+          }
+          &>a{
+            display: none;
+            position: absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            line-height: 110px;
+            color:#fff;
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.4);
+            text-align: center;
+          }
+          &:hover{
+            &>a{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  div.qrcode{
+    margin-bottom: 0;
+    &>div.dataTable{
+      margin:0 10px 10px;
+      &>table>tbody>tr>td>div{
+        display: inline-block;
+        width:200px;
+        height:200px;
+        border:1px solid #eee;
+        &:hover{
+          border-color:#ddd;
+        }
+        &>img{
+          width:100%;
+          height:100%;
+          line-height: 200px;
+        }
+        &.spec{
+          position: relative;
+          overflow: hidden;
+          &>img{
+            position: absolute;
+            left:-10px;
+            top:-10px;
+            width:220px;
+            height:220px;
+          }
+        }
+      }
+    }
+  }
+
+  div#clubInfoModal{
+    &>div>div.content{
+      &>div{
+        &>label{
+          width:150px;
+        }
+        &>input{
+          width:280px;
+        }
+      }
+      div.tel,div.map{
+        position: relative;
+        &>i{
+          position: absolute;
+          display: block;
+          width:20px;
+          height:20px;
+          left:460px;
+          top:7px;
+          cursor: pointer;
+        }
+        &.plus>i{
+          background: url("../../../img/common/plus.png?base64");
+          &:hover{
+            background: url("../../../img/common/plus_active.png?base64");
+          }
+        }
+        &.del>i{
+          background: url("../../../img/common/del.png?base64");
+          &:hover{
+            background: url("../../../img/common/del_active.png?base64");
+          }
+        }
+        &.map>i{
+          width:27px;
+          background: url("../../../img/common/map.png?base64");
+          &:hover{
+            background: url("../../../img/common/map_active.png?base64");
+          }
+        }
+      }
+    }
+  }
+
+  div#clubLocModal>div{
+    margin-top:8%;
+    width:800px;
+    &>div.content{
+      position: relative;
+      div#autoSearchRes{
+        position: absolute;
+        left:0;
+        right:0;
+        top:38px;
+        z-index:20;
+        padding-left:15px;
+        background-color:rgba(255,255,255,0.8);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        line-height: 35px;
+        &>div{
+          cursor: pointer;
+          &:hover{
+            color:#ff6666;
+            text-decoration: underline;
+          }
+        }
+      }
+      input#locSearch{
+        display: block;
+        width:760px;
+        padding:5px 10px;
+        margin:5px;
+      }
+      &>div#loc-map{
+        height:500px;
+      }
+
+      a.amap-logo{
+        display: none !important;
+      }
+      div.amap-copyright{
+        display: none !important;
+      }
+    }
+    &>div.footer{
+      &>span{
+        float: left;
+        margin-left:5px;
+      }
+    }
+  }
+
+  div#editLogoModal>div{
+    div.content{
+      @include transition(padding-bottom 0.3s);
+      form{
+        &>div{
+          position: relative;
+          height:300px;
+          margin:10px;
+          border:1px dotted #ddd;
+          border-radius: 4px;
+          &>img{
+            //position: absolute;
+            max-width: 100%!important;
+          }
+          &>a{
+            position: absolute;
+            display: block;
+            width:140px;
+            height:50px;
+            top:50%;
+            left:50%;
+            margin-top:-25px;
+            margin-left:-70px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            @include transition(all 0.3s);
+            &:hover{
+              background-color: $highlightColor;
+              color:#fff;
+              border-color:$highlightColor;
+            }
+          }
+          #uploadImgBtn{
+            position: absolute;
+            display: block;
+            width:140px;
+            height:50px;
+            top:50%;
+            left:50%;
+            margin-top:-25px;
+            margin-left:-70px;
+            opacity: 0;
+          }
+          &>span.selectionTxt{
+            display: none;
+            position: absolute;
+            bottom:0;
+            right:0;
+            color:#fff;
+            background-color: rgba(0,0,0,0.5);
+            padding:4px 6px;
+            font-size:12px;
+            &>b{
+              font-weight: normal;
+              margin-left:5px;
+              &:first-child{
+                margin-left:0;
+              }
+            }
+          }
+        }
+      }
+      &.hasImg{
+        padding-bottom:50px;
+        &>form>div{
+          &>a,&>#uploadImgBtn{
+            top:100%;
+            margin-top:5px;
+          }
+        }
+      }
+    }
+  }
+
+  #qrPayCode>canvas{
+    width: 100%;
+    height: 100%;
+  }
+}

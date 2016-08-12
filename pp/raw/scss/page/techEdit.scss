@@ -1,0 +1,362 @@
+@import "../common/mixin.scss";
+section#techEditPage{
+  div.group{
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom:15px;
+    @include ty(0 5px 5px rgba(0,0,0,.05));
+    padding:15px;
+    &>h3{
+      height:36px;
+      line-height: 36px;
+      border-bottom:1px solid #eee;
+      &>b{
+        font-weight: bold;
+      }
+      &>a{
+        position: absolute;
+        right:6px;
+        top:8px;
+        padding: 6px 12px;
+        margin-right:10px;
+        text-align: center;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+        font-weight: normal;
+        @include transition(all 0.3s);
+        &:hover{
+          background-color: $highlightColor;
+          color:#fff;
+          border-color:$highlightColor
+        }
+      }
+      &>i{
+        font-size:14px;
+        margin-left:10px;
+        font-style: normal;
+        color:#ff6666;
+        font-weight: bold;
+      }
+    }
+
+    &>div.header{
+      position: absolute;
+      right:15px;
+      top:60px;
+      width:120px;
+      height:120px;
+      border-radius: 50%;
+      overflow: hidden;
+      &>img{
+        width:120px;
+        height:120px;
+      }
+      &>span{
+        display: none;
+        width:120px;
+        height:40px;
+        position: absolute;
+        left:0;
+        bottom:0;
+        background-color: rgba(0,0,0,0.2);
+        color:#fff;
+        font-size:12px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+      }
+      &:hover{
+        &>span{
+          display: block;
+        }
+      }
+    }
+  }
+
+  div.form{
+    &>div{
+      padding:8px 0;
+      border-bottom:1px dotted #ddd;
+      &>input,&>select{
+        padding:4px 5px;
+      }
+      &>input{
+        width:220px;
+      }
+      &>label{
+        display: inline-block;
+        width:130px;
+        text-align: right;
+      }
+      &>span{
+        margin-left:4px;
+        color:#ff6666;
+      }
+      &>select{
+        margin-left:0;
+      }
+    }
+    &>div.sex{
+      &>label{
+        float: left;
+      }
+      &>span{
+        display: block;
+        width:40px;
+        position: relative;
+        float: left;
+        padding-left:28px;
+        color:#6d6d6d;
+        font-weight: normal;
+        cursor: pointer;
+        &>i{
+          display: block;
+          position: absolute;
+          width:21px;
+          height:21px;
+          left:0;
+          top:0;
+          background: url("../../../img/common/radio.png?base64");
+        }
+        &.active{
+          &>i{
+            background: url("../../../img/common/radio_act.png?base64");
+          }
+        }
+      }
+    }
+    &>div.place{
+      &>select{
+        width:auto;
+        margin-right:8px;
+      }
+    }
+    &>div.desc{
+      &>label{
+        float: left;
+      }
+      &>div{
+        float: left;
+        width:500px;
+        min-height:50px;
+        padding:5px 12px;
+        line-height: 30px;
+        border-radius: 4px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        &:focus{
+          border-color:#0099ff;
+          outline: 0;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) , 0 0 8px rgba(0,153,255,0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) , 0 0 8px rgba(0,153,255,0.6);
+        }
+      }
+    }
+  }
+
+  div.techImg{
+    ul.img{
+      position: relative;
+      padding:10px 0;
+      margin-top:10px;
+      border:1px dotted #eee;
+      border-radius: 4px;
+      &>li{
+        position: relative;
+        float: left;
+        width:25%;
+        height:250px;
+        &>div{
+          position: absolute;
+          top:10px;
+          left:50%;
+          margin-left:-180px;
+          width:340px;
+          height:210px;
+          padding:10px;
+          overflow-y: hidden;
+          @include ty(0 1px 3px rgba(0,0,0,.2));
+          cursor: move;
+          &>img{
+            display: block;
+            width:100%;
+            height:100%;
+            border:1px solid #eee;
+          }
+          &>ul{
+            position: absolute;
+            top:10px;
+            right:10px;
+            display: none;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 4px;
+            &>li{
+              width:80px;
+              height:35px;
+              text-align: center;
+              line-height: 35px;
+              cursor: pointer;
+              &:hover{
+                color:#ff6666;
+                text-decoration: underline;
+              }
+            }
+            &.active{
+              display: block;
+            }
+          }
+           &>div{
+            display: none;
+            position: absolute;
+            top:10px;
+            left:10px;
+            right:10px;
+            bottom:10px;
+            line-height: 210px;
+            background-color: rgba(0,0,0,0.4);
+            color:#fff;
+            text-align: center;
+          }
+
+          &:hover{
+            &>ul,&>div{
+              display: block;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    div.noData{
+      margin-top:10px;
+      height: 200px;
+      line-height:200px;
+      text-align: center;
+      border:1px dotted #ddd;
+      border-radius: 4px;
+    }
+  }
+
+  div.confirmModal>div>div.content{
+    font-size:16px;
+    line-height: 80px;
+    padding-left:40px;
+    font-weight: bold;
+  }
+
+  div.uploadImgModal>div{
+    div.content{
+      @include transition(padding-bottom 0.3s);
+      form{
+        &>div{
+          position: relative;
+          height:300px;
+          margin:10px;
+          border:1px dotted #ddd;
+          border-radius: 4px;
+          &>img{
+            //position: absolute;
+            max-width: 100%!important;
+          }
+          &>a{
+            position: absolute;
+            display: block;
+            width:140px;
+            height:50px;
+            top:50%;
+            left:50%;
+            margin-top:-25px;
+            margin-left:-70px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            @include transition(all 0.3s);
+            &:hover{
+              background-color: $highlightColor;
+              color:#fff;
+              border-color:$highlightColor;
+            }
+          }
+          &>input{
+            position: absolute;
+            display: block;
+            width:140px;
+            height:50px;
+            top:50%;
+            left:50%;
+            margin-top:-25px;
+            margin-left:-70px;
+            opacity: 0;
+          }
+          &>span.selectionTxt{
+            display: none;
+            position: absolute;
+            bottom:0;
+            right:0;
+            color:#fff;
+            background-color: rgba(0,0,0,0.5);
+            padding:4px 6px;
+            font-size:12px;
+            &>b{
+              font-weight: normal;
+              margin-left:5px;
+              &:first-child{
+                margin-left:0;
+              }
+            }
+          }
+        }
+      }
+      &.hasImg{
+        padding-bottom:50px;
+        &>form>div{
+          &>a,&>input{
+            top:100%;
+            margin-top:5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1700px){
+  section#techEditPage{
+    div.techImg{
+      ul.img>li{
+        width:33.3%
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1350px){
+  section#techEditPage{
+    div.techImg{
+      ul.img>li{
+        width:50%
+      }
+    }
+  }
+}
+
+@media screen and (max-width:999px){
+  section#techEditPage{
+    div.techImg{
+      ul.img>li{
+        width:100%
+      }
+    }
+  }
+}

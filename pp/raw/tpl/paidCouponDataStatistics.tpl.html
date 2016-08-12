@@ -1,0 +1,78 @@
+<!--点钟券数据统计-->
+<section id="paidCouponDataStatisticsPage" class="paidCouponData ms-controller" ms-controller="paidCouponDataStatisticsCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/paidCouponDataStatistics.js"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="7" class="header">点钟券<span>未使用数量：<b>{{countObj.canUseCount}}</b>，未使用金额：<b>{{countObj.canUseAmount}}</b>元</span><a class="btn" href="#!/paidCouponCanUseDetail">查看详情</a></th>
+            </tr>
+            <tr class="search">
+                <th colspan="7">
+                    <div class="name">
+                        <select ms-change="switchCoupon()">
+                            <option value="">全部点钟券</option>
+                            <option ms-attr-value="{{el.actId}}" ms-repeat="couponSelectData">{{el.actTitle}}</option>
+                        </select>
+                    </div>
+                    <div class="time"><a type="0">今天</a><a type="6">7天</a><a type="29" class="active">30天</a><input type="text" /></div>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="7" class="countGrid">
+                    <div class="dataTable">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td style="width:18%">购买数量</td>
+                                <td style="width:15.3%"><b>{{countObj.paidCount}}</b></td>
+                                <td style="width:18%">使用数量</td>
+                                <td style="width:15.3%"><b>{{countObj.usedCount}}</b></td>
+                                <td style="width:18%">过期数量</td>
+                                <td style="width:15.3%"><b>{{countObj.expireCount}}</b></td>
+                            </tr>
+                            <tr>
+                                <td>购买金额</td>
+                                <td><b>{{countObj.paidAmount}}</b>元</td>
+                                <td>使用金额</td>
+                                <td><b>{{countObj.usedAmount}}</b>元</td>
+                                <td>过期金额</td>
+                                <td><b>{{countObj.expireAmount}}</b>元</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><a class="btn" href="#!/paidCouponSellDetail">购买详情</a></td>
+                                <td colspan="2"><a class="btn" href="#!/paidCouponUseDetail">使用详情</a></td>
+                                <td colspan="2"><a class="btn" href="#!/paidCouponExpireDetail">过期详情</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th style="width: 16%">时间</th>
+                <th style="width: 14%">购买数量</th>
+                <th style="width: 14%">购买金额(元)</th>
+                <th style="width: 14%">使用数量</th>
+                <th style="width: 14%">使用金额(元)</th>
+                <th style="width: 14%">过期数量</th>
+                <th style="width: 14%">过期金额(元)</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="7">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.statisticsDate }}</td>
+                <td>{{el.paidCount}}</td>
+                <td>{{el.paidAmount}}</td>
+                <td>{{el.useCount}}</td>
+                <td>{{el.useAmount}}</td>
+                <td>{{el.expireCount}}</td>
+                <td>{{el.expireAmount}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

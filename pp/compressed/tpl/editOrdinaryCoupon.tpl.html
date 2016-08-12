@@ -1,0 +1,150 @@
+<!--优惠券编辑或者添加-->
+<section id="editOrdinaryCouponPage" class="ms-controller" ms-controller="editOrdinaryCouponCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/editOrdinaryCoupon.js?v=62c04598ee"></script>
+    <div class="formGroup" ms-visible="canEdit">
+        <div class="couponType clearfix">
+            <label>券类型：</label>
+            <div ms-class="active:currUseType=='money'" ms-click="doSelectUseType('money')"><i></i>现金券</div>
+            <div ms-class="active:currUseType=='coupon'" ms-click="doSelectUseType('coupon')"><i></i>优惠券</div>
+        </div>
+        <div>
+            <label>券名称：</label><input type="text" id="couponName" maxlength="30" placeholder="输入优惠券名称" /><span><b>*</b></span>
+        </div>
+        <div>
+            <label>{{currUseType=='money' ? '减免金额：' : '优惠价：'}}</label>
+            <input id="actValueOfMoney" maxlength="6" type="text" placeholder="输入减免金额" ms-visible="currUseType=='money'" /><span ms-visible="currUseType=='money'"><b>*</b>元</span>
+            <input id="actValueOfCoupon" maxlength="6" type="text" placeholder="输入优惠价" ms-visible="currUseType=='coupon'" /><span ms-visible="currUseType=='coupon'"><b>*</b>元(注：优惠之后的价格)</span>
+        </div>
+        <div>
+            <label>{{currUseType=='money' ? '使用条件：' : '原价：'}}</label>
+            <input id="consumeOfMoneyType" maxlength="6" type="text" placeholder="输入满多少元可用" ms-visible="currUseType=='money'"/><span ms-visible="currUseType=='money'">元(注：最低消费金额，不填则无限制使用)</span>
+            <input id="consumeOfCouponType" maxlength="6" type="text" placeholder="输入原价" ms-visible="currUseType=='coupon'"/><span ms-visible="currUseType=='coupon'">元(注：原来的价格)</span>
+        </div>
+        <div>
+            <label>生效时间：</label><select id="longAfterReceive"><option ms-attr-value="{{el.value}}" ms-repeat="effectDayArr" data-repeat-rendered="initRenderedOfLongAfterReceive">{{el.name}}</option></select><span>(注：领取后多少天生效)</span>
+        </div>
+        <div class="couponEffectDate clearfix">
+            <label>券有效期：</label>
+            <ul>
+                <li ms-class="active:currPeriodType=='fixed_time'" ms-click="doSelectPeriodType('fixed_time')"><i></i><input id="couponPeriodRange" placeholder="不限" type="text" /><span>(注：券有效期不少于活动日期)</span></li>
+                <li ms-class="active:currPeriodType=='after_receive'" ms-click="doSelectPeriodType('after_receive')"><i></i>有效天数：<select id="afterReceiveSelect"><option ms-attr-value="{{el.value}}" ms-repeat="effectiveDayArr" data-repeat-rendered="initRenderedOfAfterReceiveSelect">{{el.name}}</option></select></li>
+            </ul>
+        </div>
+        <div class="sellDate"><label>发放日期：</label><input id="sellDateRange" type="text" placeholder="不限"/></div>
+        <div class="useTime clearfix">
+            <label>使用时段：</label>
+            <div>
+                <span ms-repeat="weekArr" ms-attr-weekDay="{{el.value}}" ms-click="doClickItem()" class="active" data-repeat-rendered="initRenderedOfWeekArr"><i></i>{{el.name}}</span>
+                <select id="useStartTime" ms-change="doChangeUseStartTime()"><option ms-attr-value="{{el.value}}" ms-repeat="useStartTimeArr" data-repeat-rendered="initRenderedOfUseStartTimeArr">{{el.name}}</option></select> ~ <select id="useEndTime"><option ms-attr-value="{{el.value}}" ms-repeat="useEndTimeArr" data-repeat-rendered="initRenderedOfUseEndTimeArr">{{el.name}}</option></select>(注：不选择则代表无限制时段)
+            </div>
+        </div>
+        <div class="items">
+            <label>限定项目：</label>
+            <ul>
+                <li ms-repeat="serveArr" data-repeat-rendered="initRenderedOfServeArr">
+                    <div>{{el.name}}</div>
+                    <ul class="item"><li ms-repeat-elem="el.serviceItems" ms-attr-itemId="{{elem.id}}" ms-click="doClickItem()"><i></i>{{elem.name}}</li></ul>
+                </li>
+            </ul>
+        </div>
+        <div class="useDesc"><label>使用说明：</label><div id="editActContent" contenteditable="true"></div></div>
+        <div class="sellStyle">
+            <label>发放方式：</label>
+            <ul>
+                <li ms-class="active:currCouponType=='redpack'">
+                    <span ms-click="doSelectCouponType('redpack')"><i></i>分享有礼(注： 领取后，有一次使用机会。分享给朋友，朋友使用后，可再获得一次使用机会)</span>
+                    <div ms-visible="currCouponType=='redpack'">
+                        <div><span>分享提成：</span><input id="commissionOfRedpackShare" maxlength="6" type="text"/>元</div>
+                        <div class="tip"><span>提示：</span>
+                            <ul>
+                                <li>1、发布后在优惠活动中显示，也可设置首页弹窗；技师也可以分享给用户领取。</li>
+                                <li>2、领取后在用户个人中心显示。 </li>
+                                <li>3、没有发放数量限制，限领此券一张。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li ms-class="active:currCouponType=='registered'">
+                    <span ms-click="doSelectCouponType('registered')"><i></i>注册有礼(注：用户注册成功后，可获得一张优惠券)</span>
+                    <div ms-visible="currCouponType=='registered'">
+                        <div class="tip"><span>提示：</span>
+                            <ul>
+                                <li>1、领取后在用户个人中心显示。</li>
+                                <li>2、没有发放数量限制，限领此券一张。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li ms-class="active:currCouponType=='ordinary'">
+                    <span ms-click="doSelectCouponType('ordinary')"><i></i>直接发放(注：用户只能领取后，供自己使用)</span>
+                    <div ms-visible="currCouponType=='ordinary'">
+                        <div><span>发放数量：</span><input maxlength="6" type="text" id="couponTotal"/>张(注：不填则代表无数量限制)</div>
+                        <div><span>领券限制：</span><input maxlength="6" type="text" id="userGetCount"/>张(注：每个用户领券上限，如不填，则默认为1)</div>
+                        <div><span>分享提成：</span><input maxlength="6" type="text" id="commissionOfOrdinaryShare"/>元</div>
+                        <div class="tip"><span>提示：</span>
+                            <ul>
+                                <li>1、发布后在优惠活动中显示，也可设置首页弹窗；技师也可以分享给用户领取。</li>
+                                <li>2、领取后在用户个人中心显示。 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="formGroup" ms-visible="!canEdit">
+        <div><label>券类型：</label><span>{{couponObj.pa.useTypeName}}</span></div>
+        <div><label>券名称：</label><span>{{couponObj.pa.actTitle}}</span></div>
+        <div><label>{{couponObj.pa.useType=='money' ? '减免金额：' : '优惠价：'}}</label><span>{{couponObj.pa.actValue}} 元</span></div>
+        <div><label>{{couponObj.pa.useType=='money' ? '使用条件：' : '原价：'}}</label><span ms-visible="couponObj.pa.useType=='money'">满{{couponObj.pa.consumeMoney}}元可用</span><span ms-visible="couponObj.pa.useType!='money'">{{couponObj.pa.consumeMoney}}元</span></div>
+        <div><label>券有效期：</label><span>{{couponObj.pa.couponPeriod}}</span></div>
+        <div class="sellDate"><label>发放日期：</label><input type="text" id="sellDateRangeOfNoEdit" placeholder="不限"/></div>
+        <div><label>使用时段：</label><span>{{couponObj.pa.useTimePeriod}}</span></div>
+        <div><label>限定项目：</label><span>{{couponObj.pa.items}}</span></div>
+        <div class="useDesc"><label>使用说明：</label><div id="actContent"></div></div>
+        <div class="sellStyle noEdit">
+            <label>发放方式：</label>
+            <ul>
+                <li ms-visible="couponObj.pa.couponType=='redpack'">
+                    <span>分享有礼(注： 领取后，有一次使用机会。分享给朋友，朋友使用后，可再获得一次使用机会)</span>
+                    <div>
+                        <div><span>分享提成：</span><b>{{couponObj.pa.commission}}</b>元</div>
+                        <div class="tip"><span>提示：</span>
+                            <ul>
+                                <li>1、发布后在优惠活动中显示，也可设置首页弹窗；技师也可以分享给用户领取。</li>
+                                <li>2、领取后在用户个人中心显示。 </li>
+                                <li>3、没有发放数量限制，限领此券一张。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li ms-visible="couponObj.pa.couponType=='registered'">
+                    <span>注册有礼(注：用户注册成功后，可获得一张优惠券)</span>
+                    <div>
+                        <div class="tip"><span>提示：</span>
+                            <ul>
+                                <li>1、领取后在用户个人中心显示。</li>
+                                <li>2、没有发放数量限制，限领此券一张。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li ms-visible="couponObj.pa.couponType=='ordinary'">
+                    <span>直接发放(注：用户只能领取后，供自己使用)</span>
+                    <div>
+                        <div><span>发放数量：</span><b>{{couponObj.pa.actTotal}}</b>张(注：不填则代表无数量限制)</div>
+                        <div><span>领券限制：</span><b>{{couponObj.pa.userGetCount}}</b>张(注：每个用户领券上限，如不填，则默认为1)</div>
+                        <div><span>分享提成：</span><b>{{couponObj.pa.commission}}</b>元</div>
+                        <div class="tip"><span>提示：</span>
+                            <ul>
+                                <li>1、发布后在优惠活动中显示，也可设置首页弹窗；技师也可以分享给用户领取。</li>
+                                <li>2、领取后在用户个人中心显示。 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ope"><a class="ok" ms-click="doSave('saveAndOnline')">保存并发布</a><a class="ok" ms-click="doSave('save')">保存</a><a class="cancel" href="#!/ordinaryCouponSell">取消</a></div>
+</section>

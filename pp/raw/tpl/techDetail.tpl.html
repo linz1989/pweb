@@ -1,0 +1,154 @@
+<!--技师管理-技师详情-->
+<section id="techDetailPage" class="ms-controller" ms-controller="techDetailCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/techDetail.js"></script>
+    <div class="techInfo">
+        <div class="img">
+            <img ms-if="techInfoObj.avatarUrl" ms-attr-src="{{techInfoObj.avatarUrl}}"/>
+            <img ms-if="!techInfoObj.avatarUrl" src="club-admin/img/common/head.jpg"/>
+            <span ms-if="albumsNum !=0">{{albumsNum}}张</span>
+            <a ms-repeat="albums" class="cboxElement techHeader" ref="techHeader" ms-attr-href="{{el.imageUrl}}"></a>
+        </div>
+        <div class="info">
+            <h3><b>{{techInfoObj.name}}</b><span ms-if="techInfoObj.serialNo">[{{techInfoObj.serialNo}}]</span><i ms-class="busy:techInfoObj.status!='free'">{{techInfoObj.status=='free' ? "闲" : "忙"}}</i></h3>
+            <div class="star">
+                <div ms-attr-style="width:{{techInfoObj.star}}%"></div>
+            </div>
+            <div class="info"><b>特长介绍</b>：{{techInfoObj.description}}</div>
+            <div class="info"><b>性别：</b>{{techInfoObj.gender=='male' ? '男' : '女'}}<b>籍贯：</b><span ms-if="techInfoObj.province && techInfoObj.province!='null'">{{techInfoObj.province}}</span><span ms-if="techInfoObj.city && techInfoObj.city!='null'">{{techInfoObj.city}}</span><b>联系方式：</b>{{techInfoObj.phoneNum}}</div>
+        </div>
+        <div class="btn">
+            <a ms-attr-href="#!/techEdit?id={{techId}}">编辑</a>
+            <a ms-click="doChangeRecommend()">{{isRecommend =='Y' ? '取消推荐首页' : '推荐首页'}}</a>
+            <a ms-click="doDeleteTech()">删除技师</a>
+        </div>
+    </div>
+    <div class="service">
+        <h3><b>服务项目</b><a ms-click="doClickEditServiceItem()">编辑</a></h3>
+        <ul>
+            <li ms-repeat="serviceItems"><b>{{el.name}}：</b>{{el.items}}</li>
+        </ul>
+    </div>
+
+    <ul class="tab">
+        <li ms-class="active:selectedTab=='order'" ms-click="doChangeTab('order')">订单</li><li ms-class="active:selectedTab!='order'" ms-click="doChangeTab('comment')">评论</li>
+    </ul>
+
+    <div class="dataTable" id="orderDataTable" ms-visible="selectedTab=='order'">
+        <table>
+            <thead>
+            <tr>
+                <th class="header" colspan="5">订单列表<div class="sizeOption" ms-if="orderList.length != 0">每页显示记录数：<select ms-change="onChangeOrderListPageSize()"><option selected>15</option><option>30</option><option>50</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:20%">到店时间</th>
+                <th style="width:20%">预约时间</th>
+                <th style="width:20%">预约人</th>
+                <th style="width:20%">预约人号码</th>
+                <th style="width:20%"><select ms-change="doChangeQueryStatus()"><option value="">全部状态</option><option ms-repeat="orderStatus" ms-attr-value="{{el.value}}">{{el.name}}</option></select></th>
+            </tr>
+            </thead>
+            <tbody ms-if="orderList.length == 0" class="noData">
+            <tr>
+                <td colspan="5">未能查询到数据！</td>
+            </tr>
+            </tbody>
+            <tbody ms-if="orderList.length != 0">
+            <tr ms-repeat="orderList">
+                <td>{{el.appointTime}}</td>
+                <td>{{el.createdAt}}</td>
+                <td>{{el.customerName}}</td>
+                <td>{{el.phoneNum}}</td>
+                <td>{{el.statusName}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="orderListPagination" ms-visible="orderList.length != 0 && selectedTab=='order'"><div class="pages"></div></div>
+
+    <div class="dataTable" id="commentDataTable" ms-visible="selectedTab!='order'">
+        <table>
+            <thead>
+            <tr>
+                <th class="header" colspan="6">评论列表<div class="sizeOption" ms-if="commentList.length != 0">每页显示记录数：<select ms-change="onChangeCommentListPageSize()"><option selected>15</option><option>30</option><option>50</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:10%">用户</th>
+                <th style="width:24%;">评分</th>
+                <th style="width:15%">印象点评</th>
+                <th style="width:25%">评论</th>
+                <th style="width:16%">评论时间</th>
+                <th style="width:10%">操作</th>
+            </tr>
+            </thead>
+            <tbody ms-if="commentList.length == 0" class="noData">
+            <tr><td colspan="6">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="commentList.length != 0">
+            <tr ms-repeat="commentList">
+                <td>{{el.userInfo.name}}</td>
+                <td ms-if="el.attitudeRate > 0" class="star" style="min-width:270px;">
+                    态度：<div><div ms-attr-style="width:{{el.attitudeRate}}%"></div></div>
+                    &nbsp;&nbsp;仪容：<div><div ms-attr-style="width:{{el.appearanceRate}}%"></div></div><br/>
+                    技能：<div><div ms-attr-style="width:{{el.skillRate}}%"></div></div>
+                    &nbsp;&nbsp;偷钟：<div><div ms-attr-style="width:{{el.clockRate}}%"></div></div>
+                </td>
+                <td ms-if="el.attitudeRate == 0" class="star">综合：<div><div ms-attr-style="width:{{el.rate}}%"></div></div></td>
+                <td>{{el.impression}}</td>
+                <td>{{el.comment}}</td>
+                <td>{{el.createdAt}}</td>
+                <td><a class="btn" ms-click="doClickDeleteComment(el.id)">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="commentListPagination" ms-visible="commentList.length != 0 && selectedTab!='order'"><div class="pages"></div></div>
+
+    <div class="modal confirmModal" id="confirmModal" ms-attr-type="{{opeType}}">
+        <div>
+            <h3 class="header">确认<span>X</span></h3>
+            <div class="content">{{confirmContent}}</div>
+            <div class="footer"><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+
+    <div class="modal" id="editServiceItemModal">
+        <div>
+            <h3 class="header">修改技师服务项目<span>X</span></h3>
+            <div class="content">
+                <div class="dataTable">
+                    <table id="serviceItemTable">
+                        <thead>
+                        <tr>
+                            <th style="width:8%">选择</th>
+                            <th style="width:20%">项目</th>
+                            <th style="width:17%">价格(元)</th>
+                            <th style="width:17%">时间(分钟)</th>
+                            <th style="width:19%">加钟价格(元)</th>
+                            <th style="width:19%">加钟时间(分钟)</th>
+                        </tr>
+                        </thead>
+                        <tbody ms-if="serviceList.length == 0" class="noData">
+                            <tr><td colspan="6">未能查询到数据！</td></tr>
+                        </tbody>
+
+                        <tbody ms-repeat="serviceList">
+                            <tr class="group">
+                                <td><i ms-class="active:el.selected" ms-click="doCategoryAllCheck()"></i></td>
+                                <td colspan="5">{{el.name}}</td>
+                            </tr>
+                            <tr ms-repeat-item="el.serviceItems" class="item">
+                                <td><i ms-class="active:item.selected" ms-click="doServiceItemCheck()" ms-attr-itemId="{{item.id}}" ms-attr-categoryId="{{el.id}}"></i></td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.duration}}</td>
+                                <td>{{item.pricePlus}}</td>
+                                <td>{{item.durationPlus}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="footer"><span class="tip"></span><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+@import "../common/mixin.scss";
+section#couponUseRecordPage{
+  div#dataListTable{
+    &>table>thead>tr.search>th{
+      font-size:14px;
+      padding:2px 0;
+      &>div{
+        &>input{
+          padding:4px 8px;
+          width:230px;
+        }
+        &>select{
+          padding:4px 5px;
+        }
+        &>a{
+          color: #666;
+          cursor: pointer;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 5px 10px;
+          margin-right: 5px;
+          background-color: #f9f9f9;
+          font-weight: normal;
+          &:hover,&.active{
+            background-color: $highlightColor;
+            border-color:$highlightColor;
+            color:#fff;
+          }
+        }
+      }
+      &>div.name{
+        float: left;
+        margin-left:10px;
+        &>input{
+          margin-right:5px;
+        }
+      }
+      &>div.time{
+        float: right;
+        margin-right:10px;
+      }
+    }
+  }
+}

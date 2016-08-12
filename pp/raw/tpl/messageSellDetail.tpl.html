@@ -1,0 +1,86 @@
+<!--短信营销--短信详情-->
+<section id="messageSellDetailPage" class="ms-controller" ms-controller="messageSellDetailCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/messageSellDetail.js"></script>
+    <div class="step">
+        <i></i>
+        <div>选择短信模板<div>1</div></div>
+        <div>选择短信发送对象<div>2</div></div>
+        <div>设置发送时间<div>3</div></div>
+        <div>等待发送<div>4</div></div>
+        <div>发送成功<div>5</div></div>
+    </div>
+    <div class="tip">严禁发布色情低俗、暴力血腥、政治谣言等各类违反法律法规及相关政策规定的信息。一旦发现，我们将严厉打击和处理。</div>
+    <h3 class="title">步骤一：选择短信模板</h3>
+    <div class="dataTable">
+        <table>
+            <thead>
+            <tr>
+                <th style="width:5%">选择</th>
+                <th style="width:10%">模板类型</th>
+                <th style="width:25%">目的</th>
+                <th style="width:60%">内容</th>
+            </tr>
+            </thead>
+            <tbody class="noData" ms-if="templates.length==0">
+            <tr><td colspan="4">暂无数据！</td></tr>
+            </tbody>
+            <tbody ms-if="templates.length!=0" id="templateListContainer">
+            <tr ms-repeat="templates" ms-attr-template-id="el.id" ms-attr-template-index="$index" ms-click="showEditModal($index)" data-repeat-rendered="doRenderedOfTemplate">
+                <td><div class="checkbox"></div></td>
+                <td>{{el.name}}</td>
+                <td>{{el.purpose}}</td>
+                <td>{{el.template}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 class="title">步骤二：选择短信发送对象<span ms-visible="pageState != 3">共选中<span>{{selectedReceiveCount}}</span>位用户，预计共发送<span>{{selectedReceiveCount}}</span>条短信</span></h3>
+    <div class="dataTable" id="sendObjSelector" ms-visible="pageState != 3">
+        <table>
+            <tbody>
+            <tr>
+                <td style="width:14%" ms-attr-count="configData.counts['1']" receiver="1"><div>活跃用户</div><div>近期内消费过的用户</div></td>
+                <td style="width:20%" ms-attr-count="configData.counts['2']" receiver="2"><div>有效用户</div><div>曾经消费过，但近期内无消费的用户</div></td>
+                <td style="width:16%" ms-attr-count="configData.counts['3']" receiver="3"><div>所有用户</div><div>所有通过会所注册的用户</div></td>
+                <td style="width:50%" receiver="4">
+                    <div>指定用户</div>
+                    <ul id="groupsContainer"><li ms-repeat="configData.groups" ms-attr-count="el.totalCount" ms-attr-group-id="el.id" data-repeat-rendered="doRenderedGroups"><i></i>{{el.name}}</li></ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ms-visible="pageState == 3" class="setTime">
+        <span>{{dict.receiverFrom[selectedReceiver]}}，共选中{{selectedReceiveCount}}用户，预计共发送{{selectedReceiveCount}}条短信</span>
+    </div>
+    <h3 class="title">步骤三：设置发送时间</h3>
+    <div class="setTime" id="setTimeSelector">
+        <span>时间：</span><span ms-visible="pageState==3">{{sendDateTime}}</span>
+        <input ms-visible="pageState!=3" size="16" type="text" id="sendTime" readonly/>
+        <select ms-visible="pageState!=3"><option ms-repeat="dict.hour" data-repeat-rendered="doRenderedHour">{{el}}</option></select><span ms-visible="pageState!=3">时</span>
+        <select ms-visible="pageState!=3"><option ms-repeat="dict.min" data-repeat-rendered="doRenderedMin">{{el}}</option></select><span ms-visible="pageState!=3">分</span>
+        <select ms-visible="pageState!=3"><option ms-repeat="dict.second" data-repeat-rendered="doRenderedSecond">{{el}}</option></select><span ms-visible="pageState!=3">秒</span>
+    </div>
+    <h3 class="title" ms-visible="pageState != 3">步骤四：设置状态</h3>
+    <div class="setStatus" ms-visible="pageState != 3" id="setStatusSelector">
+        <div ms-class="active:messageStatus=='Y'"><i></i></div><span>{{messageStatus=="Y" ? "启用" : "禁用"}}</span>
+    </div>
+    <h3 class="title" ms-visible="pageState == 3">发送情况<a ms-attr-href="#!/messageSellSendDetail?id={{msgId}}">查看详情</a></h3>
+    <div class="save"><a ms-click="doClickBackBtn()">返回</a><a ms-visible="pageState != 3" ms-click="doClickOKBtn()">确定</a></div>
+
+    <div class="modal" id="editMessageContentModal">
+        <div>
+            <h3 class="header">编辑短信内容<span>X</span></h3>
+            <div class="content"></div>
+            <div class="footer"><a class="ok">提交</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+
+    <div class="modal" id="confirmSaveSendModal">
+        <div>
+            <h3 class="header"></h3>
+            <div class="content"></div>
+            <div class="footer"><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+</section>

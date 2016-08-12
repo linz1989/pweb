@@ -1,0 +1,30 @@
+<!--资料设置--会所简介-->
+<section id="clubBriefSettingPage" class="ms-controller" ms-controller="clubBriefSettingCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/clubBriefSetting.js?v=3b5345f2d5"></script>
+    <div class="title">
+        <a ms-click="doClickOfAddNew()">新增简介</a>
+    </div>
+    <ul class="list clearfix" ms-if="list.length !=0" id="briefItemList">
+        <li ms-repeat="list" ms-attr-itemId="{{el.id}}">
+            <div>
+                <h3>{{el.title}}</h3>
+                <img ms-attr-src="{{el.imageUrl}}" />
+                <p>{{el.intro}}</p>
+                <div></div>
+                <ul>
+                    <li ms-click="doClickEditMenu(el.id)">编辑</li>
+                    <li ms-click="doClickDelMenu(el.id)">删除</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <div ms-if="list.length ==0" class="noData">暂无会所简介！</div>
+
+    <div class="modal confirmModal" id="confirmModal" ms-attr-type="{{opeType}}" ms-attr-id="{{opeId}}">
+        <div>
+            <h3 class="header">确认<span>X</span></h3>
+            <div class="content">{{confirmContent}}</div>
+            <div class="footer"><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+</section>

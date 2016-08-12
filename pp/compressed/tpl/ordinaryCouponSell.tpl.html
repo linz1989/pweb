@@ -1,0 +1,65 @@
+<!--优惠券-->
+<section id="ordinaryCouponSellPage" class="ms-controller" ms-controller="ordinaryCouponSellCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/ordinaryCouponSell.js?v=8464a0800d"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="9" class="header">优惠券列表<a class="btn" href="#!/editOrdinaryCoupon">添加</a></th>
+            </tr>
+            <tr>
+                <th style="width:8%">券类型</th>
+                <th style="width:20%">卡券名称</th>
+                <th style="width:15%">活动日期</th>
+                <th style="width:15%">券有效期</th>
+                <th style="width:9%"><select ms-change="doChangeStatus()"><option ms-repeat="statusObj" ms-attr-value="{{el.value}}">{{el.name}}</option></select></th>
+                <th style="width:7%">总数</th>
+                <th style="width:7%">已领取</th>
+                <th style="width:7%">已使用</th>
+                <th style="width:20%;min-width:330px;">操作</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="9">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.useTypeName}}</td>
+                <td>{{el.actTitle}}({{el.couponTypeName}})</td>
+                <td>{{el.startDate}}<span ms-if="el.startDate==''">不限</span><span ms-if="el.startDate">~</span>{{el.endDate}}</td>
+                <td>{{el.couponPeriod}}</td>
+                <td>{{el.actStatus=='online' ? '使用中' : el.actStatusName}}</td>
+                <td>{{(el.couponType=="ordinary" && el.actTotal !=0) ? el.actTotal : "-"}}</td>
+                <td>{{el.couponSellTotal}}</td>
+                <td>{{el.couponUseTotal}}</td>
+                <td>
+                    <a class="btn" ms-click="showQrCode(el.qrCodeUrl,el.actId)">预览</a>
+                    <a class="btn" ms-if="el.actStatus=='not_online' || el.actStatus=='downline_can_use'" ms-click="doChangeCouponStatus(el.actId,el.actType,'online')">上线</a>
+                    <a class="btn" ms-if="el.actStatus=='online'" ms-click="doChangeCouponStatus(el.actId,el.actType,'downline')">下线</a>
+                    <a class="btn" ms-if="el.actStatus!='disable'" ms-attr-href="#!/editOrdinaryCoupon?id={{el.actId}}&couponType={{el.couponType}}&useType={{el.useType}}">编辑</a>
+                    <a class="btn" ms-if="el.actStatus=='disable' || el.actStatusName=='已过期' || el.actStatus=='not_online' || el.actStatus=='downline_can_use'" ms-click="doChangeCouponStatus(el.actId,el.actType,'delete')">删除</a>
+                    <a class="btn" ms-click="doCopyCoupon(el.actId,el.actType)">复制</a>
+                    <a class="btn" ms-if="el.actStatus=='online' && (el.couponType =='redpack' || el.couponType =='ordinary')" ms-click="doHandlerPopCoupon(el.actId)">{{el.isIndex=="Y" ? "取消弹窗" : "首页弹窗"}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal" id="confirmModal">
+        <div>
+            <h3 class="header">确认<span>X</span></h3>
+            <div class="content"></div>
+            <div class="footer"><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+
+    <div class="modal" id="qrCodeModal">
+        <div>
+            <h3 class="header">预览二维码<span>X</span></h3>
+            <div class="content">
+                <img alt="预览二维码"/>
+            </div>
+        </div>
+    </div>
+</section>

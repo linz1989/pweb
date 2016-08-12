@@ -1,0 +1,80 @@
+<!--技师管理-所有技师-->
+<section id="techListPage" class="ms-controller" ms-controller="techListCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/techList.js?v=e3ec48ec4a"></script>
+    <div class="title" ms-if="recommendList.length !=0"><b>首页推荐</b></div>
+    <ul id="recommendTechList" class="indexRecommend clearfix" ms-if="recommendList.length !=0">
+        <li ms-repeat="recommendList" ms-attr-techId="{{el.id}}">
+            <div class="tech">
+                <a ms-attr-title="{{el.name}}">
+                    <img ms-if="el.avatarUrl" ms-attr-src="{{el.avatarUrl}}"/>
+                    <img ms-if="!el.avatarUrl" src="club-admin/img/common/head.jpg"/>
+                    <div>
+                        <span>{{el.serialNo}}</span>
+                        <b ms-click="doClickTech(el.id)">{{el.name}}</b>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+    <div class="title">
+        <b>技师信息</b>
+        <select ms-change="doChangeQueryCategory()"><option value="-1">全部分类</option><option ms-repeat="itemList" ms-attr-value="{{el.id}}">{{el.name}}</option></select>
+        <input type="text" id="techInfoSearch" placeholder="输入技师昵称或者编号" maxlength="15"/>
+        <a ms-click="doClickSearchBtn()">搜索</a>
+        <a class="add" ms-click="doAddTechBtn()">添加技师</a>
+    </div>
+    <div class="group clearfix">
+        <div class="free">
+            <h3>空闲</h3>
+            <ul class="clearfix" id="freeTechList" type="free">
+                <li ms-repeat="freeList" ms-attr-techId="{{el.id}}">
+                    <div class="tech">
+                        <a ms-attr-title="{{el.name}}">
+                            <img ms-if="el.avatarUrl" ms-attr-src="{{el.avatarUrl}}"/>
+                            <img ms-if="!el.avatarUrl" src="club-admin/img/common/head.jpg"/>
+                            <div>
+                                <span>{{el.serialNo}}</span>
+                                <b ms-click="doClickTech(el.id)">{{el.name}}</b>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="busy">
+            <h3>工作</h3>
+            <ul class="clearfix" id="busyTechList" type="busy">
+                <li ms-repeat="busyList" ms-attr-techId="{{el.id}}">
+                    <div class="tech">
+                        <a ms-attr-title="{{el.name}}">
+                            <img ms-if="el.avatarUrl" ms-attr-src="{{el.avatarUrl}}"/>
+                            <img ms-if="!el.avatarUrl" src="club-admin/img/common/head.jpg"/>
+                            <div>
+                                <span>{{el.serialNo}}</span>
+                                <b ms-click="doClickTech(el.id)">{{el.name}}</b>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="addTechModal">
+        <div>
+            <h3 class="header">添加技师<span>X</span></h3>
+            <div class="content form">
+                <div><label>昵称：</label><input type="text" id="techName" maxlength="15" placeholder="技师昵称"/><span><b>*</b></span></div>
+                <div class="sex clearfix"><label>性别：</label><span ms-class="active:currSex=='male'" ms-click="doChangeSex('male')"><i></i>男</span><span ms-class="active:currSex=='female'" ms-click="doChangeSex('female')"><i></i>女</span></div>
+                <div><label>编号：</label><input type="text" id="techNo" maxlength="5" placeholder="技师编号" /></div>
+                <div class="place">
+                    <label>籍贯：</label>
+                    <select ms-change="doChangeOfProvince()" id="provinceSelect"><option value="">请选择</option><option ms-repeat="provinceList" ms-attr-value="{{el.code}}">{{el.name}}</option></select>
+                    <select id="citySelect"><option value="">请选择</option><option ms-repeat="cityList" ms-attr-value="{{el.code}}">{{el.name}}</option></select>
+                </div>
+                <div><label>手机号码：</label><input type="text" id="techPhoneNum" maxlength="11" placeholder="技师手机号码"/><span><b>*(密码是手机号码后6位)</b></span></div>
+            </div>
+            <div class="footer"><span class="tip"></span><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+</section>

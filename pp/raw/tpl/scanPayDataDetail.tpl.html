@@ -1,0 +1,33 @@
+<!--扫码支付详情-->
+<section id="scanPayDataDetailPage" class="ms-controller" ms-controller="scanPayDataDetailCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/scanPayDataDetail.js"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="7" class="header">支付记录<div class="sizeOption" ms-if="dataList.length != 0">每页显示记录数：<select><option selected>20</option><option>50</option><option>100</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:24%">用户</th>
+                <th style="width:19%">用户支付金额</th>
+                <th style="width:19%">小摩豆手续费</th>
+                <th style="width:19%">会所实际收入</th>
+                <th style="width:19%">时间</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="5">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.srcName}}</td>
+                <td>{{el.tradeTotalAmount | bizMoneyToYuan}}</td>
+                <td>{{el.tradeBrokerage | bizMoneyToYuan}}</td>
+                <td>{{el.tradeAmount | bizMoneyToYuan}}</td>
+                <td>{{el.dealDatetime}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="dataListPagination" ms-if="dataList.length != 0"><div class="pages"></div></div>
+</section>

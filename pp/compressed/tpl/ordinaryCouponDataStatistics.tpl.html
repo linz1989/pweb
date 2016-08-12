@@ -1,0 +1,47 @@
+<!--数据统计--优惠券-->
+<section id="ordinaryCouponDataStatisticsPage" class="ms-controller dataStatisticsChart" ms-controller="ordinaryCouponDataStatisticsCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/ordinaryCouponDataStatistics.js?v=ece9b94600"></script>
+    <div class="dataTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="4" class="header">优惠券
+                    <div class="sizeOption">
+                        <select ms-change="doChangeCoupon()">
+                            <option value="">全部优惠券</option>
+                            <option ms-attr-value="{{el.actId}}" ms-repeat="couponList">{{el.actTitle}}{{el.couponType=="paid" ? "" : el.couponType=="redpack"?"(裂变券)":(el.couponType=="registered"?"(注册有礼)":"(普通券)")}}</option>
+                        </select>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th style="width:25%">宣传次数</th>
+                <th style="width:25%">领取次数</th>
+                <th style="width:25%">到店人数</th>
+                <th style="width:25%">分享次数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{countObj.openTotal}}</td>
+                <td>{{countObj.getTotal}}</td>
+                <td>{{countObj.haveUseTotal}}</td>
+                <td>{{countObj.shareTotal}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="chartGroup" id="chartGroup">
+        <div class="tool">
+            <a class="active btn" type="detail">新增数</a><a class="btn" type="total">累计数</a>
+            <div><a class="btn" type="6">7天</a><a class="btn active" type="29">30天</a><input type="text" /></div>
+        </div>
+        <div class="chart"></div>
+    </div>
+    <div class="linkGroup">
+        <a href="#!/couponGetRecord">优惠券领取记录</a>
+        <a href="#!/couponUseRecord">优惠券使用记录</a>
+        <a href="#!/couponDataDetail">数据详情</a>
+        <a href="#!/couponRewardDetail" style="display: none">优惠券提现详情</a>
+    </div>
+</section>

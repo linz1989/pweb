@@ -1,0 +1,61 @@
+<!--营销中心--场所活动-->
+<section id="clubActivityPage" class="ms-controller" ms-controller="clubActivityCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/clubActivity.js"></script>
+    <div class="title">
+        <a ms-click="doClickOfAddNew()">新增活动</a>
+    </div>
+    <ul class="list clearfix" ms-if="list.length !=0" id="activityList">
+        <li ms-repeat="list" ms-attr-actId="{{el.actStatus == 'online' ? el.actId : ''}}">
+            <div>
+                <i ms-if="el.actStatus != 'online'"></i>
+                <h3>{{el.actTitle}}</h3>
+                <img ms-attr-src="{{el.actLogoUrl}}" />
+                <div><label>活动时间：</label>{{el.startDate}}<span ms-if="el.startDate==''">不限</span><span ms-if="el.startDate">~</span>{{el.endDate}}</div>
+                <div><label>活动规则：</label></div>
+                <p>{{el.actContent | html}}</p>
+                <a></a>
+                <ul>
+                    <li ms-click="doEditAct($index)">编辑</li>
+                    <li ms-click="doChangeStatus(el.actStatus,el.actId)">{{el.actStatus == 'online' ? '下线' : '上线' }}</li>
+                    <li ms-if="el.actStatus != 'online'" ms-click="doDelAct(el.actId)">删除</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <div ms-if="list.length ==0" class="noData">暂无会所活动！</div>
+
+    <div class="modal confirmModal" id="confirmModal" ms-attr-type="{{opeType}}" ms-attr-id="{{opeActId}}">
+        <div>
+            <h3 class="header">确认<span>X</span></h3>
+            <div class="content">{{confirmContent}}</div>
+            <div class="footer"><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+
+    <div class="modal" id="editActivityModal">
+        <div>
+            <h3 class="header">{{editStr}}<span>X</span></h3>
+            <div class="content">
+                <form id="editActivityForm" action='act/modify' method="post">
+                    <input type='hidden' name='operator' ms-attr-value="{{currEditOpe}}"/>
+                    <input type="hidden" name='actType' value='act' />
+                    <input type="hidden" name='actId' ms-attr-value="{{currActId}}" />
+                    <input type='hidden' id='x' name='x' value='0' />
+                    <input type='hidden' id='y' name='y' value='0' />
+                    <input type='hidden' id='factor' name='factor' value='1' />
+                    <input type='hidden' id='w' name='width' value='1' />
+                    <input type='hidden' id='h' name='height' value='1' />
+                    <input type='hidden' id='imgFileName'/>
+                    <div class="img"><img /><a>上传活动图片</a><input type="file" id="uploadImgBtn" name="imgFile"/><span class="selectionTxt"></span></div>
+                    <div class="item"><label>活动名称：</label><input id="actTitle" type="text" placeholder="输入活动名称" maxlength="15" name="actTitle"/></div>
+                    <div class="item"><label>活动时间：</label><input id="actDate" type="text" /></div>
+                    <input type='hidden' id='startTime' name='startDate'/>
+                    <input type='hidden' id='endTime' name='endDate'/>
+                    <textarea id="actRules" name="actContent"></textarea>
+                    <div class="item rules clearfix"><label>活动规则：</label><div id="actRulesContent" contenteditable="true"></div></div>
+                </form>
+            </div>
+            <div class="footer"><span class="tip"></span><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+</section>

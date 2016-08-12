@@ -1,0 +1,47 @@
+<!--数据统计-注册用户-详情-->
+<section id="registeredUserListPage" class="ms-controller" ms-controller="registeredUserListCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/registeredUserList.js"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="7" class="header" style="height:96px">
+                <div class="count" style="top:16px;line-height:38px;">
+                <b style="color:#4d4d4d">注册用户 </b>手机用户：<b>{{countObj.temp+countObj.user}} </b>微信用户：<b>{{countObj.weixin+countObj.winxin_fans_user}}</b>
+                <br/>
+                <b style="color:#4d4d4d">当前用户 </b>粉丝用户：<b>{{countObj.user}}</b>领券用户：<b>{{countObj.temp}}</b>微信用户：<b>{{countObj.weixin}} </b> (有 <b>{{countObj.winxin_fans_user}}</b>个已转化为粉丝用户)
+                </div>
+                当前用户<span ms-if="userTotal != 0">（{{userTotal}}人）</span>
+                <div class="sizeOption">每页显示记录数：<select><option selected>20</option><option>50</option><option>100</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:15%">注册日期</th>
+                <th style="width:17%">用户名称</th>
+                <th style="width:12%">用户头像</th>
+                <th style="width:15%">用户手机号</th>
+                <th style="width:12%">用户类型</th>
+                <th style="width:17%">技师名称</th>
+                <th style="width:12%">技师头像</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="7">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.createDate}}</td>
+                <td>{{el.userName || '-'}}</td>
+                <td class="header"><img ms-if="el.userHeadimgurl && el.userHeadimgurl != 'null'" ms-attr-src="{{el.userHeadimgurl}}"/></td>
+                <td>{{el.phoneNum}}</td>
+                <td>{{userType[el.userType]}}</td>
+                <td>
+                    <span ms-if="!el.techId">{{el.techName || '-'}}</span>
+                    <a ms-if="el.techName" ms-attr-href="#!/techDetail?id={{el.techId}}">{{el.techName || '-'}}</a>
+                </td>
+                <td><img ms-if="el.techHeadimgurl  && el.techHeadimgurl != 'null'" ms-attr-src="{{el.techHeadimgurl}}"/></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="dataListPagination" ms-visible="dataList.length != 0"><div class="pages"></div></div>
+</section>

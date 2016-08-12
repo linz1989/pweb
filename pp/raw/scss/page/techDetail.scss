@@ -1,0 +1,248 @@
+@import "../common/mixin.scss";
+section#techDetailPage{
+  div.techInfo{
+    position: relative;
+    border:1px dotted #eee;
+    border-radius: 4px;
+    padding:12px 12px 12px 145px;
+    background-color: #f9f9f9;
+    height:120px;
+    &>div.img{
+      position: absolute;
+      width:120px;
+      height:120px;
+      left:10px;
+      top:10px;
+      border-radius: 50%;
+      cursor: pointer;
+      overflow: hidden;
+      &>img{
+        width:120px;
+        height:120px;
+      }
+      &>span{
+        display: none;
+        width:120px;
+        height:40px;
+        position: absolute;
+        left:0;
+        bottom:0;
+        background-color: rgba(0,0,0,0.2);
+        color:#fff;
+        line-height: 40px;
+        text-align: center;
+      }
+      &>a{
+        display: block;
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+      }
+      &:hover{
+        &>span{
+          display: block;
+        }
+      }
+    }
+    &>div.info{
+      height:120px;
+      &>h3{
+        &>b{
+          font-size:22px;
+          font-weight: normal;
+          &:first-child{
+            margin-left:0;
+          }
+        }
+        &>span{
+          font-size:15px;
+          margin:0 8px 0 5px;
+        }
+        &>i{
+          font-style: normal;
+          border-radius: 50%;
+          color:#fff;
+          padding:3px 5px;
+          background-color: #a3e5a3;
+          &.busy{
+            background-color: #ffadad;
+          }
+        }
+      }
+      &>div.star{
+        margin:8px 0 5px;
+        position: relative;
+        width:90px;
+        height:16px;
+        background: url("../../../img/common/spa-icon.png") no-repeat -80px 0;
+        &>div{
+          position: absolute;
+          left:0;
+          top:0;
+          height:16px;
+          background: url("../../../img/common/spa-icon.png") no-repeat -80px -18px;
+        }
+      }
+      &>div.info{
+        line-height: 30px;
+        font-size:16px;
+        &>b{
+          font-weight: normal;
+          margin-left:15px;
+          &:first-child{
+            margin-left : 0;
+          }
+        }
+      }
+    }
+    &>div.btn{
+      position: absolute;
+      display: inline-block;
+      right:8px;
+      top:8px;
+      &>a{
+        padding: 8px 12px;
+        margin-right:10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+        font-weight: normal;
+        @include transition(all 0.3s);
+        &:hover{
+          background-color: $highlightColor;
+          color:#fff;
+          border-color:$highlightColor
+        }
+        &:last-child{
+          margin-right:0;
+        }
+      }
+    }
+  }
+
+  div.service{
+    position: relative;
+    margin-top:15px;
+    border:1px solid #eee;
+    border-radius: 4px;
+    margin-bottom:15px;
+    @include ty(0 5px 5px rgba(0,0,0,.05));
+    padding:15px;
+    &>h3{
+      padding-bottom:5px;
+      border-bottom:1px dotted #ddd;
+      &>b{
+        font-weight: bold;
+      }
+      &>a{
+        position: absolute;
+        right:8px;
+        top:5px;
+        padding: 3px 8px;
+        margin-right:10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+        font-weight: normal;
+
+        @include transition(all 0.3s);
+        &:hover{
+          background-color: $highlightColor;
+          color:#fff;
+          border-color:$highlightColor
+        }
+      }
+    }
+    &>ul{
+      padding-top:5px;
+      &>li{
+        line-height: 30px;
+        border-bottom:1px dotted #ddd;
+        &>b{
+          display: inline-block;
+          width:120px;
+          text-align: right;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  div#commentDataTable,div#orderDataTable{
+    margin-top:-1px;
+  }
+
+  ul.tab{
+    border:1px solid #ddd;
+    background-color: #f9f9f9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    &>li{
+      display: inline-block;
+      width:120px;
+      text-align: center;
+      height:42px;
+      line-height:42px;
+      cursor: pointer;
+      &.active{
+        background-color: #f0f0f0;
+        color:#ff6666;
+        font-weight: bold;
+      }
+      &:first-child{
+        &.active{
+          border-right:1px solid #ddd;
+          border-top-right-radius: 4px;
+        }
+      }
+      &:last-child{
+        &.active{
+          border-left:1px solid #ddd;
+          border-right:1px solid #ddd;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+      }
+    }
+  }
+
+  div.confirmModal>div>div.content{
+    font-size:16px;
+    line-height: 80px;
+    padding-left:40px;
+    font-weight: bold;
+  }
+
+  div#editServiceItemModal{
+    &>div{
+      width:650px;
+    }
+    div.content{
+      padding:10px;
+      height:350px;
+      overflow-y: auto;
+      tbody{
+        tr.group{
+          background-color: #f6f6f6;
+          font-weight: bold;
+        }
+        td>i{
+          display: inline-block;
+          width:16px;
+          height:16px;
+          cursor: pointer;
+          background: url("../../../img/common/checkbox.png?base64");
+          &.active {
+            background: url("../../../img/common/check_active.png?base64");
+          }
+        }
+      }
+    }
+  }
+}

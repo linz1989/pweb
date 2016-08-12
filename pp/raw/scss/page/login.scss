@@ -1,0 +1,123 @@
+@import "../common/mixin.scss";
+@import "../common/reset.scss";
+
+html,body{
+  position: relative;
+  width:100%;
+  height:100%;
+  background: url("../../../img/login/bg.jpg") no-repeat center center;
+  //@include imgBgFix(100% 100%);
+}
+
+div#login-dialog{
+  position: absolute;
+  top:40%;
+  right:8%;
+  width:400px;
+  height:350px;
+  margin-top:-175px;
+  background-color: #fff;
+  @include ty(3px 1px 4px #c0c0c0);
+  border-radius: 5px;
+  border-top:2px solid #ff6666;
+  z-index: 2;
+  &>form{
+    display: block;
+    height:100%;
+    &>h1{
+      color:#555;
+      margin:25px;
+      font-size:22px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+    &>div.lock,&>div.person{
+      position: relative;
+      margin:0 20px 15px 20px;
+      &>i{
+        display: block;
+        position: absolute;
+        width:18px;
+        height:18px;
+        top:50%;
+        margin-top:-9px;
+        left:10px;
+      }
+      &>input{
+        width:310px;
+        padding:8px 10px 8px 38px;
+      }
+    }
+    &>div.lock>i{
+      background-image: url("../../../img/login/lock.png?base64");
+    }
+    &>div.person>i{
+      background-image: url("../../../img/login/person.png?base64");
+    }
+    &>div.remember{
+      position: relative;
+      height:35px;
+      padding-left:46px;
+      font-size:14px;
+      cursor: pointer;
+      &>i{
+        position: absolute;
+        width:18px;
+        height:18px;
+        left:20px;
+        top:1px;
+        background-image: url("../../../img/login/checkbox.png?base64");
+      }
+      &.active{
+        &>i{
+          background-image: url("../../../img/login/checkbox_active.png?base64");
+        }
+      }
+    }
+    &>input.btn,&>div.btn{
+      display: block;
+      height:48px;
+      width:360px;
+      font-size:18px;
+      margin:12px 20px 0;
+      border-radius: 4px;
+      border:1px solid #ddd;
+      text-align: center;
+      line-height: 48px;
+      color:#ccc;
+      background-color: #efefef;
+      letter-spacing: 2px;
+      &.active{
+        cursor: pointer;
+        background-color: #ff6666;
+        border-color:#ff6666;
+        color:#fff;
+      }
+    }
+    &>div.info{
+      display: none;
+      margin:18px 20px 0;
+      color:#ff6666;
+      font-weight: bold;
+    }
+  }
+}
+
+div.logo{
+  position: absolute;
+  width:514px;
+  height:208px;
+  top:40%;
+  margin-top:-104px;
+  left:10%;
+  background-image: url("../../../img/login/logo.png");
+}
+
+footer{
+  display: block;
+  position: absolute;
+  width:100%;
+  bottom:20px;
+  text-align: center;
+  font-size:14px;
+}

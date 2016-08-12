@@ -1,0 +1,33 @@
+<!--系统通知-->
+<section id="noticeListPage" class="ms-controller" ms-controller="noticeListCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/noticeList.js"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="3" class="header">系统通知<div class="sizeOption">每页显示记录数：<select><option selected>20</option><option>50</option><option>100</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:14%">时间</th>
+                <th style="width:60%">内容</th>
+                <th style="width:16%">操作</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="3">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.createdAt}}</td>
+                <td>{{el.comments}}</td>
+                <td>
+                    <span ms-if="el.status !='uncert'">{{statusObj[el.status]}}</span>
+                    <a ms-if="el.status =='uncert'" class="btn" ms-click="doHandlerNotice(el.id,'已同意')">同意</a>
+                    <a ms-if="el.status =='uncert'" class="btn" ms-click="doHandlerNotice(el.id,'已拒绝')">拒绝</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="dataListPagination" ms-visible="dataList.length != 0"><div class="pages"></div></div>
+</section>

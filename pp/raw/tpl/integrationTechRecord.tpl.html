@@ -1,0 +1,44 @@
+<!--数据统计 积分统计 技师记录-->
+<section id="integrationTechRecordPage" class="ms-controller integrationSys" ms-controller="integrationTechRecordCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/integrationTechRecord.js"></script>
+    <div class="dataTable dataList" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="7" class="header">
+                    技师记录
+                    <div class="sizeOption">每页显示记录数：<select><option selected>20</option><option>50</option><option>100</option></select></div>
+                    <div class="search">
+                        <input type="text" id="search-tel" placeholder="输入手机号码" maxlength="11"/>
+                        <a class="toolButton" ms-click="doClickSearchBtn()">搜索</a>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th style="width:11%">手机号</th>
+                <th style="width:10%">积分数量</th>
+                <th style="width:12%">业务类型</th>
+                <th style="width:12%">时间</th>
+                <th style="width:11%">账户余额</th>
+                <th style="width:22%">描述</th>
+                <th style="width:22%">备注</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="7">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.dstTelephone}}</td>
+                <td>{{el.amount}}</td>
+                <td>{{el.businessCategoryDesc}}</td>
+                <td>{{el.createDatetime}}</td>
+                <td>{{el.currentAmount}}</td>
+                <td>{{el.description}}</td>
+                <td>{{el.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="dataListPagination" ms-visible="dataList.length != 0"><div class="pages"></div></div>
+</section>

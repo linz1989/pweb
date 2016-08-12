@@ -1,0 +1,17 @@
+@import "../common/mixin.scss";
+section#messageSellSendDetailPage{
+  div.dataTable{
+    table>thead>tr>th{
+      div.info{
+        position: absolute;
+        left:5px;
+        width:200px;
+        &>span{
+          color:#ff6666;
+          font-weight: bold;
+          margin:0 3px;
+        }
+      }
+    }
+  }
+}

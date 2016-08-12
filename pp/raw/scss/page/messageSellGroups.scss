@@ -1,0 +1,100 @@
+@import "../common/mixin.scss";
+section#messageSellGroupsPage{
+
+  div.dataTable>table>thead>tr>th{
+    &>a.btn{
+      position: absolute;
+      right:6px;
+      top:7px;
+      letter-spacing: 0;
+      color:#666;
+      cursor: pointer;
+      border:1px solid #efefef;
+      border-radius: 4px;
+      padding:6px 10px;
+      margin-right:5px;
+      background-color: #f9f9f9;
+      @include transition(all 0.3s);
+      &:hover{
+        background-color: $highlightColor;
+        border-color:$highlightColor;
+        color:#fff;
+      }
+    }
+    &>div{
+      right:95px;
+    }
+  }
+  div#confirmDelGroupModal{
+    &>div>div.confirmDel{
+      font-size:16px;
+      line-height: 100px;
+      text-indent:60px;
+    }
+  }
+
+  div#addNewGroupModal{
+    &>div>div.addGroup{
+      padding:14px 0;
+      form{
+        &>div{
+          height:30px;
+          padding:9px 0;
+          position: relative;
+          &>label{
+            display: block;
+            float: left;
+            height:30px;
+            line-height: 30px;
+            width:160px;
+            text-align: right;
+          }
+          &>a{
+            display: block;
+            float: left;
+            color: #666;
+            padding: 0 18px;
+            border: 1px solid #efefef;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            margin-right:15px;
+            line-height: 30px;
+            &:hover{
+              background-color: $highlightColor;
+              color:#fff;
+              border-color:$highlightColor;
+            }
+          }
+          input#groupNameInput{
+            display: block;
+            float: left;
+            height:30px;
+            width:240px;
+            padding:0 10px;
+          }
+          input#groupFileInput{
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            opacity: 0;
+            width:70px;
+            height:30px;
+            left:270px;
+            top:10px;
+          }
+          span#groupFileNameSpan{
+            display: inline-block;
+            width:230px;
+            @include sl();
+          }
+        }
+        &>label{
+          clear: both;
+          display: block;
+          margin-left:160px;
+        }
+      }
+    }
+  }
+}

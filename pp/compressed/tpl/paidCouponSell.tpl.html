@@ -1,0 +1,110 @@
+<!--点钟券-->
+<section id="paidCouponSellPage" class="ms-controller" ms-controller="paidCouponSellCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/paidCouponSell.js?v=a3900630e1"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="7" class="header">点钟券列表<a class="btn" ms-click="doAddCoupon()" ms-if="couponSwitch=='on'">添加</a></th>
+            </tr>
+            <tr>
+                <th style="width:20%">卡券名称</th>
+                <th style="width:15%">券有效期</th>
+                <th style="width:12%"><select ms-change="doChangeStatus()"><option ms-repeat="statusObj" ms-attr-value="{{el.value}}">{{el.name}}</option></select></th>
+                <th style="width:8%">总数</th>
+                <th style="width:8%">已领取</th>
+                <th style="width:8%">已使用</th>
+                <th style="width:20%;min-width: 245px;">操作</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="7">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.actTitle}}({{el.actValue}}元抵{{el.consumeMoney}}元)</td>
+                <td>{{el.couponPeriod}}</td>
+                <td>{{el.actStatus=='online' ? '使用中' : el.actStatusName}}</td>
+                <td>{{(el.couponType=="ordinary" && el.actTotal !=0) ? el.actTotal : "-"}}</td>
+                <td>{{el.couponSellTotal}}</td>
+                <td>{{el.couponUseTotal}}</td>
+                <td>
+                    <a class="btn" ms-if="el.actStatus=='not_online' || el.actStatus=='downline_can_use'" ms-click="doChangeCouponStatus(el.actId,el.actType,'online')">上线</a>
+                    <a class="btn" ms-if="el.actStatus=='online'" ms-click="doChangeCouponStatus(el.actId,el.actType,'downline')">下线</a>
+                    <a class="btn" ms-if="el.actStatus!='disable'" ms-click="doEditViewCoupon($index)">{{el.actStatus=='not_online' ? '编辑' : '查看' }}</a>
+                    <a class="btn" ms-if="el.actStatus=='disable' || el.actStatus=='not_online'" ms-click="doChangeCouponStatus(el.actId,el.actType,'delete')">删除</a>
+                    <a class="btn" ms-click="doCopyCoupon(el.actId,el.actType)">复制</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal" id="confirmModal">
+        <div>
+            <h3 class="header">确认<span>X</span></h3>
+            <div class="content"></div>
+            <div class="footer"><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+
+    <div class="modal" id="couponDetailModal">
+        <div>
+            <h3 class="header">点钟券详情<span>X</span></h3>
+            <div class="content">
+                <div class="baseInfo">
+                    <h3>基本信息</h3>
+                    <ul>
+                        <li><label>金额：</label>{{detailObj.actValue}}元抵{{detailObj.consumeMoney}}元</li>
+                        <li><label>券有效期：</label>{{detailObj.couponPeriod}}</li>
+                        <li class="content clearfix"><label>使用说明：</label><div id="detailActContent"></div></li>
+                    </ul>
+                </div>
+                <div class="notice">
+                    <h3>注意事项</h3>
+                    <ul>
+                        <li>1、客人购买点钟后，小摩豆将收取{{couponFeeStr}}信息费。</li>
+                        <li>2、券被使用后，<span ms-if="detailObj.incomeType!='tech'">收入归会所所有，将按照扣除信息费后的金额计入会所账户。</span><span ms-if="detailObj.incomeType=='tech'">收入归技师所有，技师可直接从小摩豆账号提取红包。</span></li>
+                        <li>3、券过期后，收入归技师所有，技师可直接从小摩豆账号提取红包。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="couponEditModal">
+        <div>
+            <h3 class="header">{{editModalTitle}}<span>X</span></h3>
+            <div class="content">
+                <div class="baseInfo">
+                    <h3>基本信息</h3>
+                    <ul>
+                        <li><label>金额：</label><input id="editActValue" maxlength="5" ms-attr-value="{{editObj.actValue}}"/>元抵<input id="editActConsumeMoney" maxlength="5" ms-attr-value="{{editObj.consumeMoney}}"/>元</li>
+                        <li><label>券有效期：</label><select id="editPeriod"><option ms-repeat="dayOptionArr" ms-attr-value="{{el.value}}" ms-attr-selected="editObj.couponPeriod==el.value">{{el.name}}</option></select><span>(注：比如用户购买后，30天有效)</span></li>
+                        <li class="content clearfix"><label>使用说明：</label><div id="editActContent" contenteditable="true"></div></li>
+                    </ul>
+                </div>
+                <div class="notice">
+                    <h3>注意事项</h3>
+                    <ul>
+                        <li>1、客人购买点钟后，小摩豆将收取{{couponFeeStr}}信息费。</li>
+                        <li class="used">
+                            <label>2、券被使用后：</label>
+                            <ul>
+                                <li ms-class="active:editObj.incomeType=='club'" ms-click="doChangeIncomeType('club')"><i></i>收入归会所所有，将按照扣除信息费后的金额计入会所账户。</li>
+                                <li ms-class="active:editObj.incomeType=='tech'" ms-click="doChangeIncomeType('tech')"><i></i>收入归技师所有，技师可直接从小摩豆账号提取红包。</li>
+                            </ul>
+                        </li>
+                        <li>3、券过期后，收入归技师所有，技师可直接从小摩豆账号提取红包。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <span class="tip"></span>
+                <a class="ok" ms-click="doSaveCoupon('saveAndOnline')">保存并发布</a>
+                <a class="ok" ms-click="doSaveCoupon('save')">保存</a>
+                <a class="cancel">取消</a>
+            </div>
+        </div>
+    </div>
+</section>

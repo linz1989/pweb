@@ -1,0 +1,58 @@
+<!--优惠券数据详情-->
+<section id="couponDataDetailPage" class="ms-controller" ms-controller="couponDataDetailCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/couponDataDetail.js"></script>
+    <div class="dataTable" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="7" class="header">优惠券数据详情<div class="sizeOption" ms-if="dataList.length != 0">每页显示记录数：<select><option selected>20</option><option>50</option><option>100</option></select></div></th>
+            </tr>
+            <tr class="search">
+                <th colspan="7">
+                    <div class="name">
+                        <select ms-change="switchCoupon()"><option ms-repeat="couponSelectData" ms-attr-value="{{el.actId}}">{{el.actTitle}}</option></select>
+                        <input type="text" id="techInfoSearch" maxlength="15" placeholder="技师昵称或者编号" />
+                        <input type="text" id="techTelSearch" maxlength="11" placeholder="技师手机号码"/>
+                        <a ms-click="doClickSearch()">搜索</a>
+                    </div>
+                    <div class="time"><input type="text" /></div>
+                </th>
+            </tr>
+            <tr id="sortHeader">
+                <th style="width:18%">技师名称</th>
+                <th style="width:12%">技师编号</th>
+                <th style="width:14%"><a sortName="shareSum" sortType="desc">技师分享次数</a></th>
+                <th style="width:14%"><a sortName="openSum" sortType="asc">浏览次数</a></th>
+                <th style="width:14%"><a sortName="getSum" sortType="asc">领取次数</a></th>
+                <th style="width:14%"><a sortName="haveUseSum" sortType="asc">使用次数</a></th>
+                <th style="width:14%"><a sortName="userShareSum" sortType="asc">用户分享次数</a></th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="7">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.techNickName}}</td>
+                <td>{{el.techSerialNo}}</td>
+                <td>{{el.shareSum}}</td>
+                <td>{{el.openSum}}</td>
+                <td>{{el.getSum}}</td>
+                <td>{{el.haveUseSum}}</td>
+                <td>{{el.userShareSum}}</td>
+            </tr>
+            </tbody>
+            <tbody ms-if="countDataList.length != 0" class="count">
+            <tr ms-repeat="countDataList">
+                <td colspan="2">{{el.nickNameAndNo}}</td>
+                <td>{{el.shareSum}}</td>
+                <td>{{el.openSum}}</td>
+                <td>{{el.getSum}}</td>
+                <td>{{el.haveUseSum}}</td>
+                <td>{{el.userShareSum}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="dataListPagination" ms-visible="dataList.length != 0"><div class="pages"></div></div>
+</section>

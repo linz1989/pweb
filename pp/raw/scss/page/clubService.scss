@@ -1,0 +1,353 @@
+@import "../common/mixin.scss";
+section.clubService{
+  h3.title{
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom:15px;
+    @include ty(0 5px 5px rgba(0,0,0,.05));
+    padding:15px;
+    font-weight: bold;
+    &>a{
+      position: absolute;
+      right:5px;
+      top:6px;
+      padding: 6px 8px;
+      margin-right:10px;
+      text-align: center;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      font-weight: normal;
+      @include transition(all 0.3s);
+      &:hover{
+        background-color: $highlightColor;
+        color:#fff;
+        border-color:$highlightColor
+      }
+    }
+  }
+  ul.list{
+    position: relative;
+    border:1px solid #eee;
+    border-radius: 4px;
+    padding:10px 0;
+    margin-bottom:15px;
+    &>li{
+      position: relative;
+      float: left;
+      width:25%;
+      height:250px;
+      &>div{
+        position: absolute;
+        top:10px;
+        left:50%;
+        margin-left:-180px;
+        width:340px;
+        height:210px;
+        padding:10px;
+        overflow-y: hidden;
+        @include ty(0 1px 3px rgba(0,0,0,.2));
+      }
+    }
+  }
+
+  ul.item{
+    &>li{
+      height:160px;
+      &>div{
+        height:120px;
+        cursor: move;
+        &>img{
+          display: block;
+          width:120px;
+          height:120px;
+          float: left;
+          border:1px solid #ddd;
+        }
+        &>div.content{
+          width:198px;
+          height:120px;
+          float: left;
+          margin-left:10px;
+          &>h3{
+            font-size:18px;
+            font-weight: bold;
+            line-height: 40px;
+            border-bottom: 1px dotted #ddd;
+            margin-bottom:12px;
+            @include sl();
+          }
+          &>h4{
+            border-bottom: 1px dotted #ddd;
+            line-height: 32px;
+          }
+        }
+        &>div.mask{
+          display: none;
+          position: absolute;
+          left:0;
+          top:0;
+          width:100%;
+          height:100%;
+          background-color: rgba(0,0,0,0.5);
+          cursor: move;
+        }
+        &>ul{
+          position: absolute;
+          top:10px;
+          right:10px;
+          display: none;
+          border-radius: 4px;
+          background-color: rgba(255,255,255,0.3);
+          &>li{
+            width:80px;
+            height:35px;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+            color:#fff;
+            &:hover{
+              color:#ff6666;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        &:hover{
+          &>ul,&>div.mask{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  ul.category{
+    margin-bottom: 0;
+    &>li{
+      &>div{
+        border:1px solid #efefef;
+        &>a{
+          display: block;
+          width:100%;
+          height:100%;
+          cursor: pointer;
+          position: absolute;
+          left: 0;
+          top:0;
+          &>img{
+            display: block;
+            width:100%;
+            height:100%;
+          }
+        }
+        &>span{
+          position: absolute;
+          color:#eee;
+          top:65%;
+          left:49%;
+        }
+        &:hover{
+          border-color: #ff6666;
+        }
+      }
+    }
+  }
+
+  div.noData{
+    border:1px solid #ddd;
+    height:280px;
+    line-height: 280px;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  div.confirmModal>div>div.content{
+    font-size:16px;
+    line-height: 80px;
+    padding-left:40px;
+    font-weight: bold;
+  }
+
+  div#editItemModal{
+    @include transition(padding-bottom 0.3s);
+    form{
+      &>div.img{
+        position: relative;
+        height:230px;
+        margin:10px;
+        border:1px dotted #ddd;
+        border-radius: 4px;
+        &>img{
+          //position: absolute;
+          max-width: 100%!important;
+        }
+        &>a,&>div#fileManager{
+          position: absolute;
+          display: block;
+          width:140px;
+          height:50px;
+          top:50%;
+          left:50%;
+          margin-top:-25px;
+          line-height: 50px;
+          text-align: center;
+          border: 1px solid #eee;
+          border-radius: 4px;
+          cursor: pointer;
+          background-color: #f9f9f9;
+          @include transition(all 0.3s);
+          &:hover{
+            background-color: $highlightColor;
+            color:#fff;
+            border-color:$highlightColor;
+          }
+        }
+        &>a{
+          margin-left:-145px;
+        }
+        &>div#fileManager{
+          margin-left:5px;
+        }
+        #uploadImgBtn{
+          position: absolute;
+          display: block;
+          width:140px;
+          height:50px;
+          top:50%;
+          left:50%;
+          margin-top:-25px;
+          margin-left:-145px;
+          opacity: 0;
+        }
+        &>span.selectionTxt{
+          display: none;
+          position: absolute;
+          bottom:0;
+          right:0;
+          color:#fff;
+          background-color: rgba(0,0,0,0.5);
+          padding:4px 6px;
+          font-size:12px;
+          &>b{
+            font-weight: normal;
+            margin-left:5px;
+            &:first-child{
+              margin-left:0;
+            }
+          }
+        }
+      }
+      &>textarea{
+        display: none;
+      }
+      &>div.item{
+        border-top:1px dotted #ddd;
+        line-height: 35px;
+        margin-left:12px;
+        margin-right:12px;
+        padding:3px 0;
+        &>label{
+          display: inline-block;
+          width:100px;
+          text-align: right;
+          font-weight: bold;
+        }
+        &>input{
+          padding:4px 5px;
+          width:250px;
+        }
+        &.price{
+          &>input{
+            width:70px;
+          }
+          &>span{
+            margin-left:5px;
+            margin-right:5px;
+          }
+          &>select{
+            padding:4px;
+            margin-left:5px;
+          }
+        }
+        &.rules{
+          &>label{
+            float: left;
+          }
+          &>div{
+            float: left;
+            width:350px;
+            max-height: 120px;
+            min-height:50px;
+            overflow: auto;
+            padding:4px 8px;
+            line-height: 27px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            &:focus{
+              border-color:#0099ff;
+              outline: 0;
+              -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) , 0 0 8px rgba(0,153,255,0.6);
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) , 0 0 8px rgba(0,153,255,0.6);
+            }
+          }
+        }
+        &>a{
+          padding: 6px 12px;
+          border: 1px solid #eee;
+          border-radius: 4px;
+          margin-left: 15px;
+          background-color: #f5f5f5;
+          cursor: pointer;
+          @include transition(all 0.3s);
+          &:hover{
+            background-color: $highlightColor;
+            color:#fff;
+            border-color:$highlightColor;
+          }
+        }
+      }
+      &.hasImg{
+        &>div.img{
+          margin-bottom:60px;
+          &>a,&>div#fileManager,&>input#uploadImgBtn{
+            top:100%;
+            margin-top:5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1700px){
+  section.clubService{
+    ul.list>li{
+      width:33.3%
+    }
+  }
+}
+
+@media screen and (max-width:1350px){
+  section.clubService{
+    ul.list>li{
+      width:50%
+    }
+  }
+}
+
+@media screen and (max-width:999px){
+  section.clubService{
+    ul.list>li{
+      width:100%
+    }
+  }
+}

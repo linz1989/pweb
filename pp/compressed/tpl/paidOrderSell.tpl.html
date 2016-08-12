@@ -1,0 +1,21 @@
+<!--营销中心--付费预约-->
+<section id="paidOrderSellPage" class="ms-controller" ms-controller="paidOrderSellCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/paidOrderSell.js?v=7a48a4491f"></script>
+    <div>
+        <label>付费预约设置</label>
+        <div ms-if="paidOrderSysSwitch == 'on'" ms-class="{{paidOrderUserSwitch == 'on' ? 'active' : ''}}" ms-click="doClickSwitch()"><i></i></div>
+        <span ms-if="paidOrderSysSwitch == 'on'">{{paidOrderUserSwitch == 'on' ? '已开启' : '已关闭'}}</span>
+        <a ms-if="paidOrderSysSwitch == 'on' && paidOrderUserSwitch == 'on'" ms-click="doSave()">保存</a>
+    </div>
+    <ul id="paidOrderForm" ms-if="paidOrderSysSwitch == 'on' && paidOrderUserSwitch == 'on' ">
+        <li><label>预约定金：</label><input ms-duplex="paidOrderDownPayment" type="text" maxlength="6"/><span>元，其中{{paidOrderPlatformFree}}为小摩豆手续费</span></li>
+        <li><label>营业时段：</label>
+            <select id="paidOrderStartTime" ms-change="doChangeStartTime()"><option ms-repeat="paidOrderStartTimeArr">{{el}}</option></select> -
+            <select id="paidOrderEndTime" ms-change="doChangeEndTime()"><option ms-repeat="paidOrderEndTimeArr">{{el}}</option></select>
+            <i id="paidOrderAllDay" ms-click="doClickAllDay()"></i><span>全天</span></li>
+        <li><label>核销提成：</label><input ms-duplex="paidOrderTechCommission" type="text" maxlength="6" /><span>元</span></li>
+        <li><label>过期提成：</label><input ms-duplex="paidOrderExpireCommission" type="text" maxlength="6"/><span>元</span></li>
+    </ul>
+    <h3 ms-if="paidOrderSysSwitch == 'on' && paidOrderUserSwitch == 'off' ">当前预约不需要付费，如需要开启请点击右上角开关！</h3>
+    <h3 ms-if="paidOrderSysSwitch == 'off'">当前会所未开启付费预约功能！</h3>
+</section>

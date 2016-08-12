@@ -1,0 +1,220 @@
+@import "../common/mixin.scss";
+section#homePageSettingPage{
+  ul.list{
+    position: relative;
+    border:1px solid #eee;
+    border-radius: 4px;
+    padding:10px 0;
+    &>li{
+      position: relative;
+      float: left;
+      width:25%;
+      height:250px;
+      &>div{
+        position: absolute;
+        top:10px;
+        left:50%;
+        margin-left:-180px;
+        width:340px;
+        height:193px;
+        padding:10px;
+        overflow-y: hidden;
+        @include ty(0 1px 3px rgba(0,0,0,.2));
+        cursor: move;
+        &>img{
+          display: block;
+          width:100%;
+          height:100%;
+          border:1px solid #eee;
+        }
+        &>ul{
+          position: absolute;
+          top:10px;
+          right:10px;
+          display: none;
+          background-color: rgba(255,255,255,0.5);
+          border-radius: 4px;
+          &>li{
+            width:80px;
+            height:35px;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+            &:hover{
+              color:#ff6666;
+              text-decoration: underline;
+            }
+          }
+          &.active{
+            display: block;
+          }
+        }
+        &>a,&>div{
+          display: none;
+          position: absolute;
+          top:10px;
+          left:10px;
+          right:10px;
+          bottom:10px;
+          line-height: 210px;
+          background-color: rgba(0,0,0,0.4);
+          color:#fff;
+          text-align: center;
+        }
+
+        &:hover{
+          &>ul,&>a,&>div{
+            display: block;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  div.title{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom:15px;
+    @include ty(0 5px 5px rgba(0,0,0,.05));
+    padding:15px;
+    &>a{
+      padding: 6px 8px;
+      text-align: center;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      @include transition(all 0.3s);
+      &:hover{
+        background-color: $highlightColor;
+        color:#fff;
+        border-color:$highlightColor
+      }
+    }
+    &>b{
+      color:#ff6666;
+      margin-left:10px;
+    }
+  }
+  div.noData{
+    height:300px;
+    line-height: 300px;
+    text-align: center;
+    border:1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  div.confirmModal>div>div.content{
+    font-size:16px;
+    line-height: 80px;
+    padding-left:40px;
+    font-weight: bold;
+  }
+
+  div#editModal{
+    @include transition(padding-bottom 0.3s);
+    form{
+      &>div.img{
+        position: relative;
+        height:300px;
+        margin:10px;
+        border:1px dotted #ddd;
+        border-radius: 4px;
+        &>img{
+          //position: absolute;
+          max-width: 100%!important;
+        }
+        &>a{
+          position: absolute;
+          display: block;
+          width:140px;
+          height:50px;
+          top:50%;
+          left:50%;
+          margin-top:-25px;
+          margin-left:-70px;
+          line-height: 50px;
+          text-align: center;
+          border: 1px solid #eee;
+          border-radius: 4px;
+          cursor: pointer;
+          background-color: #f9f9f9;
+          @include transition(all 0.3s);
+          &:hover{
+            background-color: $highlightColor;
+            color:#fff;
+            border-color:$highlightColor;
+          }
+        }
+        &>span.selectionTxt{
+          display: none;
+          position: absolute;
+          bottom:0;
+          right:0;
+          color:#fff;
+          background-color: rgba(0,0,0,0.5);
+          padding:4px 6px;
+          font-size:12px;
+          &>b{
+            font-weight: normal;
+            margin-left:5px;
+            &:first-child{
+              margin-left:0;
+            }
+          }
+        }
+        #uploadImgBtn{
+          position: absolute;
+          display: block;
+          width:140px;
+          height:50px;
+          top:50%;
+          left:50%;
+          margin-top:-25px;
+          margin-left:-70px;
+          opacity: 0;
+        }
+      }
+      &.hasImg{
+        &>div.img{
+          margin-bottom:60px;
+          &>a,&>input#uploadImgBtn{
+            top:100%;
+            margin-top:5px;
+          }
+        }
+      }
+      &>div.link{
+        margin:5px 10px;
+        &>input{
+          width:570px;
+          padding:4px 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1700px){
+  section#homePageSettingPage{
+    ul.list>li{
+      width:33.3%
+    }
+  }
+}
+
+@media screen and (max-width:1350px){
+  section#homePageSettingPage{
+    ul.list>li{
+      width:50%
+    }
+  }
+}
+
+@media screen and (max-width:999px){
+  section#homePageSettingPage{
+    ul.list>li{
+      width:100%
+    }
+  }
+}

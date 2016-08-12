@@ -1,0 +1,46 @@
+<!--数据统计 积分统计 用户记录-->
+<section id="integrationUserRecordPage" class="ms-controller integrationSys" ms-controller="integrationUserRecordCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/integrationUserRecord.js?v=f55ab6f209"></script>
+    <div class="dataTable dataList" id="dataListTable">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="8" class="header">
+                    用户记录
+                    <div class="sizeOption">每页显示记录数：<select><option selected>20</option><option>50</option><option>100</option></select></div>
+                    <div class="search">
+                        <input type="text" id="search-tel" placeholder="输入手机号码" maxlength="11"/>
+                        <a class="toolButton" ms-click="doClickSearchBtn()">搜索</a>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th style="width:10%">用户名称</th>
+                <th style="width:10%">手机号</th>
+                <th style="width:8%">积分数量</th>
+                <th style="width:10%">业务类型</th>
+                <th style="width:12%">时间</th>
+                <th style="width:8%">账户余额</th>
+                <th style="width:22%">描述</th>
+                <th style="width:20%">备注</th>
+            </tr>
+            </thead>
+            <tbody ms-if="dataList.length == 0" class="noData">
+            <tr><td colspan="8">未能查询到数据！</td></tr>
+            </tbody>
+            <tbody ms-if="dataList.length != 0">
+            <tr ms-repeat="dataList">
+                <td>{{el.dstName}}</td>
+                <td>{{el.dstTelephone}}</td>
+                <td>{{el.amount}}</td>
+                <td>{{el.businessCategoryDesc}}</td>
+                <td>{{el.createDatetime}}</td>
+                <td>{{el.currentAmount}}</td>
+                <td>{{el.description}}</td>
+                <td>{{el.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="dataListPagination" ms-visible="dataList.length != 0"><div class="pages"></div></div>
+</section>

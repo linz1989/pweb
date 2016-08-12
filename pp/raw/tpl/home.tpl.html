@@ -1,0 +1,174 @@
+<!--首页-->
+<section id="homePage" class="ms-controller" ms-controller="homeCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/home.js"></script>
+    <div class="techAndPayGroup clearfix" ms-class="noPaidOrder:paidOrderSwitch!='on'">
+        <div class="detailGroup tech">
+            <div class="title">技师</div>
+            <ul class="clearfix">
+                <li>总数：{{freeCount+inProgressCount}}</li>
+                <li><i class="busy">忙</i>{{inProgressCount}}</li>
+                <li><i class="free">闲</i>{{freeCount}}</li>
+            </ul>
+        </div>
+        <div class="detailGroup pay">
+            <div class="title">核销<a class="toolButton" href="#!/couponUseRecord">核销记录</a></div>
+            <div class="sell-row">
+                <div>
+                    <div class="sell" ms-click="doCouponVerify()">{{couponSwitch=="on" ? "核销优惠劵/点钟券" : "核销优惠劵" }}</div>
+                </div>
+                <div ms-if="paidOrderSwitch=='on'" >
+                    <div class="sell" ms-click="doPaidOrderVerify()">付费预约核销</div>
+                </div>
+                <div>
+                    <div class="sell" ms-click="doTreatVerify()">核销授权码</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="dataTable" id="orderListDataTable">
+        <table>
+            <thead>
+            <tr>
+                <th ms-attr-colspan="{{paidOrderSwitch=='on' ? 7 : 6}}" class="header">最近订单<a class="toolButton" href="#!/orderList">所有订单</a></th>
+            </tr>
+            <tr ms-if="paidOrderSwitch=='off'">
+                <th style="width: 14%">下单时间</th>
+                <th style="width: 14%">到店时间 </th>
+                <th style="width: 15%">技师</th>
+                <th style="width: 17%">预约人名称</th>
+                <th style="width: 14%">预约人手机号</th>
+                <th style="width: 10%">订单状态</th>
+            </tr>
+            <tr ms-if="paidOrderSwitch=='on'">
+                <th style="width: 14%">下单时间</th>
+                <th style="width: 14%">到店时间 </th>
+                <th style="width: 18%;">技师</th>
+                <th style="width: 16%">预约人名称</th>
+                <th style="width: 15%">预约人手机号</th>
+                <th style="width: 15%">预付定金</th>
+                <th style="width: 10%">订单状态</th>
+            </tr>
+            </thead>
+            <tbody ms-if="orders.length == 0" class="noData">
+            <tr>
+                <td ms-attr-colspan="{{paidOrderSwitch=='on' ? 7 : 6}}">暂无订单数据！</td>
+            </tr>
+            </tbody>
+            <tbody ms-if="orders.length != 0">
+            <tr ms-repeat="orders">
+                <td>{{el.createdAt}}</td>
+                <td>{{!el.appointTime ? '-' : el.appointTime}}</td>
+                <td>
+                    <a ms-if="el.isRemove=='N' && el.technicianName != null" ms-attr-href="'#!/techDetail?id='+el.technicianId">{{el.technicianName}}{{el.technicianSerialNo=='' ? '' : '['+el.technicianSerialNo+']'}}</a>
+                    <span ms-if="el.technicianName == null">-</span>
+                    <span ms-if="el.isRemove=='Y'">{{el.technicianName}}{{el.technicianSerialNo=='' ? '' : '['+el.technicianSerialNo+']'}}</span>
+                </td>
+                <td>{{el.customerName}}</td>
+                <td>{{el.phoneNum}}</td>
+                <td ms-if="paidOrderSwitch=='on'">{{el.downPayment}}</td>
+                <td>{{el.status}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--核销券-->
+    <div class="modal" id="couponVerificationModal">
+        <div>
+            <h3 class="header">{{couponSwitch=="on" ? "核销优惠劵/点钟券" : "核销优惠劵" }}<span>X</span></h3>
+            <div class="content">
+                <div class="dataTable">
+                    <table>
+                        <thead>
+                        <tr class="search">
+                            <th colspan="5">
+                                <select id="couponSearchTypeSelect"><option selected value="tel">手机号码</option><option value="couponNo">券优惠码</option></select>
+                                <input placeholder="请输入手机号码" maxlength="11" ms-visible="couponVerifyType=='tel'" id="search-tel-input" />
+                                <input placeholder="请输入券优惠码" maxlength="12" ms-visible="couponVerifyType!='tel'" id="search-couponNo-input" /><a ms-click="doSearchCoupon(1)">搜索</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="width: 10%">卡券类型</th>
+                            <th style="width: 27%">卡券名称</th>
+                            <th style="width: 35%">券有效期</th>
+                            <th style="width: 10%">状态</th>
+                            <th style="width: 9%">选择</th>
+                        </tr>
+                        </thead>
+                        <tbody ms-if="coupons.length == 0" class="noData">
+                        <tr>
+                            <td colspan="5">未能查询到数据！</td>
+                        </tr>
+                        </tbody>
+                        <tbody ms-if="coupons.length != 0">
+                        <tr ms-repeat="coupons">
+                            <td>{{el.useTypeName}}</td>
+                            <td>{{el.actTitle}}({{el.couponTypeName}})</td>
+                            <td>{{el.couponPeriod}}</td>
+                            <td>{{el.actStatusName}}</td>
+                            <td><i ms-class="active:verifyCouponSuaId==el.suaId" ms-click="deSelectVerifyCoupon(el.suaId,$index)"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination" id="couponPagination" ms-visible="coupons.length != 0 && couponsPage>1"><div class="pages"></div></div>
+                <ul ms-if="selectCoupon.couponNo != ''">
+                    <li><label>{{selectCoupon.consumeMoneyDescription}}</label></li>
+                    <li><label>领取时间：</label>{{selectCoupon.getDate}}</li>
+                    <li><label>使用时段：</label>{{selectCoupon.useTimePeriod}}</li>
+                    <li><label>使用说明：</label>{{selectCoupon.actContent | html}}</li>
+                </ul>
+            </div>
+            <div class="footer"><span class="tip"></span><a class="ok" ms-class="disabled:verifyCouponSuaId==''">核销</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+
+    <!--核销预付费订单-->
+    <div class="modal" id="orderVerificationModal">
+        <div>
+            <h3 class="header">核销预付费订单<span>X</span></h3>
+            <div class="content">
+                <div class="search">
+                    <input placeholder="请输入订单预约号码" maxlength="12"  id="search-order-input" />
+                    <a ms-click="doSearchOrder()">搜索</a>
+                </div>
+                <div class="title" ms-if="selectOrder.id !=''">订单信息</div>
+                <ul ms-if="selectOrder.id !=''">
+                    <li><label>预约人：</label>{{selectOrder.customerName}}<span ms-if="selectOrder.phoneNum">({{selectOrder.phoneNum}})</span></li>
+                    <li><label>到店时间：</label>{{selectOrder.appointTime}}</li>
+                    <li><label>下单时间：</label>{{selectOrder.createdAt}}</li>
+                    <li><label>预约技师：</label>{{selectOrder.techName}}</li>
+                    <li><label>预付定金：</label>{{selectOrder.downPayment}}</li>
+                    <li><label>订单状态：</label>{{selectOrder.statusName}}</li>
+                </ul>
+            </div>
+            <div class="footer">
+                <span class="tip"></span>
+                <a class="ok" ms-visible="selectOrder.status=='accept'" ms-click="doUsePaidOrder('verified')">确认核销</a>
+                <a class="ok" ms-visible="selectOrder.status=='accept' && selectOrder.isExpire" ms-click="doUsePaidOrder('expire')">确认过期</a>
+                <a class="cancel">取消</a>
+            </div>
+        </div>
+    </div>
+    <!--核销请客授权码-->
+    <div class="modal" id="treatVerificationModal">
+        <div>
+            <h3 class="header">核销授权码<span>X</span></h3>
+            <div class="content">
+                <div class="search">
+                    <input placeholder="请输入授权码" maxlength="14"  id="treatCodeInput" />
+                </div>
+                <div class="search">
+                    <input placeholder="请输入客人消费金额" maxlength="7"  id="moneyInput" />
+                </div>
+            </div>
+            <div class="footer">
+                <span class="tip"></span>
+                <a class="ok">核销</a>
+                <a class="cancel">取消</a>
+            </div>
+        </div>
+    </div>
+</section>

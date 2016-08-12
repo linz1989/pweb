@@ -1,0 +1,140 @@
+<!--营销中心--积分系统-->
+<section id="integrationSysPage" class="ms-controller integrationSys" ms-controller="integrationSysCtrl">
+    <script type="text/javascript" src="club-admin/compressed/js/page/integrationSys.js?v=b2e0c773a1"></script>
+    <div class="dataTable dataCount">
+        <table>
+            <thead>
+            <tr>
+                <th colspan="3" class="header">积分系统
+                    <a ms-if="settingSwitch == 'on'" class="toolButton apply" href="#!/integrationExchangeList">兑换申请</a>
+                    <a ms-if="settingSwitch == 'on'" class="toolButton" ms-click="doClickChargeBtn()">积分充值</a></th>
+            </tr>
+            <tr>
+                <th style="width:33.3%">已发放积分</th>
+                <th style="width:33.3%">已回收积分</th>
+                <th style="width:33.4%">等待回收积分</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{deliverAmount}}</td>
+                <td>{{recycleAmount}}</td>
+                <td>{{deliverAmount-recycleAmount}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="formGroup setting" id="settingCfg">
+        <div class="title">积分设置
+            <div ms-class="{{settingSwitch == 'on' ? 'active' : ''}}" ms-click="doClickSwitch()"><i></i></div>
+            <span>{{settingSwitch == 'on' ? '已开启' : '已关闭'}}</span>
+            <a class="toolButton" ms-if="settingSwitch == 'on'" ms-click="doClickSaveCfgBtn()">保存设置</a>
+        </div>
+        <div class="tip" ms-visible="settingSwitch == 'off'">尚未开启！</div>
+        <div class="item" ms-visible="settingSwitch == 'on'">
+            <label>每消费1元获取：</label><input id="creditPerConsume" type="text" maxlength="9" placeholder="输入积分数量"/>
+        </div>
+        <div class="item" ms-visible="settingSwitch == 'on'">
+            <label>注册赠送积分：</label><input id="creditPerRegister" type="text" maxlength="9" placeholder="输入积分数量"/>
+        </div>
+        <div class="item" ms-visible="settingSwitch == 'on'">
+            <label>技师每兑换1元所需积分：</label><input id="creditPerExchange" type="text" maxlength="9" placeholder="输入积分数量"/>
+        </div>
+        <div class="item spec" ms-visible="settingSwitch == 'on'">
+            <label>技师起提积分：</label><input id="creditExchangeLimitation" type="text" maxlength="9" placeholder="输入积分数量" /><span>技师积分大于起提积分部分才可以进行兑换</span>
+        </div>
+    </div>
+
+    <!--<div class="tab">
+        <div class="first" ms-class="active:selectedTab=='user'" ms-click="doChangeTab('user')">用户积分记录</div>
+        <div class="last" ms-class="active:selectedTab!='user'" ms-click="doChangeTab('tech')">技师积分记录</div>
+        <a class="toolButton" ms-click="doClickSearchBtn()">搜索</a><input type="text" id="search-tel" placeholder="输入手机号码" maxlength="11"/>
+    </div>
+
+    <div class="dataTable" ms-visible="selectedTab=='user'">
+        <table>
+            <thead>
+            <tr>
+                <th class="header" colspan="8">用户积分记录<div class="sizeOption" ms-if="userRecordList.length != 0">每页显示记录数：<select ms-change="onChangeUserRecordListPageSize()"><option selected>10</option><option>20</option><option>30</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:10%">用户名称</th>
+                <th style="width:10%">手机号</th>
+                <th style="width:8%">积分数量</th>
+                <th style="width:10%">业务类型</th>
+                <th style="width:12%">时间</th>
+                <th style="width:8%">账户余额</th>
+                <th style="width:22%">描述</th>
+                <th style="width:20%">备注</th>
+            </tr>
+            </thead>
+            <tbody ms-if="userRecordList.length == 0" class="noData">
+            <tr>
+                <td colspan="8">未能查询到数据！</td>
+            </tr>
+            </tbody>
+            <tbody ms-if="userRecordList.length != 0">
+            <tr ms-repeat="userRecordList">
+                <td>{{el.dstName}}</td>
+                <td>{{el.dstTelephone}}</td>
+                <td>{{el.amount}}</td>
+                <td>{{el.businessCategoryDesc}}</td>
+                <td>{{el.createDatetime}}</td>
+                <td>{{el.currentAmount}}</td>
+                <td>{{el.description}}</td>
+                <td>{{el.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="userRecordListPagination" ms-visible="userRecordList.length != 0 && selectedTab=='user'"><div class="pages"></div></div>
+
+    <div class="dataTable" ms-visible="selectedTab=='tech'">
+        <table>
+            <thead>
+            <tr>
+                <th class="header" colspan="7">技师积分记录<div class="sizeOption" ms-if="techRecordList.length != 0">每页显示记录数：<select ms-change="onChangeTechRecordListPageSize()"><option selected>10</option><option>20</option><option>30</option></select></div></th>
+            </tr>
+            <tr>
+                <th style="width:11%">手机号</th>
+                <th style="width:10%">积分数量</th>
+                <th style="width:12%">业务类型</th>
+                <th style="width:12%">时间</th>
+                <th style="width:11%">账户余额</th>
+                <th style="width:22%">描述</th>
+                <th style="width:22%">备注</th>
+            </tr>
+            </thead>
+            <tbody ms-if="techRecordList.length == 0" class="noData">
+            <tr>
+                <td colspan="7">未能查询到数据！</td>
+            </tr>
+            </tbody>
+            <tbody ms-if="techRecordList.length != 0">
+            <tr ms-repeat="techRecordList">
+                <td>{{el.dstTelephone}}</td>
+                <td>{{el.amount}}</td>
+                <td>{{el.businessCategoryDesc}}</td>
+                <td>{{el.createDatetime}}</td>
+                <td>{{el.currentAmount}}</td>
+                <td>{{el.description}}</td>
+                <td>{{el.remark}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="techRecordListPagination" ms-visible="techRecordList.length != 0 && selectedTab=='tech'"><div class="pages"></div></div>-->
+
+    <div class="modal" id="chargeModal">
+        <div>
+            <h3 class="header">积分充值<span>X</span></h3>
+            <div class="content form">
+                <div class="select clearfix"><label>&nbsp;</label><div ms-class="active:chargeType=='user'" ms-click="changeChargeType('user')"><i></i>用户</div><div ms-class="active:chargeType=='tech'" ms-click="changeChargeType('tech')"><i></i>技师</div></div>
+                <div><label>充值账号：</label><input id="charge-account" type="text" maxlength="11" placeholder="请输入手机号码"/></div>
+                <div><label>充值积分：</label><input id="charge-value" type="text" maxlength="9" placeholder="请输入赠送积分数量"/></div>
+                <div class="clearfix"><label>备注：</label><div id="charge-remark" contenteditable="true" class="contentEditable"/></div>
+            </div>
+            <div class="footer"><span class="tip"></span><a class="ok">确定</a><a class="cancel">取消</a></div>
+        </div>
+    </div>
+</section>
