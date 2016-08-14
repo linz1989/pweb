@@ -24,9 +24,9 @@
 <body data-lang="zh_cn">
 <div class="top-wrap">
     <ul>
-        <li class="china"><i></i>中文</li>
-        <li class="english"><i></i>english</li>
-        <li class="russia"><i></i>русский</li>
+        <li class="china" lang="zh_cn"><i></i>中文</li>
+        <li class="english" lang="en"><i></i>english</li>
+        <li class="russia" lang="rus"><i></i>русский</li>
     </ul>
 </div>
 <div class="menu-wrap">
@@ -61,7 +61,7 @@
 </div>
 <div class="product-wrap selling-product">
     <div>
-        <div class="zh_cn">热销产品<a href="#">更多...</a></div>
+        <div class="zh_cn">热销产品<a href="product.html">更多...</a></div>
         <ul class="clear-fix" id="sellingProductList"></ul>
     </div>
 </div>
@@ -96,8 +96,8 @@
     </div>
     <div class="search">
         <h3>产品搜索<span>X</span></h3>
-        <select id="product-type"><option>选择系列</option><option></option></select>
-        <select id="product-name"><option>选择产品</option><option></option></select>
+        <select id="product-type"><option value="">选择系列</option></select>
+       <!-- <select id="product-name"><option>选择产品</option><option></option></select>-->
         <input id="product-keywords" placeholder="请输入关键字" type="text" maxlength="60"/>
         <a>搜索</a>
     </div>

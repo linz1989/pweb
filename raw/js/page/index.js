@@ -43,7 +43,7 @@ $(function(){
         shareDiv = $("div.side-bar>div.share"),
         searchDiv = $("div.side-bar>div.search"),
         productType = $("#product-type"),
-        productName = $("#product-name"),
+        //productName = $("#product-name"),
         productKeyWords = $("#product-keywords");
 
     $(sideBarBtns[0]).hover(function(){///搜
@@ -55,8 +55,18 @@ $(function(){
         searchDiv.removeClass("active");
     });
     $("div.side-bar>div.search>a").click(function(){///点击搜索
-
+        location.href="search.html?type="+productType.val()+"&key="+encodeURIComponent(productKeyWords.val());
     });
+
+    //////获取产品数据
+    $.get("../json/product_"+lang+".json",{ "_t" : (+new Date())},function(pdata){
+        pdata = pdata.products;
+        var optionStr = "";
+        for(var k=0;k<pdata.length;k++){
+            optionStr += "<option value='"+pdata[k].id+"'>"+pdata[k]["text"]+"</option>";
+        }
+        $("#product-type").html($("#product-type").html()+optionStr);
+    },"json");
 
     $(sideBarBtns[2]).hover(function(){///分享
         shareDiv.addClass("active");

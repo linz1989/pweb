@@ -6,9 +6,10 @@
   "common/swiper-3.3.1.jquery.min.js": "common/swiper-3.3.1.jquery.min.js?v=9a237fb70d",
   "page/about.js": "page/about.js?v=05fbb6d296",
   "page/contact.js": "page/contact.js?v=96042edec2",
-  "page/index.js": "page/index.js?v=1fc394286e",
+  "page/index.js": "page/index.js?v=945a70b4b7",
   "page/list.js": "page/list.js?v=04296d1d00",
-  "page/product.js": "page/product.js?v=21feed6cec",
-  "page/public.js": "page/public.js?v=5cb9e22a12",
+  "page/product.js": "page/product.js?v=a6f15f47b4",
+  "page/public.js": "page/public.js?v=95ea8edbd4",
+  "page/search.js": "page/search.js?v=74eba44949",
   "page/solution.js": "page/solution.js?v=003e8c2dd7"
 }

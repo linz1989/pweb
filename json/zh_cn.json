@@ -35,5 +35,8 @@
   "{contact-form-tel}" : "手机号码",
   "{contact-form-subject}" : "主题",
   "{contact-form-content}" : "内容",
-  "{email-error-tip}" : "电子邮箱格式不对！"
+  "{email-error-tip}" : "电子邮箱格式不对！",
+  "{search_key_tip}" : "搜索关键字",
+  "{product_series_tip}" : "产品系列",
+  "{no_search_result_tip}" : "未能搜索到相关产品！"
 }

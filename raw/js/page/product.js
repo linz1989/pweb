@@ -6,7 +6,8 @@ $(function(){
         $leftMenu = $("div.content-wrap>div>div.nav"),
         $rightContentList,
         $win = $(window),
-        content = $("div.content-wrap>div");
+        content = $("div.content-wrap>div"),
+        path = $("div.path>span");
 
     /////获取产品数据
     $.get("../json/product_"+lang+".json",{ "_t" : (+new Date())},function(res){
@@ -29,7 +30,7 @@ $(function(){
             }
             contentHtmlStr +="</div>";
         }
-        console.log("menuHtmlStr："+menuHtmlStr);
+        //console.log("menuHtmlStr："+menuHtmlStr);
         $("#leftMenu").html(menuHtmlStr);
         $("#productContent").html(contentHtmlStr);
         $leftNavMenu = $("#leftMenu>li");
@@ -67,6 +68,7 @@ $(function(){
             navIndex = navStrObj[navId],
             navMenu = $leftNavMenu[navIndex];
 
+        path.html("<a href='product.html#"+navId+"'>"+navMenu.innerHTML+"</a>");
         $(navMenu).addClass("curr");
         $rightContentList.removeClass("active");
         $rightContentList[navIndex].className = "active";

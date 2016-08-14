@@ -51,7 +51,7 @@ function getParam(){
         for(i=0;i<paramArr.length;i++){
             arr = paramArr[i].split("=");
             if(arr.length==2){
-                paramObj[arr[0]] = arr[1];
+                paramObj[arr[0]] = decodeURIComponent(arr[1]);
             }
         }
     }
@@ -79,6 +79,11 @@ $(function () {
             htmlStr += "<li><a href='product.html#"+productMenuData[i]["id"]+"'>"+productMenuData[i]["text"]+"</a></li>";
         }
         $("#product-menu").html(htmlStr);
+    });
+
+    ////////////////////////////////////////////////////////////语言
+    $("div.top-wrap>ul").on("click","li",function(){
+       location.href="../"+this.getAttribute("lang")+"/index.html";
     });
 
     ///////////////////////////////////////////////////////////点击菜单弹出

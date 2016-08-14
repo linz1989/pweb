@@ -12,13 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../css/page/product.css"/>
+    <link rel="stylesheet" href="../css/page/search.css"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="../js/common/css3-mediaqueries.js"></script>
     <![endif]-->
     <script type="text/javascript" src="../js/common/jquery.min.js"></script>
     <script type="text/javascript" src="../js/page/public.js"></script>
-    <script type="text/javascript" src="../js/page/product.js"></script>
+    <script type="text/javascript" src="../js/page/search.js"></script>
 </head>
 <body data-lang="{page_lang}">
 <div class="top-wrap">
@@ -54,12 +54,10 @@
 </div>
 <div class="content-wrap">
     <div>
-        <div class="nav">
-            <div><b>{menu_product}</b></div>
-            <ul id="leftMenu"></ul>
+        <div class="path">{product_series_tip}：<b id="product-type"></b> {search_key_tip}：<b id="key-word"></b></div>
+        <div class="content" id="productContent">
+            <div><div class="null">{no_search_result_tip}</div></div>
         </div>
-        <div class="path">{menu_product} >> <span></span></div>
-        <div class="content" id="productContent"></div>
     </div>
 </div>
 <div class="foot-wrap">

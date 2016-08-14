@@ -10,7 +10,6 @@ div.content-wrap{
     width:980px;
     padding:0 10px;
     margin:0 auto;
-    min-height:500px;
     &>div.nav{
       position: absolute;
       left:0;
@@ -82,7 +81,6 @@ div.content-wrap{
       }
     }
     &>div.path{
-      margin-left:210px;
       height:50px;
       line-height: 50px;
       margin-bottom:10px;
@@ -90,24 +88,30 @@ div.content-wrap{
       border-radius: 4px;
       background-color: #fff;
       padding-left:20px;
-      a{
+      a,b{
         font-size:16px;
-        &:hover{
-          color:#f59f3a;
-        }
+        font-weight: bold;
+        color:#f59f3a;
+      }
+      b{
+        margin-right:10px;
       }
     }
     &>div.content{
-      margin-left:210px;
       border:1px dotted #ccc;
       background-color: #fff;
       border-radius: 4px;
-      min-height: 480px;
+      min-height: 400px;
       &>div{
-        display: none;
         padding:20px 0;
-        &.active{
-          display: block;
+        div.null{
+          margin:10px 20px;
+          height:380px;
+          line-height: 380px;
+          text-align: center;
+          color:#f59f3a;
+          border:1px dotted #ddd;
+          border-radius: 4px;
         }
         div.item{
           position:relative;
