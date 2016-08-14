@@ -62,13 +62,13 @@ $(function () {
     var $win = $(window), supportTouch = "ontouchend" in document;
     
     //////////////////////////////////////////////////////////menu
-    var lang = $("body").attr("data-lang");
+    var lang = $("body").attr("data-lang"),i;
     $.get("../json/menu_"+lang+".json",{ "_t" : (+new Date())},function(res) {
         var htmlStr = "";
         ////////////////////////////////////////////////////solution menu
         var solutionMenuData = res.solutionMenu;
         for(i=0;i<solutionMenuData.length;i++){
-            htmlStr += "<li><a href='solution.html#'"+solutionMenuData[i]["id"]+">"+solutionMenuData[i]["text"]+"</a></li>";
+            htmlStr += "<li><a href='solution.html#"+solutionMenuData[i]["id"]+"'>"+solutionMenuData[i]["text"]+"</a></li>";
         }
         $("#solution-menu").html(htmlStr);
 
@@ -76,7 +76,7 @@ $(function () {
         var productMenuData = res.productMenu;
         htmlStr = "";
         for(i=0;i<productMenuData.length;i++){
-            htmlStr += "<li><a href=''>"+productMenuData[i]["text"]+"</a></li>";
+            htmlStr += "<li><a href='product.html#"+productMenuData[i]["id"]+"'>"+productMenuData[i]["text"]+"</a></li>";
         }
         $("#product-menu").html(htmlStr);
     });

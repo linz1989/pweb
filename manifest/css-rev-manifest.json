@@ -4,9 +4,10 @@
   "common/mixin.css": "common/mixin.css?v=d41d8cd98f",
   "common/reset.css": "common/reset.css?v=38d5090850",
   "common/swiper.css": "common/swiper.css?v=453b585266",
-  "page/about.css": "page/about.css?v=76f86883e4",
-  "page/contact.css": "page/contact.css?v=8349338822",
+  "page/about.css": "page/about.css?v=23fdd3cbd6",
+  "page/contact.css": "page/contact.css?v=a9d3fe8662",
   "page/index.css": "page/index.css?v=eb77901fd6",
   "page/list.css": "page/list.css?v=b1c6efda41",
-  "page/solution.css": "page/solution.css?v=76f86883e4"
+  "page/product.css": "page/product.css?v=94d487f199",
+  "page/solution.css": "page/solution.css?v=fd5957d2fe"
 }

@@ -36,7 +36,6 @@ $(function(){
                 "</li>";
         }
         $("#sellingProductList").html(htmlStr);
-
     },"json");
 
     var sideBarBtns = $("div.side-bar>ul>li"),

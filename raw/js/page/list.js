@@ -37,7 +37,7 @@ $(function(){
             $("#dataTab").html(_html);
         }
     }).fail(function (header, status, errorThrown) {
-        msgAlert("获取数据出错啦！")
+        msgAlert("获取数据出错！")
     });
 
     $(window).resize(function(){
