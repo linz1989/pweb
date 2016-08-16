@@ -105,8 +105,8 @@ div.content-wrap{
       min-height: 480px;
       padding:15px 20px;
       h3{
-        height:36px;
-        line-height: 36px;
+        height:40px;
+        line-height: 40px;
         text-align: center;
         font-size:20px;
         &>b{
@@ -126,9 +126,74 @@ div.content-wrap{
           height:145px;
           top:10px;
           left:10px;
+          border-radius: 4px;
+          border:1px dotted #ddd;
         }
         p{
           line-height: 28px;
+        }
+      }
+      div.item{
+        h4{
+          margin-top:10px;
+          margin-bottom:10px;
+          font-size:18px;
+          line-height: 36px;
+          font-weight: bold;
+          border-bottom:1px solid #ddd;
+        }
+        p{
+          line-height: 30px;
+        }
+        div{
+          border:1px solid #ddd;
+          border-radius: 4px;
+          &>table{
+            width:100%;
+            border:0;
+            thead>tr{
+              background-color: #f59f3a;
+              &>th{
+                padding:4px 0;
+                line-height:30px;
+                font-weight: bold;
+                text-align: center;
+                color:#fff;
+                border-right:1px solid #ddd;
+                border-bottom:1px solid #ddd;
+                &:last-child{
+                  border-right-width:0;
+                }
+              }
+            }
+            tbody{
+              background-color: #fff;
+              tr{
+                border-top:1px dotted #eee;
+                &:nth-child(even){
+                  background-color: #fdfdfd;
+                }
+              }
+              td{
+                padding:12px 4px;
+                text-align: center;
+                border-right:1px solid #eee;
+                line-height: 1.5;
+                &:last-child{
+                  border-right-width:0;
+                }
+              }
+            }
+          }
+        }
+        ul>li{
+          line-height: 32px;
+          &>a{
+            &:hover{
+              text-decoration: underline;
+              color:#f59f3a;
+            }
+          }
         }
       }
     }
