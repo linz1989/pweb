@@ -34,4 +34,8 @@ $(function(){
         if(contentHtmlStr != "") $("#productContent").html(contentHtmlStr);
         $rightContentList = $("#productContent>div");
     },"json");
+
+    $("#productContent").on("click","div>div.item",function(){
+        location.href="detail.html?pid="+this.getAttribute("pid");
+    })
 })

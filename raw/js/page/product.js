@@ -62,6 +62,10 @@ $(function(){
         location.hash = this.getAttribute("data-nav-id");
     })
 
+    $("#productContent").on("click","div>div.item",function(){
+        location.href="detail.html?pid="+this.getAttribute("pid");
+    })
+
     function doHashChange(){
         $leftNavMenu.removeClass("curr");
         var navId = location.hash.substr(1),
