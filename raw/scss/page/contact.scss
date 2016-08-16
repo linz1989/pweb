@@ -233,22 +233,6 @@ div.msgBox{
   }
 }
 
-@-webkit-keyframes loading-ani{
-  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-  20% { -webkit-transform: scaleY(1.0) }
-}
-
-@keyframes loading-ani{
-  0%, 40%, 100%{
-    transform: scaleY(0.4);
-    -webkit-transform: scaleY(0.4);
-  }
-  20%{
-    transform: scaleY(1.0);
-    -webkit-transform: scaleY(1.0);
-  }
-}
-
 div.contentEditable{
   min-height:50px;
   padding:4px 12px;

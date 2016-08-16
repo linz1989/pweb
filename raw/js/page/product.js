@@ -81,7 +81,7 @@ $(function(){
                 $leftMenu.addClass("fixed");
                 $leftMenu.css("left",content.offset().left+"px");
             }
-            if(document.body.scrollHeight-$win.height()-$(window).scrollTop()<82){
+            if(70+$leftMenu.height()+102>$win.height() && document.body.scrollHeight-$win.height()-$(window).scrollTop()<82){
                 $leftMenu.addClass("bottomFixed");
             }
             else{

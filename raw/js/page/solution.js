@@ -6,7 +6,8 @@ $(function(){
         $leftMenu = $("div.content-wrap>div>div.nav"),
         $rightContentList,
         $win = $(window),
-        content = $("div.content-wrap>div");
+        content = $("div.content-wrap>div"),
+        loading = $("#loading");
 
     /////获取左侧菜单
     $.get("../json/home_"+lang+".json",{ "_t" : (+new Date())},function(res){
@@ -49,7 +50,7 @@ $(function(){
     $("#leftMenu").on("click","li",function(){
         if(this.className == "curr") return;
         location.hash = this.getAttribute("data-nav-id");
-    })
+    });
 
     function doHashChange(){
         $leftNavMenu.removeClass("curr");
@@ -60,8 +61,10 @@ $(function(){
         $(navMenu).addClass("curr");
         $rightContentList.removeClass("active");
         if($rightContentList[navIndex].innerHTML.length==0){
+            loading.addClass("active");
             $.get("../json/solution_"+lang+"/solution_"+navId+".html",{"_t":(+new Date())},function(res){
                 $rightContentList[navIndex].innerHTML = res;
+                loading.removeClass("active");
             },"text");
         }
         $rightContentList[navIndex].className = "active";
