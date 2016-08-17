@@ -279,6 +279,8 @@ div.content-wrap{
       line-height: 36px;
       font-size:16px;
       text-indent: 32px;
+      padding-left:10px;
+      padding-right:10px;
     }
     ul{
       padding:12px 10px;
@@ -362,6 +364,10 @@ div#contact-modal{
 @media screen and (min-width:1280px){
   div.content-wrap>div{
     width:1180px;
+    p{
+      padding-left:20px;
+      padding-right:20px;
+    }
     ul{
       padding-left:20px;
       padding-right:20px;
@@ -378,6 +384,10 @@ div#contact-modal{
 @media screen and (min-width:1366px){
   div.content-wrap>div{
     width:1260px;
+    p{
+      padding-left:30px;
+      padding-right:30px;
+    }
     ul{
       padding-left:30px;
       padding-right:30px;
@@ -394,6 +404,10 @@ div#contact-modal{
 @media screen and (min-width:1440px){
   div.content-wrap>div{
     width:1320px;
+    p{
+      padding-left:35px;
+      padding-right:35px;
+    }
     ul{
       padding-left:35px;
       padding-right:35px;

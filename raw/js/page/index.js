@@ -19,7 +19,7 @@ $(function(){
             loop : true,
             speed : 800,
             autoplay : 3000,
-            effect : "coverflow",
+            //effect : "coverflow",
             autoplayDisableOnInteraction : false,
             pagination : '.swiper-pagination'
         });

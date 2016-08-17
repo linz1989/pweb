@@ -7,7 +7,8 @@ $(function(){
         $rightContentList,
         $win = $(window),
         content = $("div.content-wrap>div"),
-        path = $("div.path>span");
+        path = $("div.path>span"),
+        loading = $("#loading");
 
     /////获取产品数据
     $.get("../json/product_"+lang+".json",{ "_t" : (+new Date())},function(res){
@@ -55,6 +56,8 @@ $(function(){
         $win.scroll(function(){
             doHandlerScroll();
         });
+
+        loading.removeClass("active");
     },"json");
 
     $("#leftMenu").on("click","li",function(){

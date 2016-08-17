@@ -162,4 +162,6 @@ $(function(){
             this.value = this.value.substring(0, 11);
         }*/
     });
+
+    $("#loading").removeClass("active");
 })

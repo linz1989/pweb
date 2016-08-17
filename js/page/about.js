@@ -1,1 +1,1 @@
-$(function(){var t=$("body").attr("data-lang");$.get("../json/about_"+t+".html",{},function(t){$("div.content-wrap>div").html(t)},"text")});
+$(function(){var t=$("body").attr("data-lang");$.get("../json/about_"+t+".html",{},function(t){$("div.content-wrap>div").html(t),$("#loading").removeClass("active")},"text")});
