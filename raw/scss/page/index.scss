@@ -209,13 +209,10 @@ div.side-bar{
       left:-134px;
     }
   }
-  &>div.share{
+  &>div.share,&>div.service{
     position: absolute;
-    top:100px;
     left:60px;
     height:32px;
-    width:240px;
-    padding:8px 10px;
     z-index:10;
     border-radius: 4px;
     border:1px solid #ddd;
@@ -233,8 +230,34 @@ div.side-bar{
         background-color: #d0d0d0;
       }
     }
+  }
+  &>div.share{
+    top:100px;
+    width:240px;
+    padding:8px 10px;
     &.active{
       left:-260px;
+    }
+  }
+  &>div.service{
+    top:50px;
+    width:155px;
+    padding:8px 10px;
+    &>div{
+      &>a{
+        display: inline-block;
+        width:36px;
+        height:32px;
+        border:1px solid #eee;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover{
+          border-color:#ddd;
+        }
+      }
+    }
+    &.active{
+      left:-175px;
     }
   }
   &>div.search{

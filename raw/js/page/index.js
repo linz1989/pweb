@@ -41,6 +41,7 @@ $(function(){
     var sideBarBtns = $("div.side-bar>ul>li"),
         qrCodeDiv = $("div.side-bar>div.qrcode"),
         shareDiv = $("div.side-bar>div.share"),
+        serviceDiv = $("div.side-bar>div.service"),
         searchDiv = $("div.side-bar>div.search"),
         productType = $("#product-type"),
         //productName = $("#product-name"),
@@ -49,6 +50,7 @@ $(function(){
     $(sideBarBtns[0]).hover(function(){///搜
         searchDiv.addClass("active");
         shareDiv.removeClass("active");
+        serviceDiv.removeClass("active");
         qrCodeDiv.removeClass("active");
     },function(){});
     $("div.side-bar>div.search>h3>span").click(function(){
@@ -68,10 +70,18 @@ $(function(){
         $("#product-type").html($("#product-type").html()+optionStr);
     },"json");
 
+    $(sideBarBtns[1]).hover(function(){///在线客服
+        serviceDiv.addClass("active");
+        searchDiv.removeClass("active");
+        qrCodeDiv.removeClass("active");
+        shareDiv.removeClass("active");
+    },function(){});
+
     $(sideBarBtns[2]).hover(function(){///分享
         shareDiv.addClass("active");
         searchDiv.removeClass("active");
         qrCodeDiv.removeClass("active");
+        serviceDiv.removeClass("active");
     },function(){});
     $("div.side-bar>div.share>span").click(function(){
         shareDiv.removeClass("active");
@@ -80,6 +90,7 @@ $(function(){
         qrCodeDiv.addClass("active");
         searchDiv.removeClass("active");
         shareDiv.removeClass("active");
+        serviceDiv.removeClass("active");
     },function(){ qrCodeDiv.removeClass("active"); });
     $(sideBarBtns[4]).click(function(){///返回顶部
         $("html,body").animate({ scrollTop : 0 },500);
