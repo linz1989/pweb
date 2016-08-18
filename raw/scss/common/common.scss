@@ -41,26 +41,25 @@ div.top-wrap{
     &>li{
       float: left;
       position: relative;
-      padding-left:32px;
+      padding-left:40px;
       margin-right:12px;
       cursor: pointer;
       &.china>i{
-        background: url("../../img/common/flag_china.png?base64");
+        background: url("../../img/common/flag_china.png");
       }
       &.english>i{
-        background: url("../../img/common/flag_england.png?base64");
+        background: url("../../img/common/flag_england.png");
       }
       &.russia>i{
-        background: url("../../img/common/flag_russia.png?base64");
+        background: url("../../img/common/flag_russia.png");
       }
       &>i{
         position: absolute;
         display: block;
-        width:20px;
+        width:30px;
         height:20px;
         left:4px;
         top:8px;
-        background-size: 20px 20px !important;
       }
       &:hover{
         color:#2185c5;
