@@ -76,6 +76,9 @@ $(function(){
         qrCodeDiv.removeClass("active");
         shareDiv.removeClass("active");
     },function(){});
+    $("div.side-bar>div.service>span").click(function(){
+        serviceDiv.removeClass("active");
+    });
 
     $(sideBarBtns[2]).hover(function(){///分享
         shareDiv.addClass("active");

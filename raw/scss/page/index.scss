@@ -248,9 +248,19 @@ div.side-bar{
         display: inline-block;
         width:36px;
         height:32px;
-        border:1px solid #eee;
-        border-radius: 4px;
+        //border:1px solid #eee;
+        //border-radius: 4px;
         cursor: pointer;
+        @include imgSize(36px 32px);
+        &.qq{
+          background-image: url("../../../img/home/side-bar/qq.png");
+        }
+        &.skype{
+          background-image: url("../../../img/home/side-bar/skype.jpg");
+        }
+        &.ali{
+          background-image: url("../../../img/home/side-bar/ali.png");
+        }
         &:hover{
           border-color:#ddd;
         }

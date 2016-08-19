@@ -361,16 +361,17 @@ div.content-wrap{
               left:0;
               width:56px;
               height:56px;
-              border-radius: 50%;
-              border:1px dotted #ddd;
+              //border-radius: 50%;
+              //border:1px dotted #ddd;
+              @include imgSize(56px 56px);
               &.qq{
-
+                background-image: url("../../../img/contact/qq.png");
               }
               &.skype{
-
+                background-image: url("../../../img/contact/skype.jpg");
               }
               &.ali{
-
+                background-image: url("../../../img/contact/ali.png");
               }
             }
             &:first-child{
