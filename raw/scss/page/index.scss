@@ -40,6 +40,7 @@ div.product-wrap{
         cursor: pointer;
         font-size:14px;
         color:#f59f3a;
+        margin-right:10px;
         &:hover{
           text-decoration: underline;
         }
@@ -51,18 +52,19 @@ div.product-wrap{
       &>li{
         position: relative;
         width:310px;
-        height:310px;
+        height:275px;
         float: left;
         margin-right:35px;
-        margin-bottom:15px;
-        border:1px solid #e0e0e0;
+        margin-bottom:20px;
+        border:1px dotted #e0e0e0;
         cursor: pointer;
         background-color: #fff;
         overflow: hidden;
+        border-radius: 4px;
         @include boxSizing();
         &>img{
           width:308px;
-          height:308px;
+          height:225px;
           //border:1px dotted #d0d0d0;
         }
         &>div{
@@ -70,38 +72,21 @@ div.product-wrap{
           left:0;
           right:0;
           bottom:0;
-          height:40px;
-          background-color: rgba(0,0,0,0.2);
-          @include transition(all 0.5s);
+          height:50px;
+          //background-color: rgba(0,0,0,0.2);
           &>h3{
-            height:40px;
-            line-height: 40px;
+            height:50px;
+            line-height: 50px;
             text-align: center;
-            color:#ddd;
-          }
-          &>h5{
-            visibility: hidden;
-            color:#ddd;
-            margin:0 8px;
-            font-size:14px;
-            line-height: 28px;
-            text-align: center;
+            color:#f59f3a;
           }
         }
 
         &:hover{
           border-color:#f59f3a;
           @include boxShadow(0 0 30px rgba(0,0,0,0.1));
-          &>div{
-            height:308px;
-            background-color: rgba(0,0,0,0.5);
-            &>h3{
-              margin-top:50px;
-              color:#f59f3a;
-            }
-            &>h5{
-              visibility: visible;
-            }
+          &>div>h3{
+            font-weight: bold;
           }
         }
       }
@@ -111,7 +96,7 @@ div.product-wrap{
 
 div.selling-product{
   border-color:#ff00ff;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 div.help-wrap{
@@ -132,7 +117,7 @@ div.help-wrap{
 
 div.side-bar{
   position: fixed;
-  width:50px;
+  width:60px;
   height:250px;
   right:10px;
   top:50%;
@@ -149,16 +134,18 @@ div.side-bar{
       width:30px;
       height:30px;
       position: relative;
-      padding:10px;
+      padding:10px 15px;
       cursor: pointer;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(33,133,197,0.8);
+      border-radius: 2px;
+      margin-bottom:1px;
       i{
         display: block;
         width:100%;
         height:100%;
       }
       &:hover{
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(33,133,197,0.9);
       }
       &.search{
         i {
@@ -183,6 +170,9 @@ div.side-bar{
       &.back{
         i {
           background: url("../../../img/home/side-bar/back.png");
+        }
+        &.hide{
+          display: none;
         }
       }
     }
@@ -211,13 +201,14 @@ div.side-bar{
   }
   &>div.share,&>div.service{
     position: absolute;
-    left:60px;
+    left:80px;
     height:32px;
     z-index:10;
     border-radius: 4px;
     border:1px solid #ddd;
     background-color: #fff;
-    @include transition(left 0.5s);
+    opacity: 0;
+    @include transition(all 0.5s);
     &>span{
       position: absolute;
       right:4px;
@@ -268,18 +259,21 @@ div.side-bar{
     }
     &.active{
       left:-175px;
+      opacity: 1;
     }
   }
   &>div.search{
     position: absolute;
     top:0;
-    left:60px;//-180px
+    left:80px;//-180px
     width:180px;
     background: #fff;
     z-index:10;
     border-radius: 4px;
+    border:1px solid #ddd;
     padding-bottom:10px;
-    @include transition(left 0.5s);
+    opacity: 0;
+    @include transition(all 0.5s);
     &>h3{
       height:36px;
       line-height: 36px;
@@ -324,6 +318,143 @@ div.side-bar{
     }
     &.active{
       left:-180px;
+      opacity: 1;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////
+@media screen and (max-width:999px) {
+  div.product-wrap{
+    &>div{
+      width:750px;
+      &>ul{
+        width:790px;
+        padding-left:35px;
+        padding-right:35px;
+        &>li{
+          margin-right:60px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:749px) {
+  div.product-wrap{
+    &>div{
+      width:650px;
+      &>ul{
+        width:660px;
+        padding-left:10px;
+        padding-right:10px;
+        &>li{
+          margin-right:10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:649px) {
+  div.slider-wrap{
+    div.swiper-container{
+      height:280px;
+      img{
+        height:280px;
+      }
+    }
+  }
+
+  div.product-wrap{
+    &>div{
+      width:480px;
+      &>ul{
+        width:565px;
+        padding-left:85px;
+        padding-right:85px;
+        &>li{
+          margin-right:85px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:479px) {
+  div.slider-wrap{
+    margin-top:100px;
+    div.swiper-container{
+      height:220px;
+      img{
+        height:220px;
+      }
+    }
+  }
+
+  div.product-wrap{
+    &>div{
+      width:374px;
+      &>ul{
+        width:406px;
+        padding-left:32px;
+        padding-right:32px;
+        &>li{
+          margin-right:32px;
+        }
+      }
+    }
+  }
+}
+
+//////////////360
+@media screen and (max-width:374px) {
+  div.slider-wrap{
+    div.swiper-container{
+      height:210px;
+      img{
+        height:210px;
+      }
+    }
+  }
+
+  div.product-wrap{
+    &>div{
+      width:360px;
+      &>ul{
+        width:390px;
+        padding-left:25px;
+        padding-right:25px;
+        &>li{
+          margin-right:25px;
+        }
+      }
+    }
+  }
+}
+
+//////////////320
+@media screen and (max-width:359px) {
+  div.slider-wrap{
+    div.swiper-container{
+      height:200px;
+      img{
+        height:200px;
+      }
+    }
+  }
+
+  div.product-wrap{
+    &>div{
+      width:320px;
+      &>ul{
+        width:330px;
+        padding-left:5px;
+        padding-right:5px;
+        &>li{
+          margin-right:55px;
+        }
+      }
     }
   }
 }

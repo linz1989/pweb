@@ -135,11 +135,11 @@ div.content-wrap{
       }
       div.item{
         h4{
-          margin-top:10px;
+          margin-top:20px;
           margin-bottom:10px;
           font-size:18px;
           line-height: 36px;
-          font-weight: bold;
+          color:#f59f3a;
           border-bottom:1px solid #ddd;
         }
         p{
@@ -161,6 +161,7 @@ div.content-wrap{
                 color:#fff;
                 border-right:1px solid #ddd;
                 border-bottom:1px solid #ddd;
+                font-size:15px;
                 &:last-child{
                   border-right-width:0;
                 }
@@ -179,6 +180,7 @@ div.content-wrap{
                 text-align: center;
                 border-right:1px solid #eee;
                 line-height: 1.5;
+                font-size:15px;
                 &:last-child{
                   border-right-width:0;
                 }

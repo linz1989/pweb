@@ -24,28 +24,44 @@ $(function(){
             pagination : '.swiper-pagination'
         });
 
-        //////////////////////////////////////////////////////新品推荐
-        var sellProducts = homeData.sellingProducts;
-        for(i=0,htmlStr = "";i<sellProducts.length;i++){
-            htmlStr += "<li pid='"+sellProducts[i]["id"]+"'>" +
-                "<img src='"+sellProducts[i]["img"]+"'/>" +
-                "<div>" +
-                "   <h3>"+sellProducts[i]["name"]+"</h3>" +
-                "   <h5>"+sellProducts[i]["description"]+"</h5>" +
-                "</div>" +
-                "</li>";
-        }
-        $("#sellingProductList").html(htmlStr);
+        //////获取产品数据
+        $.get("../json/product_"+lang+".json",{ "_t" : (+new Date())},function(pdata){
+            pdata = pdata.products;
+            var optionStr = "",htmlStr = "";
+            for(var k=0;k<pdata.length;k++){
+                optionStr += "<option value='"+pdata[k].id+"'>"+pdata[k]["text"]+"</option>";
+                for(i=0;i<pdata[k]["list"].length;i++){
+                    if(pdata[k]["list"][i]["isHot"]){
+                        htmlStr += "<li pid='"+pdata[k]["list"][i]["id"]+"'>" +
+                            "<img src='"+pdata[k]["list"][i]["img"]+"'/>" +
+                            "<div>" +
+                            "   <h3>"+pdata[k]["list"][i]["title"]+"</h3>" +
+                            "</div>" +
+                            "</li>";
+                    }
+                }
+            }
+            $("#sellingProductList").html(htmlStr);
+            $("#product-type").html($("#product-type").html()+optionStr);
+
+            $("#loading").removeClass("active");
+        },"json");
     },"json");
 
-    var sideBarBtns = $("div.side-bar>ul>li"),
+    $("#sellingProductList").on("click","li",function(){
+        location.href = "detail.html?pid="+this.getAttribute("pid");
+    })
+
+    var sideBarBtns = $("div.side-bar>ul>li>i"),
         qrCodeDiv = $("div.side-bar>div.qrcode"),
         shareDiv = $("div.side-bar>div.share"),
         serviceDiv = $("div.side-bar>div.service"),
         searchDiv = $("div.side-bar>div.search"),
         productType = $("#product-type"),
         //productName = $("#product-name"),
-        productKeyWords = $("#product-keywords");
+        productKeyWords = $("#product-keywords"),
+        $win = $(window),
+        sideBar = $("div.side-bar");
 
     $(sideBarBtns[0]).hover(function(){///搜
         searchDiv.addClass("active");
@@ -59,16 +75,6 @@ $(function(){
     $("div.side-bar>div.search>a").click(function(){///点击搜索
         location.href="search.html?type="+productType.val()+"&key="+encodeURIComponent(productKeyWords.val());
     });
-
-    //////获取产品数据
-    $.get("../json/product_"+lang+".json",{ "_t" : (+new Date())},function(pdata){
-        pdata = pdata.products;
-        var optionStr = "";
-        for(var k=0;k<pdata.length;k++){
-            optionStr += "<option value='"+pdata[k].id+"'>"+pdata[k]["text"]+"</option>";
-        }
-        $("#product-type").html($("#product-type").html()+optionStr);
-    },"json");
 
     $(sideBarBtns[1]).hover(function(){///在线客服
         serviceDiv.addClass("active");
@@ -98,4 +104,13 @@ $(function(){
     $(sideBarBtns[4]).click(function(){///返回顶部
         $("html,body").animate({ scrollTop : 0 },500);
     });
+
+    function doHandleResize(){
+        if($win.width()>1490){
+            var rightPos = ($win.width()-1440)/2-30;
+            sideBar.css("right",rightPos+"px");
+        }
+    }
+    doHandleResize();
+    $win.resize(function(){ doHandleResize() });
 })

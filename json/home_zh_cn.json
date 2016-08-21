@@ -22,42 +22,5 @@
   "banner" : [
     "../img/home/banner/1.jpg",
     "../img/home/banner/2.jpg"
-  ],
-  "sellingProducts" : [
-    {
-      "id" : "1",
-      "img" : "../img/home/sell-product/1.jpg",
-      "name" : "产品名字",
-      "description" : "描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息"
-    },
-    {
-      "id" : "2",
-      "img" : "../img/home/sell-product/2.jpg",
-      "name" : "产品名字",
-      "description" : "描述信息2"
-    },
-    {
-      "id" : "3",
-      "img" : "../img/home/sell-product/3.jpg",
-      "name" : "名字",
-      "description" : "描述信息"
-    },
-    {
-      "id" : "4",
-      "img" : "../img/home/sell-product/4.jpg",
-      "name" : "名字",
-      "description" : "描述信息"
-    },
-    {
-      "id" : "5",
-      "img" : "../img/home/sell-product/5.jpg",
-      "name" : "名字",
-      "description" : "描述信息"
-    },
-    {
-      "id" : "6",
-      "img" : "../img/home/sell-product/6.jpg",
-      "name" : "名字",
-      "description" : "描述信息"
-    }]
+  ]
 }

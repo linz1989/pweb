@@ -3,92 +3,92 @@
       "id" : "1",
       "text" : "大背光",
       "list" : [
-        { "id" : "11" , "title" : "2525系列" , "img" : "../img/product/1/1.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "12" , "title" : "3030系列" , "img" : "../img/product/1/2.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "13" , "title" : "2835系列" , "img" : "../img/product/1/3.jpg", "description" : "1.OD25mm方案成熟稳定，低混光距离OD15项目方案<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "14" , "title" : "7020系列" , "img" : "../img/product/1/4.jpg", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "15" , "title" : "4014系列" , "img" : "../img/product/1/5.jpg", "description" : "1.高信赖性，设有热点分离式产品<br/>L/B方案成熟稳定，性价比优越，产品设有TVS保护" }
+        { "id" : "11" , "title" : "2525系列" , "isHot" : true, "img" : "../img/product/1/1.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+        { "id" : "12" , "title" : "3030系列" , "isHot" : false, "img" : "../img/product/1/2.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+        { "id" : "13" , "title" : "2835系列" , "isHot" : false, "img" : "../img/product/1/3.jpg", "description" : "1.OD25mm方案成熟稳定，低混光距离OD15项目方案<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+        { "id" : "14" , "title" : "7020系列" , "isHot" : false, "img" : "../img/product/1/4.jpg", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+        { "id" : "15" , "title" : "4014系列" , "isHot" : true, "img" : "../img/product/1/5.jpg", "description" : "1.高信赖性，设有热点分离式产品<br/>L/B方案成熟稳定，性价比优越，产品设有TVS保护" }
       ]
     },
     {
       "id" : "2",
       "text" : "汽车电子",
       "list" : [
-        { "id" : "21" , "title" : "PLCC4 60°LENS" , "img" : "../img/product/2/1.jpg", "description" : "产品型号：PLCC4 60° LENS<br/>发光角度：60°" },
-        { "id" : "22" , "title" : "闪光灯2016" , "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.小尺寸2.04mm*1.64mm*0.75mm<br/>2.高亮度，高光效，高可靠性<br/>3.低热阻：5-8℃/W" },
-        { "id" : "23" , "title" : "汽车产品PLCC6(3535)" , "img" : "../img/product/2/3.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.可选镀金防硫化工艺" },
-        { "id" : "24" , "title" : "汽车产品PLCC4(3528)" , "img" : "../img/product/2/4.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.专用汽车支架设计" },
-        { "id" : "25" , "title" : "汽车产品PLCC2(3528)" , "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.专用汽车支架设计" }
+        { "id" : "21" , "title" : "PLCC4 60°LENS" , "isHot" : false, "img" : "../img/product/2/1.jpg", "description" : "产品型号：PLCC4 60° LENS<br/>发光角度：60°" },
+        { "id" : "22" , "title" : "闪光灯2016" , "isHot" : true, "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.小尺寸2.04mm*1.64mm*0.75mm<br/>2.高亮度，高光效，高可靠性<br/>3.低热阻：5-8℃/W" },
+        { "id" : "23" , "title" : "汽车产品PLCC6(3535)" , "isHot" : false, "img" : "../img/product/2/3.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.可选镀金防硫化工艺" },
+        { "id" : "24" , "title" : "汽车产品PLCC4(3528)" , "isHot" : false, "img" : "../img/product/2/4.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.专用汽车支架设计" },
+        { "id" : "25" , "title" : "汽车产品PLCC2(3528)" , "isHot" : false, "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.专用汽车支架设计" }
       ]
     },
     {
       "id" : "3",
       "text" : "红外",
       "list" : [
-        { "id" : "31" , "title" : "红外RE35系列" , "img" : "../img/product/3/1.jpg", "description" : "产品型号：红外EMC3535<br/>优异的产品性能：高亮度、低光衰、低热阻<br/>出色品控能力：瑞丰近十五年封装经验，有出色的品控能力<br/>产品规格齐全"}
+        { "id" : "31" , "title" : "红外RE35系列" , "isHot" : true, "img" : "../img/product/3/1.jpg", "description" : "产品型号：红外EMC3535<br/>优异的产品性能：高亮度、低光衰、低热阻<br/>出色品控能力：瑞丰近十五年封装经验，有出色的品控能力<br/>产品规格齐全"}
       ]
     },
     {
       "id" : "4",
       "text" : "紫外",
       "list" : [
-        { "id" : "41" , "title" : "UV 模组系列" , "img" : "../img/product/4/1.png", "description" : ""},
-        { "id" : "42" , "title" : "UV COB 系列" , "img" : "../img/product/4/2.png", "description" : ""},
-        { "id" : "43" , "title" : "UV3535 普亮系列" , "img" : "../img/product/4/3.png", "description" : ""},
-        { "id" : "44" , "title" : "UV 2835系列" , "img" : "../img/product/4/4.png", "description" : ""},
-        { "id" : "45" , "title" : "UV3535 高亮度120°系列" , "img" : "../img/product/4/5.png", "description" : ""},
-        { "id" : "46" , "title" : "UVPW16LN" , "img" : "../img/product/4/6.jpg", "description" : "产品规格：14.2mm × Φ8.0mm × 5.2mm<br/>发光角度：120°<br/>焊接方式：回流焊焊接"},
-        { "id" : "47" , "title" : "UV 6868" , "img" : "../img/product/4/7.png", "description" : "透镜角度：90°，120°/lens angle：90°，120°"}
+        { "id" : "41" , "title" : "UV 模组系列" , "isHot" : true, "img" : "../img/product/4/1.png", "description" : ""},
+        { "id" : "42" , "title" : "UV COB 系列" , "isHot" : false, "img" : "../img/product/4/2.png", "description" : ""},
+        { "id" : "43" , "title" : "UV3535 普亮系列" , "isHot" : false, "img" : "../img/product/4/3.png", "description" : ""},
+        { "id" : "44" , "title" : "UV 2835系列" , "isHot" : false, "img" : "../img/product/4/4.png", "description" : ""},
+        { "id" : "45" , "title" : "UV3535 高亮度120°系列" , "isHot" : false, "img" : "../img/product/4/5.png", "description" : ""},
+        { "id" : "46" , "title" : "UVPW16LN" , "isHot" : false, "img" : "../img/product/4/6.jpg", "description" : "产品规格：14.2mm × Φ8.0mm × 5.2mm<br/>发光角度：120°<br/>焊接方式：回流焊焊接"},
+        { "id" : "47" , "title" : "UV 6868" , "isHot" : true, "img" : "../img/product/4/7.png", "description" : "透镜角度：90°，120°/lens angle：90°，120°"}
       ]
     },
     {
       "id" : "5",
       "text" : "全彩",
       "list" : [
-        { "id" : "51" , "title" : "全彩1010户内系列" , "img" : "../img/product/5/1.png", "description" : "表面不反光设计<br/>尺寸(长*宽*高mm): 1.0x1.0x0.65"},
-        { "id" : "52" , "title" : "全彩2321户外系列" , "img" : "../img/product/5/2.jpg", "description" : "包括全黑和外观黑封装类型<br/>尺寸(长*宽*高mm): 2.3x2.1x1.8<br/>SMD管脚高度：0.30mm(最大值)"},
-        { "id" : "53" , "title" : "全彩2727户外系列" , "img" : "../img/product/5/3.png", "description" : "包括全黑和外观黑封装类型<br/>尺寸(长*宽*高mm): 2.8x2.8x2.5<br/>SMD管脚高度：0.65mm(最大值)"},
-        { "id" : "54" , "title" : "全彩3535户外系列" , "img" : "../img/product/5/4.png", "description" : "外观黑封装类型<br/>尺寸(长*宽*高mm): 3.5x3.5x2.8<br/>SMD管脚高度：1.0mm(最大值)"}
+        { "id" : "51" , "title" : "全彩1010户内系列" , "isHot" : true, "img" : "../img/product/5/1.png", "description" : "表面不反光设计<br/>尺寸(长*宽*高mm): 1.0x1.0x0.65"},
+        { "id" : "52" , "title" : "全彩2321户外系列" , "isHot" : false, "img" : "../img/product/5/2.jpg", "description" : "包括全黑和外观黑封装类型<br/>尺寸(长*宽*高mm): 2.3x2.1x1.8<br/>SMD管脚高度：0.30mm(最大值)"},
+        { "id" : "53" , "title" : "全彩2727户外系列" , "isHot" : false, "img" : "../img/product/5/3.png", "description" : "包括全黑和外观黑封装类型<br/>尺寸(长*宽*高mm): 2.8x2.8x2.5<br/>SMD管脚高度：0.65mm(最大值)"},
+        { "id" : "54" , "title" : "全彩3535户外系列" , "isHot" : true, "img" : "../img/product/5/4.png", "description" : "外观黑封装类型<br/>尺寸(长*宽*高mm): 3.5x3.5x2.8<br/>SMD管脚高度：1.0mm(最大值)"}
       ]
     },
     {
       "id" : "6",
       "text" : "植物灯",
       "list" : [
-        { "id" : "61" , "title" : "植物灯2835" , "img" : "../img/product/6/1.png", "description" : "产品型号：植物灯2835<br/>发光角度：120°"},
-        { "id" : "62" , "title" : "植物灯3535" , "img" : "../img/product/6/2.jpg", "description" : "1.高纯度陶瓷支架，进口抗UV硅胶，品牌芯片<br/>2.自动化封装,Molding制程，品质优良，一致性好<br/>3.严格信赖性测试，ESD防护，高可靠性<br/>4.弹性，贴心配合，可出灯条"}
+        { "id" : "61" , "title" : "植物灯2835" , "isHot" : false, "img" : "../img/product/6/1.png", "description" : "产品型号：植物灯2835<br/>发光角度：120°"},
+        { "id" : "62" , "title" : "植物灯3535" , "isHot" : true, "img" : "../img/product/6/2.jpg", "description" : "1.高纯度陶瓷支架，进口抗UV硅胶，品牌芯片<br/>2.自动化封装,Molding制程，品质优良，一致性好<br/>3.严格信赖性测试，ESD防护，高可靠性<br/>4.弹性，贴心配合，可出灯条"}
       ]
     },
     {
       "id" : "7",
       "text" : "CHIP LED",
       "list" : [
-        { "id" : "71" , "title" : "1206" , "img" : "../img/product/7/1.jpg", "description" : "产品特点：<br/>1.一致性好<br/>2.可靠性高<br/>3.光衰小"},
-        { "id" : "72" , "title" : "0805" , "img" : "../img/product/7/2.jpg", "description" : "产品特点：<br/>1.一致性好<br/>2.可靠性高<br/>3.光衰小"}
+        { "id" : "71" , "title" : "1206" , "isHot" : false, "img" : "../img/product/7/1.jpg", "description" : "产品特点：<br/>1.一致性好<br/>2.可靠性高<br/>3.光衰小"},
+        { "id" : "72" , "title" : "0805" , "isHot" : false, "img" : "../img/product/7/2.jpg", "description" : "产品特点：<br/>1.一致性好<br/>2.可靠性高<br/>3.光衰小"}
       ]
     },
     {
       "id" : "8",
       "text" : "COB及灯丝",
       "list" : [
-        { "id" : "81" , "title" : "COB 1916系列" , "img" : "../img/product/8/1.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM16T0(9/11)-S<br/>产品规格：16.0mm × 19.0mm × 1.0mm"},
-        { "id" : "82" , "title" : "COB 1512 B系列" , "img" : "../img/product/8/2.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM15T0(4/7)-S<br/>产品规格：15.0mm × 12.0mm × 1.0mm"},
-        { "id" : "83" , "title" : "COB 1919系列" , "img" : "../img/product/8/3.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM19T(13/17)-S<br/>产品规格：19.0mm × 19.0mm × 1.0mm"},
-        { "id" : "84" , "title" : "灯丝系列" , "img" : "../img/product/8/4.jpg", "description" : "1.360°全角度立体发光，高密度、集成式、高压、低电流驱动LED灯丝<br/>2.超高光效，显色90以上光效可实现130Lm/W（2700K）以上<br/>3.采用瑞丰光电成熟的molding技术，彻底解决漏蓝问题"},
-        { "id" : "85" , "title" : "COB 1512 A系列" , "img" : "../img/product/8/5.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM15T0(4/7)-S<br/>产品规格：15.0mm × 12.0mm × 1.0mm"}
+        { "id" : "81" , "title" : "COB 1916系列" , "isHot" : true, "img" : "../img/product/8/1.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM16T0(9/11)-S<br/>产品规格：16.0mm × 19.0mm × 1.0mm"},
+        { "id" : "82" , "title" : "COB 1512 B系列" , "isHot" : false, "img" : "../img/product/8/2.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM15T0(4/7)-S<br/>产品规格：15.0mm × 12.0mm × 1.0mm"},
+        { "id" : "83" , "title" : "COB 1919系列" , "isHot" : false, "img" : "../img/product/8/3.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM19T(13/17)-S<br/>产品规格：19.0mm × 19.0mm × 1.0mm"},
+        { "id" : "84" , "title" : "灯丝系列" , "isHot" : false, "img" : "../img/product/8/4.jpg", "description" : "1.360°全角度立体发光，高密度、集成式、高压、低电流驱动LED灯丝<br/>2.超高光效，显色90以上光效可实现130Lm/W（2700K）以上<br/>3.采用瑞丰光电成熟的molding技术，彻底解决漏蓝问题"},
+        { "id" : "85" , "title" : "COB 1512 A系列" , "isHot" : false, "img" : "../img/product/8/5.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM15T0(4/7)-S<br/>产品规格：15.0mm × 12.0mm × 1.0mm"}
       ]
     },
     {
       "id" : "9",
       "text" : "照明系列",
       "list" : [
-        { "id" : "91" , "title" : "4014" , "img" : "../img/product/9/1.jpg", "description" : "产品特点：<br/>1.PCT支架，散热佳，可靠性好<br/>2.产品独有的结构,可以解决光斑暗区<br/>3.可以减少灯珠颗数,优化方案TOTAL成本" },
-        { "id" : "92" , "title" : "5050系列" , "img" : "../img/product/9/2.jpg", "description" : "1.符合灯条个性化需求，起到装饰作用<br/>2.RA:90满足特殊场所需求，如博物馆，生鲜照明<br/>3.低色温应用洗墙灯，夜间景观亮化照明，突显建筑气势<br/>4.5050单色光填补了市场空白" },
-        { "id" : "93" , "title" : "2835系列" , "img" : "../img/product/9/3.jpg", "description" : "1.垂直散热结构，散热面积大，散热性能优良<br/>2.发光面大，出光效果好，性价比高，市场通用性强<br/>3.LM80报告，产品符合欧洲ERP色容差要求" },
-        { "id" : "94" , "title" : "XC35系列" , "img" : "../img/product/9/4.jpg", "description" : "1.BRIDGELUX战略合作伙伴<br/>2.6000小时完整第三方实验室LM-80报告<br/>3.点亮厦深高铁，梅观高速，宝安大道，盐龙大道，市民中心，与您实现0距离接触" },
-        { "id" : "95" , "title" : "EMC2525" , "img" : "../img/product/9/5.jpg", "description" : "产品型号：EMC2525<br/>发光角度：120°" },
-        { "id" : "96" , "title" : "EMC3030" , "img" : "../img/product/9/6.jpg", "description" : "产品型号：EMC3030<br/>发光角度：120°" },
-        { "id" : "97" , "title" : "装饰照明3528/3020/2216系列" , "img" : "../img/product/9/7.jpg", "description" : "1.符合灯条个性化需求，起到装饰作用<br/>2.RA:90满足特殊场所需求，如博物馆，生鲜照明<br/>3.低色温应用洗墙灯，夜间景观亮化照明，突显建筑气势<br/>4.2216在灯条上的应用，是灯条市场新的创新，产品更新颖" }
+        { "id" : "91" , "title" : "4014" , "isHot" : false, "img" : "../img/product/9/1.jpg", "description" : "产品特点：<br/>1.PCT支架，散热佳，可靠性好<br/>2.产品独有的结构,可以解决光斑暗区<br/>3.可以减少灯珠颗数,优化方案TOTAL成本" },
+        { "id" : "92" , "title" : "5050系列" , "isHot" : false, "img" : "../img/product/9/2.jpg", "description" : "1.符合灯条个性化需求，起到装饰作用<br/>2.RA:90满足特殊场所需求，如博物馆，生鲜照明<br/>3.低色温应用洗墙灯，夜间景观亮化照明，突显建筑气势<br/>4.5050单色光填补了市场空白" },
+        { "id" : "93" , "title" : "2835系列" , "isHot" : false, "img" : "../img/product/9/3.jpg", "description" : "1.垂直散热结构，散热面积大，散热性能优良<br/>2.发光面大，出光效果好，性价比高，市场通用性强<br/>3.LM80报告，产品符合欧洲ERP色容差要求" },
+        { "id" : "94" , "title" : "XC35系列" , "isHot" : false, "img" : "../img/product/9/4.jpg", "description" : "1.BRIDGELUX战略合作伙伴<br/>2.6000小时完整第三方实验室LM-80报告<br/>3.点亮厦深高铁，梅观高速，宝安大道，盐龙大道，市民中心，与您实现0距离接触" },
+        { "id" : "95" , "title" : "EMC2525" , "isHot" : true, "img" : "../img/product/9/5.jpg", "description" : "产品型号：EMC2525<br/>发光角度：120°" },
+        { "id" : "96" , "title" : "EMC3030" , "isHot" : false, "img" : "../img/product/9/6.jpg", "description" : "产品型号：EMC3030<br/>发光角度：120°" },
+        { "id" : "97" , "title" : "装饰照明3528/3020/2216系列" , "isHot" : false, "img" : "../img/product/9/7.jpg", "description" : "1.符合灯条个性化需求，起到装饰作用<br/>2.RA:90满足特殊场所需求，如博物馆，生鲜照明<br/>3.低色温应用洗墙灯，夜间景观亮化照明，突显建筑气势<br/>4.2216在灯条上的应用，是灯条市场新的创新，产品更新颖" }
       ]
     }
   ]

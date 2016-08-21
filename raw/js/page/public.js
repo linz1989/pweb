@@ -89,7 +89,9 @@ $(function () {
     ///////////////////////////////////////////////////////////点击菜单弹出
     var menuListArr = $("div.menu-wrap>div>ul>li");
     menuListArr[supportTouch ? "click" : "hover"](function(event){ doHandlerMenu(this); event.stopPropagation(); });
-
+    if(supportTouch){
+        $("div.menu-wrap>div>ul>li>a.touch").removeAttr("href");
+    }
     function doHandlerMenu(menu){
         if(menu.className != "active"){
             menuListArr.removeClass("active");
@@ -99,7 +101,8 @@ $(function () {
     }
 
     ////////////////////////////////////////////////////////////滚动条的监听
-    var menu = $("body>div.menu-wrap");
+    var menu = $("body>div.menu-wrap"),
+        backBtn = $("div.side-bar>ul>li.back");
 
     $win.scroll(function(){
         var scrollTop = $win.scrollTop();
@@ -113,9 +116,18 @@ $(function () {
                 menu.removeClass("fixed");
             }
         }
+
+        if(backBtn[0]){
+            if(scrollTop>112){
+                backBtn.removeClass("hide");
+            }
+            else{
+                backBtn.addClass("hide");
+            }
+        }
     });
 
-    if($win.scrollTop()>112){
+    if($win.scrollTop()>112 && !supportTouch ){
         menu.addClass("fixed");
     }
 });

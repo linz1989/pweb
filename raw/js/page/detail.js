@@ -32,7 +32,7 @@ $(function(){
             }
         }
         if(!productObj) location.href = "error.html";
-        path.html("<a href='product.html#"+typeId+"'>"+typeName+"</a>");
+        path.html("<a href='product.html#"+typeId+"'>"+typeName+"</a> >> "+productObj.title);
         $("#leftMenu").html(menuHtmlStr);
         $("#leftMenu>li:eq("+navStrObj[typeId]+")").addClass("curr");
 
