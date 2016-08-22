@@ -121,6 +121,7 @@ div.content-wrap{
           border:1px dotted #ddd;
           border-radius: 4px;
           cursor: pointer;
+          overflow: hidden;
           &:hover{
             border-color:#f59f3a;
             &>img{
@@ -156,7 +157,11 @@ div.content-wrap{
 }
 
 @media screen and (max-width:999px) {
-
+  div.content-wrap>div{
+    width:98%;
+    padding-left:0;
+    padding-right:0;
+  }
 }
 
 @media screen and (max-width:749px) {
@@ -164,21 +169,57 @@ div.content-wrap{
 }
 
 @media screen and (max-width:649px) {
-
+  div.content-wrap>div{
+    &>div.content{
+      &>div{
+        padding:4px;
+        div.item{
+          margin-left:4px;
+          margin-right:4px;
+          padding-left:225px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width:479px) {
-
+  div.content-wrap{
+    margin-top:100px;
+    &>div{
+      &>div.path{
+        font-size:14px;
+      }
+      &>div.content{
+        &>div{
+          div.item{
+            padding-left:15px;
+            padding-top:165px;
+          }
+        }
+      }
+    }
+  }
 }
 
 //////////////360
 @media screen and (max-width:374px) {
-
 }
 
 //////////////320
 @media screen and (max-width:359px) {
-
+  div.content-wrap{
+    &>div{
+      &>div.content{
+        &>div{
+          div.item{
+            padding-left:15px;
+            height:220px;
+          }
+        }
+      }
+    }
+  }
 }
 
 

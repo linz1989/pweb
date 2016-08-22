@@ -36,7 +36,13 @@ div.content-wrap{
 }
 
 @media screen and (max-width:999px) {
-
+  div.content-wrap>div{
+    width:98%;
+    @include boxSizing();
+    img{
+      max-width: 99%;
+    }
+  }
 }
 
 @media screen and (max-width:749px) {
@@ -44,11 +50,19 @@ div.content-wrap{
 }
 
 @media screen and (max-width:649px) {
-
+  div.content-wrap>div{
+    h3{
+      height:38px;
+      line-height: 38px;
+      font-size:22px;
+    }
+  }
 }
 
 @media screen and (max-width:479px) {
-
+  div.content-wrap{
+    margin-top:100px;
+  }
 }
 
 //////////////360

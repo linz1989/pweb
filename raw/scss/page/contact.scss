@@ -403,7 +403,17 @@ div#contact-modal{
 }
 
 @media screen and (max-width:999px) {
-
+  div.content-wrap>div {
+    width: 98%;
+    @include boxSizing();
+    ul>li{
+      float: none;
+      margin:10px auto 0 auto;
+      &:last-child{
+        margin-right:auto;
+      }
+    }
+  }
 }
 
 @media screen and (max-width:749px) {
@@ -411,11 +421,19 @@ div#contact-modal{
 }
 
 @media screen and (max-width:649px) {
-
+  div.content-wrap>div{
+    h3{
+      height:38px;
+      line-height: 38px;
+      font-size:22px;
+    }
+  }
 }
 
 @media screen and (max-width:479px) {
-
+  div.content-wrap{
+    margin-top:100px;
+  }
 }
 
 //////////////360
@@ -425,7 +443,17 @@ div#contact-modal{
 
 //////////////320
 @media screen and (max-width:359px) {
-
+  div.content-wrap>div{
+    &>ul{
+      padding-left:0;
+      padding-right:0;
+      margin-left:-5px;
+      &>li{
+        width:300px;
+        @include boxSizing();
+      }
+    }
+  }
 }
 
 

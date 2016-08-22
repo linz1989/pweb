@@ -120,7 +120,7 @@ div.side-bar{
   width:60px;
   height:250px;
   right:10px;
-  top:50%;
+  top:65%;
   margin-top:-125px;
   z-index:100;
   &>ul{
@@ -419,8 +419,13 @@ div.side-bar{
   }
 
   div.product-wrap{
+    padding-left:0;
+    padding-right:0;
     &>div{
       width:360px;
+      &>div{
+        padding-left:10px;
+      }
       &>ul{
         width:390px;
         padding-left:25px;

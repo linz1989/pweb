@@ -105,15 +105,17 @@ $(function () {
         backBtn = $("div.side-bar>ul>li.back");
 
     $win.scroll(function(){
-        var scrollTop = $win.scrollTop();
-        if(scrollTop>112 && $win.width()>=1000){
-            if(!menu.hasClass("fixed")){
-                menu.addClass("fixed");
+        if(!supportTouch){
+            var scrollTop = $win.scrollTop();
+            if(scrollTop>112 && $win.width()>=1000){
+                if(!menu.hasClass("fixed")){
+                    menu.addClass("fixed");
+                }
             }
-        }
-        else{
-            if(menu.hasClass("fixed")){
-                menu.removeClass("fixed");
+            else{
+                if(menu.hasClass("fixed")){
+                    menu.removeClass("fixed");
+                }
             }
         }
 

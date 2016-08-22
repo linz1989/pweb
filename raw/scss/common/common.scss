@@ -201,7 +201,6 @@ div.foot-wrap{
     width:1000px;
     margin:0 auto;
     &>h5{
-      height:32px;
       line-height: 32px;
       text-align: center;
       font-size: 14px;
@@ -332,6 +331,12 @@ div#loading{
           }
         }
       }
+    }
+  }
+
+  div.top-wrap{
+    &>ul>li{
+      font-size:14px;
     }
   }
 }
