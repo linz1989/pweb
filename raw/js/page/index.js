@@ -106,8 +106,8 @@ $(function(){
     });
 
     function doHandleResize(){
-        if($win.width()>1490){
-            var rightPos = ($win.width()-1440)/2-30;
+        if($win.width()>1600){
+            var rightPos = ($win.width()-1440)/2-60;
             sideBar.css("right",rightPos+"px");
         }
     }

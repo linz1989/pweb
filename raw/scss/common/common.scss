@@ -297,12 +297,12 @@ div#loading{
 @media screen and (max-width:649px) {
   div.menu-wrap{
     &>div{
-      width:480px;
+      width:100%;
       &>div{
         display: none;
       }
       &>ul{
-        width:480px;
+        width:100%;
         &>li{
           width:19.5%;
           &.active{
@@ -318,10 +318,8 @@ div#loading{
   div.menu-wrap{
     height:100px;
     &>div{
-      width:375px;
       height:100px;
       &>ul{
-        width:375px;
         &>li{
           width:33%;
           height:50px;
@@ -340,26 +338,12 @@ div#loading{
 
 //////////////360
 @media screen and (max-width:374px) {
-  div.menu-wrap{
-    &>div{
-      width:360px;
-      &>ul{
-        width:360px;
-      }
-    }
-  }
+
 }
 
 //////////////320
 @media screen and (max-width:359px) {
-  div.menu-wrap{
-    &>div{
-      width:320px;
-      &>ul{
-        width:320px;
-      }
-    }
-  }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
