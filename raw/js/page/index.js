@@ -1,7 +1,8 @@
 $(function(){
     var lang = $("body").attr("data-lang"),
         homeData,
-        i = 0;
+        i = 0,
+        supportTouch = "ontouchend" in document;
     
     $.get("../json/home_"+lang+".json",{ "_t" : (+new Date())},function(res){
         homeData = res;
@@ -63,12 +64,34 @@ $(function(){
         $win = $(window),
         sideBar = $("div.side-bar");
 
-    $(sideBarBtns[0]).hover(function(){///搜
+    function doHandlerSearchBar(){
         searchDiv.addClass("active");
         shareDiv.removeClass("active");
         serviceDiv.removeClass("active");
         qrCodeDiv.removeClass("active");
-    },function(){});
+    }
+
+    function doHandlerServiceBar(){
+        serviceDiv.addClass("active");
+        searchDiv.removeClass("active");
+        qrCodeDiv.removeClass("active");
+        shareDiv.removeClass("active");
+    }
+
+    function doHandlerShareBar(){
+        shareDiv.addClass("active");
+        searchDiv.removeClass("active");
+        qrCodeDiv.removeClass("active");
+        serviceDiv.removeClass("active");
+    }
+
+    function doHandlerQrcodeBar(){
+        qrCodeDiv.addClass("active");
+        searchDiv.removeClass("active");
+        shareDiv.removeClass("active");
+        serviceDiv.removeClass("active");
+    }
+
     $("div.side-bar>div.search>h3>span").click(function(){
         searchDiv.removeClass("active");
     });
@@ -76,34 +99,49 @@ $(function(){
         location.href="search.html?type="+productType.val()+"&key="+encodeURIComponent(productKeyWords.val());
     });
 
-    $(sideBarBtns[1]).hover(function(){///在线客服
-        serviceDiv.addClass("active");
-        searchDiv.removeClass("active");
-        qrCodeDiv.removeClass("active");
-        shareDiv.removeClass("active");
-    },function(){});
     $("div.side-bar>div.service>span").click(function(){
         serviceDiv.removeClass("active");
     });
 
-    $(sideBarBtns[2]).hover(function(){///分享
-        shareDiv.addClass("active");
-        searchDiv.removeClass("active");
-        qrCodeDiv.removeClass("active");
-        serviceDiv.removeClass("active");
-    },function(){});
     $("div.side-bar>div.share>span").click(function(){
         shareDiv.removeClass("active");
     });
-    $(sideBarBtns[3]).hover(function(){///二维码
-        qrCodeDiv.addClass("active");
-        searchDiv.removeClass("active");
-        shareDiv.removeClass("active");
-        serviceDiv.removeClass("active");
-    },function(){ qrCodeDiv.removeClass("active"); });
+
     $(sideBarBtns[4]).click(function(){///返回顶部
         $("html,body").animate({ scrollTop : 0 },500);
     });
+
+    if(supportTouch){
+        $(sideBarBtns[0]).click(function(){
+            doHandlerSearchBar();
+        });
+        $(sideBarBtns[1]).click(function(){
+            doHandlerServiceBar();
+        });
+        $(sideBarBtns[2]).click(function(){
+            doHandlerShareBar();
+        });
+        $(sideBarBtns[3]).click(function(){
+            qrCodeDiv.toggleClass("active");
+        });
+    }
+    else{
+        $(sideBarBtns[0]).hover(function(){///搜
+            doHandlerSearchBar();
+        },function(){});
+
+        $(sideBarBtns[1]).hover(function(){///在线客服
+            doHandlerServiceBar();
+        },function(){});
+
+        $(sideBarBtns[2]).hover(function(){///分享
+            doHandlerShareBar();
+        },function(){});
+
+        $(sideBarBtns[3]).hover(function(){///二维码
+            doHandlerQrcodeBar
+        },function(){ qrCodeDiv.removeClass("active"); });
+    }
 
     function doHandleResize(){
         if($win.width()>1600){

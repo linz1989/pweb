@@ -417,7 +417,18 @@ div#contact-modal{
 }
 
 @media screen and (max-width:749px) {
-
+  div#contact-modal{
+    &>div{
+      width:500px;
+      div.form{
+        &>div{
+          &>label{
+            width:120px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width:649px) {
@@ -428,11 +439,41 @@ div#contact-modal{
       font-size:22px;
     }
   }
+
+  div#contact-modal{
+    &>div{
+      width:450px;
+      div.form{
+        &>div{
+          &>label{
+            width:100px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width:479px) {
   div.content-wrap{
     margin-top:100px;
+  }
+
+  div#contact-modal{
+    &>div{
+      width:98%;
+      div.form{
+        &>div{
+          margin-top:1px;
+          margin-bottom:1px;
+          &>label{
+            height:32px;
+            line-height: 32px;
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }
 
