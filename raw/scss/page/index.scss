@@ -56,7 +56,7 @@ div.product-wrap{
         float: left;
         margin-right:35px;
         margin-bottom:20px;
-        border:1px dotted #e0e0e0;
+        border:1px dotted #c0c0c0;
         cursor: pointer;
         background-color: #fff;
         overflow: hidden;
@@ -227,6 +227,7 @@ div.side-bar{
     width:240px;
     padding:8px 10px;
     &.active{
+      opacity: 1;
       left:-260px;
     }
   }

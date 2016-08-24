@@ -139,7 +139,7 @@ $(function(){
         },function(){});
 
         $(sideBarBtns[3]).hover(function(){///二维码
-            doHandlerQrcodeBar
+            doHandlerQrcodeBar();
         },function(){ qrCodeDiv.removeClass("active"); });
     }
 

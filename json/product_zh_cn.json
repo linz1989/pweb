@@ -15,7 +15,7 @@
       "text" : "汽车电子",
       "list" : [
         { "id" : "21" , "title" : "PLCC4 60°LENS" , "isHot" : false, "img" : "../img/product/2/1.jpg", "description" : "产品型号：PLCC4 60° LENS<br/>发光角度：60°" },
-        { "id" : "22" , "title" : "闪光灯2016" , "isHot" : true, "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.小尺寸2.04mm*1.64mm*0.75mm<br/>2.高亮度，高光效，高可靠性<br/>3.低热阻：5-8℃/W" },
+        { "id" : "22" , "title" : "闪光灯2016" , "isHot" : false, "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.小尺寸2.04mm*1.64mm*0.75mm<br/>2.高亮度，高光效，高可靠性<br/>3.低热阻：5-8℃/W" },
         { "id" : "23" , "title" : "汽车产品PLCC6(3535)" , "isHot" : false, "img" : "../img/product/2/3.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.可选镀金防硫化工艺" },
         { "id" : "24" , "title" : "汽车产品PLCC4(3528)" , "isHot" : false, "img" : "../img/product/2/4.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.专用汽车支架设计" },
         { "id" : "25" , "title" : "汽车产品PLCC2(3528)" , "isHot" : false, "img" : "../img/product/2/2.jpg", "description" : "产品特点：<br/>1.符合AEC-Q101标准<br/>2.防潮等级（MSL-2）<br/>3.专用汽车支架设计" }
@@ -32,13 +32,13 @@
       "id" : "4",
       "text" : "紫外",
       "list" : [
-        { "id" : "41" , "title" : "UV 模组系列" , "isHot" : true, "img" : "../img/product/4/1.png", "description" : ""},
+        { "id" : "41" , "title" : "UV 模组系列" , "isHot" : false, "img" : "../img/product/4/1.png", "description" : ""},
         { "id" : "42" , "title" : "UV COB 系列" , "isHot" : false, "img" : "../img/product/4/2.png", "description" : ""},
         { "id" : "43" , "title" : "UV3535 普亮系列" , "isHot" : false, "img" : "../img/product/4/3.png", "description" : ""},
         { "id" : "44" , "title" : "UV 2835系列" , "isHot" : false, "img" : "../img/product/4/4.png", "description" : ""},
         { "id" : "45" , "title" : "UV3535 高亮度120°系列" , "isHot" : false, "img" : "../img/product/4/5.png", "description" : ""},
         { "id" : "46" , "title" : "UVPW16LN" , "isHot" : false, "img" : "../img/product/4/6.jpg", "description" : "产品规格：14.2mm × Φ8.0mm × 5.2mm<br/>发光角度：120°<br/>焊接方式：回流焊焊接"},
-        { "id" : "47" , "title" : "UV 6868" , "isHot" : true, "img" : "../img/product/4/7.png", "description" : "透镜角度：90°，120°/lens angle：90°，120°"}
+        { "id" : "47" , "title" : "UV 6868" , "isHot" : false, "img" : "../img/product/4/7.png", "description" : "透镜角度：90°，120°/lens angle：90°，120°"}
       ]
     },
     {

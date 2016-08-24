@@ -54,7 +54,7 @@ div.content-wrap{
             height : 1px;
             width:0;
             background-color: #f59f3a;
-            @include transition(width 0.4s);
+            //@include transition(width 0.4s);
           }
           &:last-child{
             border-bottom-width:0;
