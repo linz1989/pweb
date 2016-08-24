@@ -4,9 +4,9 @@
       "text" : "大背光",
       "list" : [
         { "id" : "11" , "title" : "2525系列" , "isHot" : true, "img" : "../img/product/1/1.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "12" , "title" : "3030系列" , "isHot" : false, "img" : "../img/product/1/2.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+        { "id" : "12" , "title" : "3030系列" , "isHot" : true, "img" : "../img/product/1/2.jpg", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
         { "id" : "13" , "title" : "2835系列" , "isHot" : false, "img" : "../img/product/1/3.jpg", "description" : "1.OD25mm方案成熟稳定，低混光距离OD15项目方案<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "14" , "title" : "7020系列" , "isHot" : false, "img" : "../img/product/1/4.jpg", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+        { "id" : "14" , "title" : "7020系列" , "isHot" : true, "img" : "../img/product/1/4.jpg", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
         { "id" : "15" , "title" : "4014系列" , "isHot" : true, "img" : "../img/product/1/5.jpg", "description" : "1.高信赖性，设有热点分离式产品<br/>L/B方案成熟稳定，性价比优越，产品设有TVS保护" }
       ]
     },
@@ -45,7 +45,7 @@
       "id" : "5",
       "text" : "全彩",
       "list" : [
-        { "id" : "51" , "title" : "全彩1010户内系列" , "isHot" : true, "img" : "../img/product/5/1.png", "description" : "表面不反光设计<br/>尺寸(长*宽*高mm): 1.0x1.0x0.65"},
+        { "id" : "51" , "title" : "全彩1010户内系列" , "isHot" : false, "img" : "../img/product/5/1.png", "description" : "表面不反光设计<br/>尺寸(长*宽*高mm): 1.0x1.0x0.65"},
         { "id" : "52" , "title" : "全彩2321户外系列" , "isHot" : false, "img" : "../img/product/5/2.jpg", "description" : "包括全黑和外观黑封装类型<br/>尺寸(长*宽*高mm): 2.3x2.1x1.8<br/>SMD管脚高度：0.30mm(最大值)"},
         { "id" : "53" , "title" : "全彩2727户外系列" , "isHot" : false, "img" : "../img/product/5/3.png", "description" : "包括全黑和外观黑封装类型<br/>尺寸(长*宽*高mm): 2.8x2.8x2.5<br/>SMD管脚高度：0.65mm(最大值)"},
         { "id" : "54" , "title" : "全彩3535户外系列" , "isHot" : true, "img" : "../img/product/5/4.png", "description" : "外观黑封装类型<br/>尺寸(长*宽*高mm): 3.5x3.5x2.8<br/>SMD管脚高度：1.0mm(最大值)"}
@@ -71,7 +71,7 @@
       "id" : "8",
       "text" : "COB及灯丝",
       "list" : [
-        { "id" : "81" , "title" : "COB 1916系列" , "isHot" : true, "img" : "../img/product/8/1.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM16T0(9/11)-S<br/>产品规格：16.0mm × 19.0mm × 1.0mm"},
+        { "id" : "81" , "title" : "COB 1916系列" , "isHot" : false, "img" : "../img/product/8/1.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM16T0(9/11)-S<br/>产品规格：16.0mm × 19.0mm × 1.0mm"},
         { "id" : "82" , "title" : "COB 1512 B系列" , "isHot" : false, "img" : "../img/product/8/2.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM15T0(4/7)-S<br/>产品规格：15.0mm × 12.0mm × 1.0mm"},
         { "id" : "83" , "title" : "COB 1919系列" , "isHot" : false, "img" : "../img/product/8/3.jpg", "description" : "产品型号：RF-W(5/4/3/2/1)ZM19T(13/17)-S<br/>产品规格：19.0mm × 19.0mm × 1.0mm"},
         { "id" : "84" , "title" : "灯丝系列" , "isHot" : false, "img" : "../img/product/8/4.jpg", "description" : "1.360°全角度立体发光，高密度、集成式、高压、低电流驱动LED灯丝<br/>2.超高光效，显色90以上光效可实现130Lm/W（2700K）以上<br/>3.采用瑞丰光电成熟的molding技术，彻底解决漏蓝问题"},
