@@ -4,7 +4,19 @@
     <title></title>
     <meta charset="UTF-8"/>
     <script type="text/javascript">
-        location.href = "./zh_cn/index.html"
+        function ls(key,value){
+            if(localStorage){
+                if(value){
+                    if(localStorage.setItem) return localStorage.setItem(key,value);
+                }
+                else if(localStorage.getItem){
+                    return localStorage.getItem(key);
+                }
+            }
+            return false;
+        }
+        var lang = ls("sunshine-visit-lang") || "zh_cn";
+        location.href = "./"+lang+"/index.html"
     </script>
 </head>
 <body></body>

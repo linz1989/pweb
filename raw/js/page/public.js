@@ -63,6 +63,7 @@ $(function () {
     
     //////////////////////////////////////////////////////////menu
     var lang = $("body").attr("data-lang"),i;
+    ls("sunshine-visit-lang",lang);
     $.get("../json/menu_"+lang+".json",{ "_t" : (+new Date())},function(res) {
         var htmlStr = "";
         ////////////////////////////////////////////////////solution menu

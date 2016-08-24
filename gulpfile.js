@@ -9,14 +9,15 @@ var gulp = require('gulp'),
     connect=require('gulp-connect'),
     rev = require('gulp-rev'),//对文件名加MD5后缀
     notify = require('gulp-notify'),//控制台输出信息
-    runSequence = require('gulp-sequence'),//顺序执行task
-    revCollector = require('gulp-rev-collector'),//路径替换
-    urlbase64 = require("css-urlbase64"),
-    cssnano = require("gulp-minify-css"),
+    runSequence = require('run-sequence'),
+    revCollector = require('gulp-rev-collector'),
+    base64 = require('gulp-base64'),
     replace = require('gulp-replace');
 
 ///////////语言配置
 var language_zhCn = require("./json/zh_cn.json");
+
+require('gulp-awaitable-tasks')(gulp);
 
 //////////////////
 var raw_css = 'raw/scss',
@@ -25,14 +26,23 @@ var raw_css = 'raw/scss',
     com_js = 'js';
 
 //处理scss
-gulp.task('sass',function () {
-    return sass(raw_css + '/**/*.scss')
+gulp.task('sass',function* () {
+    yield sass(raw_css + '/**/*.scss')
         .pipe(mincss())
         .pipe(rev()) //添加md5后缀
         .pipe(gulp.dest(com_css))//输出到compressed目录
         .pipe(rev.manifest()) //- 生成一个rev-manifest.json
         .pipe(rename('css-rev-manifest.json')) //重命名
         .pipe(gulp.dest('manifest')); //- 将 rev-manifest.json 保存到 rev 目录内
+
+    ////转换小图标成base64
+    yield gulp.src(com_css+'/**/*.css')
+        .pipe(base64({
+            extensions: ['svg', 'png', /\.jpg#datauri$/i],
+            maxImageSize: 8*1024, // 8K
+            debug: false
+        }))
+        .pipe(gulp.dest(com_css));
 });
 
 //处理js
@@ -61,18 +71,46 @@ gulp.task('watch', function () {
 });
 
 //默认执行
-gulp.task('default',function () {
-    gulp.run('sass');
-    gulp.run('minjs');
-    gulp.run('dist_cn');
-    gulp.run('connect');
-    gulp.run('watch');
+gulp.task('default',function (callback) {
+    runSequence(['minjs', 'sass'],'dist_cn','watch', 'connect',callback);
 });
 
 gulp.task('dist_cn', function() {
-    return gulp.src('raw/html/*.html')
+    return gulp.src(['manifest/*-rev-manifest.json', 'raw/html/*.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+        .pipe(revCollector())                                   //- 执行文件内css名的替换
         .pipe(replace(/\{[^}]*\}/g,function(v1){
             return language_zhCn[v1] || v1;
         }))
         .pipe(gulp.dest('zh_cn'));
+
+    /*return gulp.src('raw/html/!*.html')
+        .pipe(replace(/\{[^}]*\}/g,function(v1){
+            return language_zhCn[v1] || v1;
+        }))
+        .pipe(gulp.dest('zh_cn'));*/
 });
+
+//*********************************************************
+//生成英文版html页面
+/*var language_en = require("./json/en.json");
+gulp.task('dist_en', function() {
+    return gulp.src('raw/html/!*.html')
+        .pipe(replace(/\{[^}]*\}/g,function(v1){
+            return language_en[v1] || v1;
+        }))
+        .pipe(gulp.dest('en'));
+});*/
+//*********************************************************
+
+//*********************************************************
+//生成俄文版html页面
+/*var language_rus = require("./json/rus.json");
+gulp.task('dist_rus', function() {
+    return gulp.src('raw/html/!*.html')
+        .pipe(replace(/\{[^}]*\}/g,function(v1){
+            return language_rus[v1] || v1;
+        }))
+        .pipe(gulp.dest('rus'));
+});*/
+//*********************************************************
+
