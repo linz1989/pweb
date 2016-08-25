@@ -20,7 +20,7 @@ div.product-wrap{
   &>div{
     width:1000px;
     margin:0 auto;
-    overflow-x: hidden;
+    overflow:hidden;
     &>div{ ///title
       border-bottom:1px solid #ddd;
       height:40px;

@@ -106,8 +106,8 @@ $(function () {
         backBtn = $("div.side-bar>ul>li.back");
 
     $win.scroll(function(){
+        var scrollTop = $win.scrollTop();
         if(!supportTouch){
-            var scrollTop = $win.scrollTop();
             if(scrollTop>112 && $win.width()>=1000){
                 if(!menu.hasClass("fixed")){
                     menu.addClass("fixed");
@@ -130,7 +130,8 @@ $(function () {
         }
     });
 
-    if($win.scrollTop()>112 && !supportTouch ){
-        menu.addClass("fixed");
+    if($win.scrollTop()>112 ){
+        if(!supportTouch) menu.addClass("fixed");
+        backBtn.removeClass("hide");
     }
 });

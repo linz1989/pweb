@@ -143,12 +143,12 @@ $(function(){
         },function(){ qrCodeDiv.removeClass("active"); });
     }
 
-    function doHandleResize(){
+   /* function doHandleResize(){
         if($win.width()>1600){
             var rightPos = ($win.width()-1440)/2-60;
             sideBar.css("right",rightPos+"px");
         }
     }
     doHandleResize();
-    $win.resize(function(){ doHandleResize() });
+    $win.resize(function(){ doHandleResize() });*/
 })
