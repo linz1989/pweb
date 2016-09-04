@@ -118,35 +118,31 @@ gulp.task('dist_cn', function() {
             return language_zhCn[v1] || v1;
         }))
         .pipe(gulp.dest('zh_cn'));
-
-    /*return gulp.src('raw/html/!*.html')
-        .pipe(replace(/\{[^}]*\}/g,function(v1){
-            return language_zhCn[v1] || v1;
-        }))
-        .pipe(gulp.dest('zh_cn'));*/
 });
 
 //*********************************************************
 //生成英文版html页面
-/*var language_en = require("./json/en.json");
+var language_en = require("./json/en.json");
 gulp.task('dist_en', function() {
-    return gulp.src('raw/html/!*.html')
+    return gulp.src(['manifest/*-rev-manifest.json', 'raw/html/*.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+        .pipe(revCollector())                                   //- 执行文件内css名的替换
         .pipe(replace(/\{[^}]*\}/g,function(v1){
             return language_en[v1] || v1;
         }))
         .pipe(gulp.dest('en'));
-});*/
+});
 //*********************************************************
 
 //*********************************************************
 //生成俄文版html页面
-/*var language_rus = require("./json/rus.json");
+var language_rus = require("./json/rus.json");
 gulp.task('dist_rus', function() {
-    return gulp.src('raw/html/!*.html')
+    return gulp.src(['manifest/*-rev-manifest.json', 'raw/html/*.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+        .pipe(revCollector())                                   //- 执行文件内css名的替换
         .pipe(replace(/\{[^}]*\}/g,function(v1){
             return language_rus[v1] || v1;
         }))
         .pipe(gulp.dest('rus'));
-});*/
+});
 //*********************************************************
 
