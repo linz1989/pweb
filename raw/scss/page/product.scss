@@ -196,7 +196,7 @@ div.content-wrap{
   div.content-wrap{
     margin-top:100px;
     &>div{
-      &>div.path{
+      div.path{
         font-size:14px;
       }
       &>div.content{
@@ -204,6 +204,15 @@ div.content-wrap{
           div.item{
             padding-left:15px;
             padding-top:165px;
+            padding-bottom:10px;
+            height:auto;
+            &>img{
+              left:50%;
+              margin-left:-100px;
+            }
+            &>h4{
+              text-align: center;
+            }
           }
         }
       }

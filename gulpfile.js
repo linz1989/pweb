@@ -21,9 +21,9 @@ require('gulp-awaitable-tasks')(gulp);
 
 //////////////////
 var raw_css = 'raw/scss',
-    com_css = 'css',
+    com_css = 'compressed/css',
     raw_js = 'raw/js',
-    com_js = 'js';
+    com_js = 'compressed/js';
 
 //处理scss
 gulp.task('sass',function* () {
@@ -46,8 +46,44 @@ gulp.task('sass',function* () {
 });
 
 //处理js
-gulp.task('minjs', function () {
-    return gulp.src(raw_js + '/**/*.js')
+gulp.task('minjs', function* () {
+    
+    ////合并index
+    yield gulp.src([raw_js+"/common/swiper-3.3.1.jquery.min.js",raw_js+"/page/public.js",raw_js+"/page/index.js"])
+        .pipe(concat('index.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    ////合并solution
+    yield gulp.src([raw_js+"/page/public.js",raw_js+"/page/solution.js"])
+        .pipe(concat('solution.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    ////合并product
+    yield gulp.src([raw_js+"/page/public.js",raw_js+"/page/product.js"])
+        .pipe(concat('product.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    ////合并search
+    yield gulp.src([raw_js+"/page/public.js",raw_js+"/page/search.js"])
+        .pipe(concat('search.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    ////合并detail
+    yield gulp.src([raw_js+"/page/public.js",raw_js+"/page/detail.js"])
+        .pipe(concat('detail.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    ////合并contact
+    yield gulp.src([raw_js+"/common/SHA1.js",raw_js+"/page/public.js",raw_js+"/page/contact.js"])
+        .pipe(concat('contact.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    ////合并about
+    yield gulp.src([raw_js+"/page/public.js",raw_js+"/page/about.js"])
+        .pipe(concat('about.js'))
+        .pipe(gulp.dest(raw_js+"/dist/"))
+
+    yield gulp.src(raw_js + '/**/*.js')
         .pipe(uglify())
         .pipe(rev()) //添加md5后缀
         .pipe(gulp.dest(com_js))

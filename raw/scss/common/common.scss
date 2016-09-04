@@ -45,13 +45,13 @@ div.top-wrap{
       margin-right:12px;
       cursor: pointer;
       &.china>i{
-        background: url("../../img/common/flag_china.png");
+        background: url("../../../img/common/flag_china.png");
       }
       &.english>i{
-        background: url("../../img/common/flag_england.png");
+        background: url("../../../img/common/flag_england.png");
       }
       &.russia>i{
-        background: url("../../img/common/flag_russia.png");
+        background: url("../../../img/common/flag_russia.png");
       }
       &>i{
         position: absolute;
@@ -60,6 +60,7 @@ div.top-wrap{
         height:20px;
         left:4px;
         top:8px;
+        border-radius: 4px;
       }
       &:hover{
         color:#2185c5;

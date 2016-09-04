@@ -2,7 +2,7 @@ $(function(){
     var lang = $("body").attr("data-lang"),
         homeData,
         i = 0,
-        supportTouch = "ontouchend" in document;
+        supportTouch = !isPC();
     
     $.get("../json/home_"+lang+".json",{ "_t" : (+new Date())},function(res){
         homeData = res;

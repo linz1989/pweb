@@ -7,6 +7,7 @@ $(function(){
         $rightContentList,
         $win = $(window),
         content = $("div.content-wrap>div"),
+        path = $("div.path>span"),
         loading = $("#loading");
 
     /////获取左侧菜单
@@ -68,6 +69,7 @@ $(function(){
             },"text");
         }
         $rightContentList[navIndex].className = "active";
+        path.html("<a>"+navMenu.innerHTML+"</a>");
     }
 
     function doHandlerScroll(){
