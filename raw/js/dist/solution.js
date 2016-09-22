@@ -161,7 +161,7 @@ $(function(){
         loading = $("#loading");
 
     /////获取左侧菜单
-    $.get("../json/home_"+lang+".json",{ "_t" : (+new Date())},function(res){
+    $.get("../json/menu_"+lang+".json",{ "_t" : (+new Date())},function(res){
         var menus = res.solutionMenu,
             menuHtmlStr = "",
             contentHtmlStr = "",
