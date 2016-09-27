@@ -1,0 +1,203 @@
+@import "../common/mixin.scss";
+@import "../common/common.scss";
+
+//////////////////////////////////////////////////////////////////dataTable样式
+div.dataTable{
+  display: block;
+  border:1px solid #ddd;
+  border-radius: 4px;
+  &>table{
+    width:100%;
+    border:0;
+    thead>tr{
+      background-color: #f9f9f9;
+      &>th{
+        height:38px;
+        font-weight: bold;
+        text-align: center;
+        border-right:1px solid #ddd;
+        border-bottom:1px solid #ddd;
+        &:last-child{
+          border-right-width:0;
+        }
+        &.header{
+          position: relative;
+          height:48px;
+          line-height: 48px;
+          font-size:18px;
+          letter-spacing: 3px;
+          text-align: center;
+          padding-left:20px;
+          &>div{
+            position: absolute;
+            right:0;
+            display: inline-block;
+            font-size:14px;
+            padding-right:10px;
+            letter-spacing: 0;
+            font-weight: normal;
+            &>a{
+              color: #666;
+              cursor: pointer;
+              border: 1px solid #efefef;
+              border-radius: 4px;
+              padding: 5px 10px;
+              margin-right: 5px;
+              background-color: #f9f9f9;
+              font-weight: normal;
+              @include transition(all 0.3s);
+              &:hover,&.active{
+                background-color: #000033;
+                border-color: #000033;
+                color:#fff;
+              }
+            }
+          }
+          &>div.sizeOption{
+            &>select{
+              font-size:14px;
+              padding:2px 0;
+              color:#757575;
+              border-color:#eee;
+              font-weight: normal;
+            }
+          }
+        }
+        &>select{
+          padding:4px;
+          font-weight: bold;
+          border-width:0;
+          background-color: transparent;
+        }
+      }
+    }
+    tbody{
+      background-color: #fff;
+      tr{
+        border-top:1px dotted #eee;
+        &:nth-child(even){
+          background-color: #fdfdfd;
+        }
+      }
+      td{
+        padding:12px 4px;
+        text-align: center;
+        border-right:1px solid #eee;
+        line-height: 1.5;
+        &:last-child{
+          border-right-width:0;
+        }
+        &>a{
+          &:hover{
+            color:#ff6666;
+            text-decoration: underline;
+          }
+        }
+        &>a.btn{
+          color:#666;
+          cursor: pointer;
+          border:1px solid #efefef;
+          border-radius: 4px;
+          padding:6px 10px;
+          margin-right:5px;
+          background-color: #f9f9f9;
+          @include transition(all 0.3s);
+          &:last-child{
+            margin-right: 0;
+          }
+          &:hover{
+            background-color: #000033;
+            border-color:#000033;
+            color:#fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    tbody.noData{
+      tr>td{
+        height:300px;
+      }
+    }
+  }
+}
+
+div.msgBox{
+  position: fixed;
+  left: 0;
+  top: 35%;
+  height: 54px;
+  width: 100%;
+  text-align: center;
+  z-index: 65533;
+  overflow: hidden;
+  span{
+    background: url("../../../img/common/tip.png") no-repeat;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 54px;
+    line-height: 54px;
+  }
+  &>span{
+    position: relative;
+    padding: 0 18px 0 9px;
+    margin: 0 auto;
+    background-position: 0 -161px;
+    background-repeat: repeat-x;
+    &>span.fail,&>span.success{
+      position: absolute;
+      left: -45px;
+      top: 0;
+      width: 45px;
+    }
+    &>span.fail{
+      background-position: -6px -108px;
+    }
+    &>span.success{
+      background-position: -6px 0;
+    }
+    &>span.end{
+      position: absolute;
+      right: -6px;
+      top: 0;
+      width: 6px;
+      background-position: 0 0;
+    }
+  }
+}
+
+div.content-wrap{
+  margin-top:70px;
+  padding:10px 0;
+  background-color: #f0f0f0;
+  &>div{
+    margin-left:10px;
+    margin-right:10px;
+  }
+}
+
+div#contact-modal{
+  div.spec{
+    &>label{
+      float: left;
+    }
+    &>div{
+      float: left;
+      width:258px;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width:1280px){
+
+}
+
+@media screen and (min-width:1366px){
+
+}
+
+@media screen and (min-width:1440px){
+
+}

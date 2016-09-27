@@ -1,0 +1,221 @@
+@import "../common/mixin.scss";
+@import "../common/common.scss";
+
+div.content-wrap{
+  margin-top:70px;
+  padding:10px 0;
+  background-color: #f0f0f0;
+  &>div{
+    position: relative;
+    width:980px;
+    padding:0 10px;
+    margin:0 auto;
+    min-height:450px;
+    &>div.nav{
+      position: absolute;
+      left:0;
+      top:0;
+      width:200px;
+      border-radius:4px;
+      border:1px dotted #ccc;
+      background-color: #fff;
+      //@include transition(all 0.4s);
+      //@include boxShadow(0 1px 1px rgba(0,0,0,0.05));
+      &>div{
+        line-height: 46px;
+        height:46px;
+        font-weight: bold;
+        border-bottom:1px solid #ddd;
+        text-align: center;
+        background-color: #f59f3a;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        color:#fff;
+      }
+      &>ul{
+        margin:8px;
+        padding:0;
+        border-radius: 4px;
+        border:1px dotted #ccc;
+        &>li{
+          height:46px;
+          line-height:46px;
+          border-bottom: 1px solid #e0e0e0;
+          @include transition(all 0.4s);
+          cursor: pointer;
+          text-align: center;
+          position: relative;
+          &:after{
+            position: absolute;
+            left:0;
+            bottom:0;
+            content : "";
+            display: block;
+            height : 1px;
+            width:0;
+            background-color: #f59f3a;
+            @include transition(width 0.4s);
+          }
+          &:last-child{
+            border-bottom-width:0;
+          }
+          &.curr,&:hover{
+            color:#f59f3a;
+            &:after{
+              width:100%;
+            }
+          }
+          &.curr{
+            font-weight: bold;
+          }
+        }
+      }
+      &.fixed{
+        //@include boxShadow(0 0 6px rgba(0, 0, 0, 0.2));
+        position: fixed;
+        top:80px;
+        left:0;
+      }
+    }
+    &>div.path{
+      margin-left:210px;
+      height:50px;
+      line-height: 50px;
+      margin-bottom:10px;
+      border:1px dotted #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      padding-left:20px;
+      a{
+        font-size:16px;
+        &:hover{
+          color:#f59f3a;
+        }
+      }
+    }
+    &>div.content{
+      margin-left:210px;
+      border:1px dotted #ccc;
+      background-color: #fff;
+      border-radius: 4px;
+      min-height: 200px;
+      &>div{
+        display: none;
+        padding:20px 0;
+        &>h3{
+          margin:8px 0;
+          height:42px;
+          line-height: 42px;
+          text-align: center;
+          font-size:25px;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+        &>p{
+          line-height: 36px;
+          font-size:16px;
+          margin:0 12px;
+          text-indent: 32px;
+        }
+        &>img{
+          display: block;
+          margin:5px auto;
+          max-width: 90%;
+        }
+        &.active{
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:999px) {
+  div.content-wrap>div{
+    width:98%;
+    padding-left:0;
+    padding-right:0;
+    &>div.nav{
+      width:180px;
+    }
+    &>div.path,&>div.content{
+      margin-left:190px;
+    }
+  }
+}
+
+@media screen and (max-width:749px) {
+  div.content-wrap>div{
+    &>div.nav{
+      width:160px;
+      font-size:14px;
+      &>div{
+        height:42px;
+        line-height: 42px;
+      }
+      &>ul>li{
+        height:42px;
+        line-height: 42px;
+      }
+    }
+    &>div.content,&>div.path{
+      margin-left:165px;
+    }
+  }
+}
+
+@media screen and (max-width:649px) {
+  div.content-wrap>div{
+    &>div.nav{
+      display: none;
+    }
+    &>div.content,&>div.path{
+      margin-left:0;
+    }
+  }
+}
+
+@media screen and (max-width:479px) {
+  div.content-wrap{
+    margin-top:100px;
+  }
+  div.path{
+    font-size:14px;
+  }
+  div.content>div{
+    h3{
+      font-size:22px;
+      height:38px;
+      line-height: 38px;
+    }
+  }
+}
+
+//////////////360
+@media screen and (max-width:374px) {
+
+}
+
+//////////////320
+@media screen and (max-width:359px) {
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width:1280px){
+  div.content-wrap>div{
+    width:1180px;
+  }
+}
+
+@media screen and (min-width:1366px){
+  div.content-wrap>div{
+    width:1260px;
+  }
+}
+
+@media screen and (min-width:1440px){
+  div.content-wrap>div{
+    width:1320px;
+  }
+}

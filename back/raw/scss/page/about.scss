@@ -1,0 +1,96 @@
+@import "../common/mixin.scss";
+@import "../common/common.scss";
+
+div.content-wrap{
+  margin-top:70px;
+  padding:10px 0;
+  background-color: #f0f0f0;
+  &>div{
+    width:980px;
+    padding:20px 10px;
+    margin:0 auto;
+    border:1px dotted #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    h3{
+      margin:8px 0;
+      height:42px;
+      line-height: 42px;
+      text-align: center;
+      font-size:25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    p{
+      line-height: 36px;
+      font-size:16px;
+      margin:0 12px;
+      text-indent: 32px;
+    }
+    img{
+      display: block;
+      margin:5px auto;
+      max-width: 960px;
+    }
+  }
+}
+
+@media screen and (max-width:999px) {
+  div.content-wrap>div{
+    width:98%;
+    @include boxSizing();
+    img{
+      max-width: 99%;
+    }
+  }
+}
+
+@media screen and (max-width:749px) {
+
+}
+
+@media screen and (max-width:649px) {
+  div.content-wrap>div{
+    h3{
+      height:38px;
+      line-height: 38px;
+      font-size:22px;
+    }
+  }
+}
+
+@media screen and (max-width:479px) {
+  div.content-wrap{
+    margin-top:100px;
+  }
+}
+
+//////////////360
+@media screen and (max-width:374px) {
+
+}
+
+//////////////320
+@media screen and (max-width:359px) {
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width:1280px){
+  div.content-wrap>div{
+    width:1180px;
+  }
+}
+
+@media screen and (min-width:1366px){
+  div.content-wrap>div{
+    width:1260px;
+  }
+}
+
+@media screen and (min-width:1440px){
+  div.content-wrap>div{
+    width:1320px;
+  }
+}
