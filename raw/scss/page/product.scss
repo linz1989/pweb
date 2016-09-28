@@ -21,7 +21,7 @@ div.content-wrap{
       background-color: #fff;
       //@include transition(all 0.4s);
       //@include boxShadow(0 1px 1px rgba(0,0,0,0.05));
-      &>div{
+      &>div.title{
         height:46px;
         line-height: 46px;
         font-weight: bold;
@@ -32,12 +32,12 @@ div.content-wrap{
         border-top-right-radius: 4px;
         color:#fff;
       }
-      &>ul{
+      div.menu-list{
         margin:8px;
         padding:0;
         border-radius: 4px;
         border:1px dotted #ccc;
-        &>li{
+        &>div{
           height:46px;
           line-height:46px;
           border-bottom: 1px solid #e0e0e0;
@@ -68,6 +68,9 @@ div.content-wrap{
           &.curr{
             font-weight: bold;
           }
+        }
+        &.subList{
+          display: none;
         }
       }
       &.fixed{

@@ -2,24 +2,36 @@
   "products" : [{
       "id" : "1",
       "text" : "电源",
-      "list" : [
-        { "id" : "11" , "title" : "59.3x53.1x22.1mm" , "isHot" : true, "img" : "../img/product/1/59.3x53.1x22.1mm.png", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "12" , "title" : "59x27mm" , "isHot" : true, "img" : "../img/product/1/59x27mm.png", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "13" , "title" : "75.6x31x24.2mm" , "isHot" : true, "img" : "../img/product/1/75.6x31x24.2mm.png", "description" : "1.OD25mm方案成熟稳定，低混光距离OD15项目方案<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "14" , "title" : "87.5x36.5x24mm" , "isHot" : true, "img" : "../img/product/1/87.5x36.5x24mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "15" , "title" : "96x71x39mm" , "isHot" : true, "img" : "../img/product/1/96x71x39mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "16" , "title" : "100x40x23mm" , "isHot" : true, "img" : "../img/product/1/100x40x23mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "17" , "title" : "100x40x23mmm" , "isHot" : true, "img" : "../img/product/1/100x40x23mmm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "18" , "title" : "130x46x25mm" , "isHot" : true, "img" : "../img/product/1/130x46x25mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "19" , "title" : "149x40x28mm" , "isHot" : true, "img" : "../img/product/1/149x40x28mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1A" , "title" : "150x45x30mm" , "isHot" : true, "img" : "../img/product/1/150x45x30mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1B" , "title" : "150x46x29mm" , "isHot" : false, "img" : "../img/product/1/150x46x29mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1C" , "title" : "150x46x29mmm" , "isHot" : false, "img" : "../img/product/1/150x46x29mmm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1D" , "title" : "155x44x26mm" , "isHot" : false, "img" : "../img/product/1/155x44x26mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1E" , "title" : "155x54x35.5mm" , "isHot" : false, "img" : "../img/product/1/155x54x35.5mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1F" , "title" : "180x52x32mm" , "isHot" : false, "img" : "../img/product/1/180x52x32mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1H" , "title" : "210x85x35mm" , "isHot" : false, "img" : "../img/product/1/210x85x35mm.jpg", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
-        { "id" : "1G" , "title" : "213x43x32mm" , "isHot" : false, "img" : "../img/product/1/213x43x32mm.jpg", "description" : "1.高信赖性，设有热点分离式产品<br/>L/B方案成熟稳定，性价比优越，产品设有TVS保护" }
+      "category" : [
+        {
+          "text" : "类型A",
+          "id" : "a0",
+          "list" : [
+            { "id" : "11" , "title" : "59.3x53.1x22.1mm" , "isHot" : true, "img" : "../img/product/1/59.3x53.1x22.1mm.png", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "12" , "title" : "59x27mm" , "isHot" : true, "img" : "../img/product/1/59x27mm.png", "description" : "1.高亮度满足客户减灯、高清电视需求<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "13" , "title" : "75.6x31x24.2mm" , "isHot" : true, "img" : "../img/product/1/75.6x31x24.2mm.png", "description" : "1.OD25mm方案成熟稳定，低混光距离OD15项目方案<br/>2.高色域方案，折射式全球IP保证(enplas授权)<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "14" , "title" : "87.5x36.5x24mm" , "isHot" : true, "img" : "../img/product/1/87.5x36.5x24mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "15" , "title" : "96x71x39mm" , "isHot" : true, "img" : "../img/product/1/96x71x39mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "16" , "title" : "100x40x23mm" , "isHot" : true, "img" : "../img/product/1/100x40x23mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "17" , "title" : "100x40x23mmm" , "isHot" : true, "img" : "../img/product/1/100x40x23mmm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "18" , "title" : "130x46x25mm" , "isHot" : true, "img" : "../img/product/1/130x46x25mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "19" , "title" : "149x40x28mm" , "isHot" : true, "img" : "../img/product/1/149x40x28mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" }
+          ]
+        },
+        {
+          "text" : "类型B",
+          "id" : "b0",
+          "list" : [
+            { "id" : "1A" , "title" : "150x45x30mm" , "isHot" : true, "img" : "../img/product/1/150x45x30mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1B" , "title" : "150x46x29mm" , "isHot" : false, "img" : "../img/product/1/150x46x29mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1C" , "title" : "150x46x29mmm" , "isHot" : false, "img" : "../img/product/1/150x46x29mmm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1D" , "title" : "155x44x26mm" , "isHot" : false, "img" : "../img/product/1/155x44x26mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1E" , "title" : "155x54x35.5mm" , "isHot" : false, "img" : "../img/product/1/155x54x35.5mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1F" , "title" : "180x52x32mm" , "isHot" : false, "img" : "../img/product/1/180x52x32mm.png", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1H" , "title" : "210x85x35mm" , "isHot" : false, "img" : "../img/product/1/210x85x35mm.jpg", "description" : "1.高光效为4K2K/UHD电视提供很好解决方案，TVS保护<br/>2.高色域方案（85%&95%NTSC），全球IP保证<br/>3.瑞丰自行高效高品质SMT，L/B便捷式交货" },
+            { "id" : "1G" , "title" : "213x43x32mm" , "isHot" : false, "img" : "../img/product/1/213x43x32mm.jpg", "description" : "1.高信赖性，设有热点分离式产品<br/>L/B方案成熟稳定，性价比优越，产品设有TVS保护" }
+          ]
+        }
       ]
     },
     {

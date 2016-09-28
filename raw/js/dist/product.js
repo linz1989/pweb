@@ -165,26 +165,29 @@ $(function(){
         var pdata = res.products,
             menuHtmlStr = "",
             contentHtmlStr = "",
-            i, k;
-
+            i, k, resObj,indexCount=0;
         for(i=0;i<pdata.length;i++){
-            if(i==0) defaultNav = pdata[i]["id"];
-            navStrObj[pdata[i]["id"]+""]=i;
-            menuHtmlStr += "<li data-nav-id='"+pdata[i]["id"]+"'>"+pdata[i]["text"]+"</li>";
-            contentHtmlStr += "<div id='product_category_"+pdata[i]["id"]+"'>";
-            for(k=0;k<pdata[i]["list"].length;k++){
-                contentHtmlStr +="<div class='item' pid='"+pdata[i]["list"][k].id+"'>\
-                        <img src='"+pdata[i]["list"][k].img+"' />\
-                        <h4>"+pdata[i]["list"][k].title+"</h4>\
-                        <p>"+pdata[i]["list"][k].description+"</p>\
-                    </div>";
+            if(pdata[i].list){
+                resObj = genertateHtml(pdata[i],indexCount);
+                menuHtmlStr += resObj.menuHtmlStr;
+                contentHtmlStr += resObj.contentHtmlStr;
+                indexCount++;
             }
-            contentHtmlStr +="</div>";
+            else if(pdata[i].category){
+                menuHtmlStr +="<div class='hasSub' data-category-id='"+pdata[i]["id"]+"'>"+pdata[i]["text"]+"</div><div class='menu-list subList' data-category-id='"+pdata[i]["id"]+"'>";
+                for(k=0;k<pdata[i].category.length;k++){
+                    resObj = genertateHtml(pdata[i].category[k],indexCount,pdata[i]["id"]);
+                    menuHtmlStr += resObj.menuHtmlStr;
+                    contentHtmlStr += resObj.contentHtmlStr;
+                    indexCount++;
+                }
+                menuHtmlStr +="</div>";
+            }
         }
         //console.log("menuHtmlStr："+menuHtmlStr);
         $("#leftMenu").html(menuHtmlStr);
         $("#productContent").html(contentHtmlStr);
-        $leftNavMenu = $("#leftMenu>li");
+        $leftNavMenu = $("#leftMenu div.menu,#leftMenu div.hasSub");
         $rightContentList = $("#productContent>div");
 
         if(!location.hash || navStrObj[location.hash.substr(1)] == undefined){
@@ -210,14 +213,56 @@ $(function(){
         loading.removeClass("active");
     },"json");
 
-    $("#leftMenu").on("click","li",function(){
-        if(this.className == "curr") return;
-        location.hash = this.getAttribute("data-nav-id");
+    $("#leftMenu").on("click","div.menu,div.hasSub",function(){
+        var $this = $(this);
+        if($this.hasClass("curr")) return;
+        if($this.hasClass("hasSub")){
+            var categoryId = $this.attr("data-category-id"),
+                menuList = $("#leftMenu>div.menu-list[data-category-id="+categoryId+"]"),
+                isSlideDown = !menuList.is(":visible");
+            menuList.slideToggle(300);
+            if(isSlideDown){
+                menuList.siblings("div.menu-list").slideUp();
+            }
+        }
+        else{
+            if($this.hasClass("subItem")){
+                var menuList = $this.parent();
+                if(!menuList.is(":visible")){
+                    menuList.slideToggle(300);
+                    menuList.siblings("div.menu-list").slideUp();
+                }
+            }
+            location.hash = $this.attr("data-nav-id");
+        }
     })
 
     $("#productContent").on("click","div>div.item",function(){
         location.href="detail.html?pid="+this.getAttribute("pid");
     })
+
+    function genertateHtml(pObj,index,categoryId){
+        var menuHtmlStr, contentHtmlStr;
+        var isSub = categoryId != undefined;
+
+        if(!defaultNav) defaultNav = pObj["id"];
+        navStrObj[pObj["id"]+""]=index;
+        menuHtmlStr = "<div class='"+(isSub ? "subItem " : "")+"menu' data-nav-id='"+pObj["id"]+"'>"+pObj["text"]+"</div>";
+        contentHtmlStr = "<div id='product_category_"+pObj["id"]+"'>";
+        for(var k=0;k<pObj["list"].length;k++){
+            contentHtmlStr +="<div class='item' pid='"+pObj["list"][k].id+"'>\
+                       <img src='"+pObj["list"][k].img+"' />\
+                       <h4>"+pObj["list"][k].title+"</h4>\
+                        <p>"+pObj["list"][k].description+"</p>\
+                   </div>";
+        }
+        contentHtmlStr +="</div>";
+
+        return {
+            menuHtmlStr : menuHtmlStr,
+            contentHtmlStr : contentHtmlStr
+        }
+    }
 
     function doHashChange(){
         $leftNavMenu.removeClass("curr");

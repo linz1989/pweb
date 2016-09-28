@@ -28,30 +28,36 @@ $(function(){
         //////获取产品数据
         $.get("../json/product_"+lang+".json",{ "_t" : (+new Date())},function(pdata){
             pdata = pdata.products;
-            var optionStr = "",htmlStr = "";
+            var optionStr = "",htmlStr = "",categoryObj;
             for(var k=0;k<pdata.length;k++){
                 optionStr += "<option value='"+pdata[k].id+"'>"+pdata[k]["text"]+"</option>";
-                for(i=0;i<pdata[k]["list"].length;i++){
-                    if(pdata[k]["list"][i]["isHot"]){
-                        htmlStr += "<li pid='"+pdata[k]["list"][i]["id"]+"'>" +
-                            "<img src='"+pdata[k]["list"][i]["img"]+"'/>" +
-                            "<div>" +
-                            "   <h3>"+pdata[k]["list"][i]["title"]+"</h3>" +
-                            "</div>" +
-                            "</li>";
+                categoryObj = pdata[k];
+                if(categoryObj.list){
+                    for(i=0;i<categoryObj.list.length;i++){
+                        if(categoryObj.list[i]["isHot"]){
+                            htmlStr += generateProductHtml(categoryObj.list[i]);
+                        }
+                    }
+                }
+                else if(categoryObj.category){
+                    for(i=0;i<categoryObj.category.length;i++){
+                        for(var j=0;j<categoryObj.category[i].list.length;j++){
+                            if(categoryObj.category[i].list[j]["isHot"]){
+                                htmlStr += generateProductHtml(categoryObj.category[i].list[j]);
+                            }
+                        }
                     }
                 }
             }
             $("#sellingProductList").html(htmlStr);
             $("#product-type").html($("#product-type").html()+optionStr);
-
             $("#loading").removeClass("active");
         },"json");
     },"json");
 
     $("#sellingProductList").on("click","li",function(){
         location.href = "detail.html?pid="+this.getAttribute("pid");
-    })
+    });
 
     var sideBarBtns = $("div.side-bar>ul>li>i"),
         qrCodeDiv = $("div.side-bar>div.qrcode"),
@@ -63,6 +69,13 @@ $(function(){
         productKeyWords = $("#product-keywords"),
         $win = $(window),
         sideBar = $("div.side-bar");
+
+    function generateProductHtml(pobj){
+        return "<li pid='"+pobj["id"]+"'>\
+                        <img src='"+pobj["img"]+"'/>\
+                        <div><h3>"+pobj["title"]+"</h3></div>\
+                    </li>";
+    }
 
     function doHandlerSearchBar(){
         searchDiv.addClass("active");
