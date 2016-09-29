@@ -37,7 +37,7 @@ $(function(){
         //console.log("menuHtmlStr："+menuHtmlStr);
         $("#leftMenu").html(menuHtmlStr);
         $("#productContent").html(contentHtmlStr);
-        $leftNavMenu = $("#leftMenu div.menu,#leftMenu div.hasSub");
+        $leftNavMenu = $("#leftMenu div.menu");
         $rightContentList = $("#productContent>div");
 
         if(!location.hash || navStrObj[location.hash.substr(1)] == undefined){
@@ -70,17 +70,17 @@ $(function(){
             var categoryId = $this.attr("data-category-id"),
                 menuList = $("#leftMenu>div.menu-list[data-category-id="+categoryId+"]"),
                 isSlideDown = !menuList.is(":visible");
-            menuList.slideToggle(300);
+            menuList.slideToggle(150);
             if(isSlideDown){
-                menuList.siblings("div.menu-list").slideUp();
+                //menuList.siblings("div.menu-list").slideUp();
             }
         }
         else{
             if($this.hasClass("subItem")){
                 var menuList = $this.parent();
                 if(!menuList.is(":visible")){
-                    menuList.slideToggle(300);
-                    menuList.siblings("div.menu-list").slideUp();
+                    menuList.slideToggle(150);
+                    //menuList.siblings("div.menu-list").slideUp();
                 }
             }
             location.hash = $this.attr("data-nav-id");
@@ -118,12 +118,20 @@ $(function(){
         $leftNavMenu.removeClass("curr");
         var navId = location.hash.substr(1),
             navIndex = navStrObj[navId],
-            navMenu = $leftNavMenu[navIndex];
+            navMenu = $($leftNavMenu[navIndex]),
+            pathStr = "<a href='product.html#"+navId+"'>"+navMenu.text()+"</a>";
 
-        path.html("<a href='product.html#"+navId+"'>"+navMenu.innerHTML+"</a>");
-        $(navMenu).addClass("curr");
+        navMenu.addClass("curr");
         $rightContentList.removeClass("active");
         $rightContentList[navIndex].className = "active";
+
+        if(navMenu.hasClass("subItem")){
+            var pNode = navMenu.parent();
+            pNode.slideDown();
+            pathStr = pNode.siblings("[data-category-id="+pNode.attr("data-category-id")+"]").text()+" >> "+pathStr;
+        }
+
+        path.html(pathStr);
     }
 
     function doHandlerScroll(){

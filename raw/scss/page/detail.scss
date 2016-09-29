@@ -21,7 +21,7 @@ div.content-wrap{
       background-color: #fff;
       //@include transition(all 0.4s);
       //@include boxShadow(0 1px 1px rgba(0,0,0,0.05));
-      &>div{
+      &>div.title{
         height:46px;
         line-height: 46px;
         font-weight: bold;
@@ -32,15 +32,17 @@ div.content-wrap{
         border-top-right-radius: 4px;
         color:#fff;
       }
-      &>ul{
+      div.menu-list{
         margin:8px;
         padding:0;
         border-radius: 4px;
         border:1px dotted #ccc;
-        &>li{
+        &>div{
           height:46px;
           line-height:46px;
-          border-bottom: 1px solid #e0e0e0;
+          border-top: 1px solid #e0e0e0;
+          font-weight: bold;
+          //border-bottom: 1px solid #e0e0e0;
           @include transition(all 0.4s);
           cursor: pointer;
           text-align: center;
@@ -54,20 +56,38 @@ div.content-wrap{
             height : 1px;
             width:0;
             background-color: #f59f3a;
-            //@include transition(width 0.4s);
+            @include transition(width 0.4s);
           }
-          &:last-child{
-            border-bottom-width:0;
-          }
-          &.curr,&:hover{
-            color:#f59f3a;
-            &:after{
-              width:100%;
-            }
+          &:first-child{
+            border-top-width:0;
           }
           &.curr{
             font-weight: bold;
           }
+          &.menu-list{
+            height:auto;
+            border-top-width:0;
+            &>div:first-child{
+              border-top-width:1px;
+            }
+            &>div.menu{
+              font-weight: normal;
+            }
+          }
+          &.hasSub{
+            border-bottom: 1px solid #e0e0e0;
+          }
+          &.hasSub,&.menu{
+            &.curr,&:hover{
+              color:#f59f3a;
+              &:after{
+                width:100%;
+              }
+            }
+          }
+        }
+        &.subList{
+          display: none;
         }
       }
       &.fixed{
